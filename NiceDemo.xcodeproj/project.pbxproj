@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9FD5E209204BFDE7002536E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD5E208204BFDE7002536E7 /* AppDelegate.swift */; };
-		9FD5E20B204BFDE7002536E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD5E20A204BFDE7002536E7 /* ViewController.swift */; };
-		9FD5E20E204BFDE7002536E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD5E20C204BFDE7002536E7 /* Main.storyboard */; };
 		9FD5E210204BFDE7002536E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FD5E20F204BFDE7002536E7 /* Assets.xcassets */; };
 		9FD5E213204BFDE7002536E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD5E211204BFDE7002536E7 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -17,8 +15,6 @@
 /* Begin PBXFileReference section */
 		9FD5E205204BFDE7002536E7 /* NiceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FD5E208204BFDE7002536E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9FD5E20A204BFDE7002536E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9FD5E20D204BFDE7002536E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FD5E20F204BFDE7002536E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FD5E212204BFDE7002536E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FD5E214204BFDE7002536E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +31,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F64F636204C14B100ED9EB4 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				9FD5E20F204BFDE7002536E7 /* Assets.xcassets */,
+				9FD5E211204BFDE7002536E7 /* LaunchScreen.storyboard */,
+				9FD5E214204BFDE7002536E7 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		9F64F637204C14DF00ED9EB4 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9F64F638204C151C00ED9EB4 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		9F64F639204C15C400ED9EB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9F64F63A204C15C900ED9EB4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9F64F63B204C15D600ED9EB4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9F64F63C204C15DC00ED9EB4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9F64F63D204C15EC00ED9EB4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9F64F63E204C15FE00ED9EB4 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		9FD5E1FC204BFDE7002536E7 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +116,16 @@
 		9FD5E207204BFDE7002536E7 /* NiceDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9F64F63B204C15D600ED9EB4 /* Extensions */,
+				9F64F63C204C15DC00ED9EB4 /* Protocols */,
+				9F64F63A204C15C900ED9EB4 /* Utils */,
+				9F64F63D204C15EC00ED9EB4 /* Services */,
+				9F64F63E204C15FE00ED9EB4 /* Coordinators */,
+				9F64F639204C15C400ED9EB4 /* Models */,
+				9F64F638204C151C00ED9EB4 /* Custom Views */,
+				9F64F637204C14DF00ED9EB4 /* Scenes */,
 				9FD5E208204BFDE7002536E7 /* AppDelegate.swift */,
-				9FD5E20A204BFDE7002536E7 /* ViewController.swift */,
-				9FD5E20C204BFDE7002536E7 /* Main.storyboard */,
-				9FD5E20F204BFDE7002536E7 /* Assets.xcassets */,
-				9FD5E211204BFDE7002536E7 /* LaunchScreen.storyboard */,
-				9FD5E214204BFDE7002536E7 /* Info.plist */,
+				9F64F636204C14B100ED9EB4 /* Supporting files */,
 			);
 			path = NiceDemo;
 			sourceTree = "<group>";
@@ -125,7 +191,6 @@
 			files = (
 				9FD5E213204BFDE7002536E7 /* LaunchScreen.storyboard in Resources */,
 				9FD5E210204BFDE7002536E7 /* Assets.xcassets in Resources */,
-				9FD5E20E204BFDE7002536E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +201,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FD5E20B204BFDE7002536E7 /* ViewController.swift in Sources */,
 				9FD5E209204BFDE7002536E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,14 +208,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9FD5E20C204BFDE7002536E7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9FD5E20D204BFDE7002536E7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9FD5E211204BFDE7002536E7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -275,7 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NiceDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NiceDemo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lollipop.NiceDemo;
@@ -290,7 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NiceDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NiceDemo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lollipop.NiceDemo;
