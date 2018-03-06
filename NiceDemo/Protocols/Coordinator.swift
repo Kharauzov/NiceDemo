@@ -16,6 +16,8 @@ protocol Coordinator: class {
     func start()
     func addChildCoordinator(_ coordinator: Coordinator)
     func removeChildCoordinator(_ coordinator: Coordinator)
+    func popView(animated: Bool)
+    func dismissView(animated: Bool)
 }
 
 extension Coordinator {
@@ -36,5 +38,13 @@ extension Coordinator {
                 break
             }
         }
+    }
+    
+    func popView(animated: Bool) {
+        navigationController.popViewController(animated: animated)
+    }
+    
+    func dismissView(animated: Bool) {
+        navigationController.visibleViewController?.dismiss(animated: animated, completion: nil)
     }
 }

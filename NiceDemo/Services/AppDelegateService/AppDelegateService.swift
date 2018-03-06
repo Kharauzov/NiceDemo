@@ -12,8 +12,12 @@ import UIKit
 /// Responsible for handling all business logic, that should be established at AppDelegate.
 class AppDelegateService {
     
+    // MARK: Private properties
+    
     /// root window of the app
     private let window: UIWindow!
+    /// root coordinator
+    private var appCoordinator: AppCoordinator!
     
     // MARK: Init
     
@@ -24,6 +28,9 @@ class AppDelegateService {
     // MARK: Public methods
     
     func setupAppCoordinator() {
-        // TODO: todo
+        window.rootViewController = BaseNavigationController()
+        appCoordinator = AppCoordinator(navigationController: window.rootViewController as! UINavigationController)
+        appCoordinator.start()
+        window.makeKeyAndVisible()
     }
 }

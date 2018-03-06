@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F091A8A204D52A800B580CB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A89204D52A800B580CB /* AppCoordinator.swift */; };
+		9F091A90204D543600B580CB /* StartContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A8C204D543600B580CB /* StartContract.swift */; };
+		9F091A91204D543600B580CB /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A8D204D543600B580CB /* StartPresenter.swift */; };
+		9F091A92204D543600B580CB /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A8E204D543600B580CB /* StartViewController.swift */; };
+		9F091A93204D543600B580CB /* StartConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A8F204D543600B580CB /* StartConfigurator.swift */; };
+		9F091A95204D54EE00B580CB /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A94204D54EE00B580CB /* StartView.swift */; };
+		9F091A99204D63DA00B580CB /* UserCredentialsStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A98204D63DA00B580CB /* UserCredentialsStorageService.swift */; };
+		9F091A9C204D63E900B580CB /* DogsStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A9B204D63E900B580CB /* DogsStorageService.swift */; };
+		9F091AA4204D6A0000B580CB /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA0204D6A0000B580CB /* SignInContract.swift */; };
+		9F091AA5204D6A0000B580CB /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA1204D6A0000B580CB /* SignInPresenter.swift */; };
+		9F091AA6204D6A0000B580CB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA2204D6A0000B580CB /* SignInViewController.swift */; };
+		9F091AA7204D6A0000B580CB /* SignInConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */; };
+		9F091AA9204D6A6100B580CB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA8204D6A6100B580CB /* SignInView.swift */; };
+		9F091AAB204D6B0400B580CB /* AuthFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AAA204D6B0400B580CB /* AuthFlowCoordinator.swift */; };
 		9F64F641204C17DC00ED9EB4 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F63F204C17DC00ED9EB4 /* ReusableView.swift */; };
 		9F64F642204C17DC00ED9EB4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F640204C17DC00ED9EB4 /* Coordinator.swift */; };
 		9F64F645204C194100ED9EB4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F643204C194100ED9EB4 /* UIViewController+Extension.swift */; };
@@ -14,7 +28,7 @@
 		9F64F648204C19EF00ED9EB4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F647204C19EF00ED9EB4 /* Utils.swift */; };
 		9F64F64C204C1B4E00ED9EB4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F64B204C1B4E00ED9EB4 /* BaseViewController.swift */; };
 		9F64F64F204C1C0400ED9EB4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F64E204C1C0400ED9EB4 /* BaseNavigationController.swift */; };
-		9F64F659204C465C00ED9EB4 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F658204C465C00ED9EB4 /* UserDefaultsManager.swift */; };
+		9F64F659204C465C00ED9EB4 /* UserDefaultsLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F658204C465C00ED9EB4 /* UserDefaultsLayer.swift */; };
 		9F64F65B204C467900ED9EB4 /* AppDelegateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F65A204C467900ED9EB4 /* AppDelegateService.swift */; };
 		9FD5E209204BFDE7002536E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD5E208204BFDE7002536E7 /* AppDelegate.swift */; };
 		9FD5E210204BFDE7002536E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FD5E20F204BFDE7002536E7 /* Assets.xcassets */; };
@@ -22,6 +36,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F091A89204D52A800B580CB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		9F091A8C204D543600B580CB /* StartContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartContract.swift; sourceTree = "<group>"; };
+		9F091A8D204D543600B580CB /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
+		9F091A8E204D543600B580CB /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		9F091A8F204D543600B580CB /* StartConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartConfigurator.swift; sourceTree = "<group>"; };
+		9F091A94204D54EE00B580CB /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		9F091A98204D63DA00B580CB /* UserCredentialsStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsStorageService.swift; sourceTree = "<group>"; };
+		9F091A9B204D63E900B580CB /* DogsStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsStorageService.swift; sourceTree = "<group>"; };
+		9F091AA0204D6A0000B580CB /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
+		9F091AA1204D6A0000B580CB /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		9F091AA2204D6A0000B580CB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInConfigurator.swift; sourceTree = "<group>"; };
+		9F091AA8204D6A6100B580CB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		9F091AAA204D6B0400B580CB /* AuthFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoordinator.swift; sourceTree = "<group>"; };
 		9F64F63F204C17DC00ED9EB4 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		9F64F640204C17DC00ED9EB4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9F64F643204C194100ED9EB4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -29,7 +57,7 @@
 		9F64F647204C19EF00ED9EB4 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9F64F64B204C1B4E00ED9EB4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9F64F64E204C1C0400ED9EB4 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
-		9F64F658204C465C00ED9EB4 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		9F64F658204C465C00ED9EB4 /* UserDefaultsLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsLayer.swift; sourceTree = "<group>"; };
 		9F64F65A204C467900ED9EB4 /* AppDelegateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateService.swift; sourceTree = "<group>"; };
 		9FD5E205204BFDE7002536E7 /* NiceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FD5E208204BFDE7002536E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +77,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F091A88204D524500B580CB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9F091A9E204D69D600B580CB /* Dogs Flow */,
+				9F091A9D204D69CE00B580CB /* Auth Flow */,
+				9F091A8B204D542C00B580CB /* Start Scene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9F091A8B204D542C00B580CB /* Start Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9F091A8E204D543600B580CB /* StartViewController.swift */,
+				9F091A94204D54EE00B580CB /* StartView.swift */,
+				9F091A8D204D543600B580CB /* StartPresenter.swift */,
+				9F091A8C204D543600B580CB /* StartContract.swift */,
+				9F091A8F204D543600B580CB /* StartConfigurator.swift */,
+			);
+			path = "Start Scene";
+			sourceTree = "<group>";
+		};
+		9F091A96204D63A700B580CB /* Local Storage */ = {
+			isa = PBXGroup;
+			children = (
+				9F091A9A204D63DF00B580CB /* DogsStorageService */,
+				9F091A97204D63BB00B580CB /* UserCredentialsStorageService */,
+			);
+			path = "Local Storage";
+			sourceTree = "<group>";
+		};
+		9F091A97204D63BB00B580CB /* UserCredentialsStorageService */ = {
+			isa = PBXGroup;
+			children = (
+				9F091A98204D63DA00B580CB /* UserCredentialsStorageService.swift */,
+			);
+			path = UserCredentialsStorageService;
+			sourceTree = "<group>";
+		};
+		9F091A9A204D63DF00B580CB /* DogsStorageService */ = {
+			isa = PBXGroup;
+			children = (
+				9F091A9B204D63E900B580CB /* DogsStorageService.swift */,
+			);
+			path = DogsStorageService;
+			sourceTree = "<group>";
+		};
+		9F091A9D204D69CE00B580CB /* Auth Flow */ = {
+			isa = PBXGroup;
+			children = (
+				9F091A9F204D69F300B580CB /* SignIn Scene */,
+			);
+			path = "Auth Flow";
+			sourceTree = "<group>";
+		};
+		9F091A9E204D69D600B580CB /* Dogs Flow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Dogs Flow";
+			sourceTree = "<group>";
+		};
+		9F091A9F204D69F300B580CB /* SignIn Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9F091AA2204D6A0000B580CB /* SignInViewController.swift */,
+				9F091AA8204D6A6100B580CB /* SignInView.swift */,
+				9F091AA1204D6A0000B580CB /* SignInPresenter.swift */,
+				9F091AA0204D6A0000B580CB /* SignInContract.swift */,
+				9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */,
+			);
+			path = "SignIn Scene";
+			sourceTree = "<group>";
+		};
 		9F64F636204C14B100ED9EB4 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,13 +159,6 @@
 				9FD5E214204BFDE7002536E7 /* Info.plist */,
 			);
 			path = "Supporting files";
-			sourceTree = "<group>";
-		};
-		9F64F637204C14DF00ED9EB4 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Scenes;
 			sourceTree = "<group>";
 		};
 		9F64F638204C151C00ED9EB4 /* Custom Views */ = {
@@ -109,6 +204,7 @@
 		9F64F63D204C15EC00ED9EB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9F091A96204D63A700B580CB /* Local Storage */,
 				9F64F657204C463C00ED9EB4 /* AppDelegateService */,
 				9F64F656204C463100ED9EB4 /* UserDefaults */,
 			);
@@ -118,6 +214,8 @@
 		9F64F63E204C15FE00ED9EB4 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				9F091A89204D52A800B580CB /* AppCoordinator.swift */,
+				9F091AAA204D6B0400B580CB /* AuthFlowCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -150,7 +248,7 @@
 		9F64F656204C463100ED9EB4 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
-				9F64F658204C465C00ED9EB4 /* UserDefaultsManager.swift */,
+				9F64F658204C465C00ED9EB4 /* UserDefaultsLayer.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -190,7 +288,7 @@
 				9F64F649204C1B3200ED9EB4 /* Controllers */,
 				9F64F639204C15C400ED9EB4 /* Models */,
 				9F64F638204C151C00ED9EB4 /* Custom Views */,
-				9F64F637204C14DF00ED9EB4 /* Scenes */,
+				9F091A88204D524500B580CB /* Scenes */,
 				9FD5E208204BFDE7002536E7 /* AppDelegate.swift */,
 				9F64F636204C14B100ED9EB4 /* Supporting files */,
 			);
@@ -268,14 +366,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F091AA7204D6A0000B580CB /* SignInConfigurator.swift in Sources */,
+				9F091A9C204D63E900B580CB /* DogsStorageService.swift in Sources */,
+				9F091AAB204D6B0400B580CB /* AuthFlowCoordinator.swift in Sources */,
+				9F091A91204D543600B580CB /* StartPresenter.swift in Sources */,
+				9F091AA4204D6A0000B580CB /* SignInContract.swift in Sources */,
+				9F091A92204D543600B580CB /* StartViewController.swift in Sources */,
+				9F091AA5204D6A0000B580CB /* SignInPresenter.swift in Sources */,
+				9F091A8A204D52A800B580CB /* AppCoordinator.swift in Sources */,
+				9F091A95204D54EE00B580CB /* StartView.swift in Sources */,
 				9F64F64F204C1C0400ED9EB4 /* BaseNavigationController.swift in Sources */,
+				9F091A90204D543600B580CB /* StartContract.swift in Sources */,
 				9F64F645204C194100ED9EB4 /* UIViewController+Extension.swift in Sources */,
 				9FD5E209204BFDE7002536E7 /* AppDelegate.swift in Sources */,
 				9F64F641204C17DC00ED9EB4 /* ReusableView.swift in Sources */,
+				9F091A99204D63DA00B580CB /* UserCredentialsStorageService.swift in Sources */,
 				9F64F646204C194100ED9EB4 /* UIView+Extension.swift in Sources */,
-				9F64F659204C465C00ED9EB4 /* UserDefaultsManager.swift in Sources */,
+				9F091AA9204D6A6100B580CB /* SignInView.swift in Sources */,
+				9F091AA6204D6A0000B580CB /* SignInViewController.swift in Sources */,
+				9F64F659204C465C00ED9EB4 /* UserDefaultsLayer.swift in Sources */,
 				9F64F65B204C467900ED9EB4 /* AppDelegateService.swift in Sources */,
 				9F64F642204C17DC00ED9EB4 /* Coordinator.swift in Sources */,
+				9F091A93204D543600B580CB /* StartConfigurator.swift in Sources */,
 				9F64F64C204C1B4E00ED9EB4 /* BaseViewController.swift in Sources */,
 				9F64F648204C19EF00ED9EB4 /* Utils.swift in Sources */,
 			);
