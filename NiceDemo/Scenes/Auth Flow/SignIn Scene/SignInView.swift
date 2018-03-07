@@ -43,6 +43,7 @@ class SignInView: UIView {
         emailTextField = UITextField(frame: .zero)
         emailTextField.placeholder = "Email"
         emailTextField.keyboardType = .emailAddress
+        emailTextField.autocapitalizationType = .none
         emailTextField.delegate = self
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(emailTextField)
@@ -98,7 +99,7 @@ class SignInView: UIView {
     }
     
     @objc private func forgotButtonTapped(_ sender: UIButton) {
-        didPressSignInButton?()
+        didPressForgotPasswordButton?()
     }
     
     private func addSignInButton() {
@@ -118,7 +119,7 @@ class SignInView: UIView {
     }
     
     @objc private func signInButtonTapped(_ sender: UIButton) {
-        didPressForgotPasswordButton?()
+        didPressSignInButton?()
     }
 }
 

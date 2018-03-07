@@ -35,7 +35,7 @@ class StartPresenter {
     private func checkUserState() {
         // could be some url request here
         // immitation via 'asyncAfter'.
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0) { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) { [unowned self] in
             // handle of result
             self.view.hideLoading()
             if self.userCredentialsStorage.isUserAuthenticated { // user is authenticated

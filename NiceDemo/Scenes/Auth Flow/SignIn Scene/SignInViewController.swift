@@ -49,11 +49,11 @@ class SignInViewController: BaseViewController {
     }
     
     private func subscribeOnCustomViewActions() {
-        customView.didPressForgotPasswordButton = {
-            debugPrint(#function)
+        customView.didPressForgotPasswordButton = { [unowned self] in
+            self.presenter.handleForgotPasswordButtonTap()
         }
-        customView.didPressSignInButton = {
-            debugPrint(#function)
+        customView.didPressSignInButton = { [unowned self] in
+            self.presenter.handleSignInButtonTap()
         }
     }
 }
@@ -71,5 +71,11 @@ extension SignInViewController: SignInViewInterface {
     
     func getEmailString() -> String? {
         return customView.emailTextField.text
+    }
+    
+    func showErrorAlert(title: String?, message: String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Okey", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }

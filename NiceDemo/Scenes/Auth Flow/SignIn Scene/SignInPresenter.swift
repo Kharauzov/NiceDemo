@@ -24,6 +24,7 @@ class SignInPresenter {
 
     private weak var view: SignInViewInterface!
     private let userCredentialsStorage = UserCredentialsStorageService(storage: UserDefaultsLayer())
+    private let validator = Validator()
     
     // MARK: Public methods
     
@@ -32,6 +33,32 @@ class SignInPresenter {
     }
     
     // MARK: Private methods
+    
+    /// Returns value if it is valid. In other case returns nil.
+    private func validateEmail(_ value: String?) -> String? {
+        do {
+            try validator.validateEmail(value)
+        } catch let error as Validator.ValidationError {
+            view.showErrorAlert(title: nil, message: error.localizedDescription)
+            return nil
+        } catch {
+            return nil
+        }
+        return value
+    }
+    
+    /// Returns value if it is valid. In other case returns nil.
+    private func validatePassword(_ value: String?) -> String? {
+        do {
+            try validator.validatePassword(value)
+        } catch let error as Validator.ValidationError {
+           view.showErrorAlert(title: nil, message: error.localizedDescription)
+            return nil
+        } catch {
+            return nil
+        }
+        return value
+    }
 }
 
 // MARK: SignInPresentation Protocol
@@ -41,16 +68,19 @@ extension SignInPresenter: SignInPresentation {
         let email = view.getEmailString()
         let password = view.getPasswordString()
         // perform some validation here
-        // show loading...
-        // perform some url request
-        // hide loading..
-        // handle result
-        if true {
-            // we store, that user authenticated successfully
-            userCredentialsStorage.isUserAuthenticated = true
-            delegate?.userPerformedAuthentication()
-        } else {
-            // show appropriate UI, that error occured
+        if let _ = validateEmail(email), let _ = validatePassword(password) {
+            // validation passed
+            // show loading...
+            // perform some url request
+            // hide loading..
+            // handle result
+            if true {
+                // we store, that user authenticated successfully
+                userCredentialsStorage.isUserAuthenticated = true
+                delegate?.userPerformedAuthentication()
+            } else {
+                // show appropriate UI, that error occured
+            }
         }
     }
     

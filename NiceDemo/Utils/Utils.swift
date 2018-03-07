@@ -38,5 +38,5 @@ struct DeviceType {
 // MARK: App internal constants
 
 struct Constants {
-    
+    static let passwordRequiredLength = 6
 }

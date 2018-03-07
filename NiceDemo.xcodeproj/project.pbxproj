@@ -21,6 +21,7 @@
 		9F091AA7204D6A0000B580CB /* SignInConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */; };
 		9F091AA9204D6A6100B580CB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA8204D6A6100B580CB /* SignInView.swift */; };
 		9F091AAB204D6B0400B580CB /* AuthFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AAA204D6B0400B580CB /* AuthFlowCoordinator.swift */; };
+		9F3776552050328400E9BB0A /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3776542050328400E9BB0A /* Validator.swift */; };
 		9F64F641204C17DC00ED9EB4 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F63F204C17DC00ED9EB4 /* ReusableView.swift */; };
 		9F64F642204C17DC00ED9EB4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F640204C17DC00ED9EB4 /* Coordinator.swift */; };
 		9F64F645204C194100ED9EB4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64F643204C194100ED9EB4 /* UIViewController+Extension.swift */; };
@@ -50,6 +51,7 @@
 		9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInConfigurator.swift; sourceTree = "<group>"; };
 		9F091AA8204D6A6100B580CB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		9F091AAA204D6B0400B580CB /* AuthFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoordinator.swift; sourceTree = "<group>"; };
+		9F3776542050328400E9BB0A /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		9F64F63F204C17DC00ED9EB4 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		9F64F640204C17DC00ED9EB4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9F64F643204C194100ED9EB4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 			path = "SignIn Scene";
 			sourceTree = "<group>";
 		};
+		9F3776532050327200E9BB0A /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				9F3776542050328400E9BB0A /* Validator.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
 		9F64F636204C14B100ED9EB4 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +214,7 @@
 		9F64F63D204C15EC00ED9EB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9F3776532050327200E9BB0A /* Validator */,
 				9F091A96204D63A700B580CB /* Local Storage */,
 				9F64F657204C463C00ED9EB4 /* AppDelegateService */,
 				9F64F656204C463100ED9EB4 /* UserDefaults */,
@@ -388,6 +399,7 @@
 				9F64F65B204C467900ED9EB4 /* AppDelegateService.swift in Sources */,
 				9F64F642204C17DC00ED9EB4 /* Coordinator.swift in Sources */,
 				9F091A93204D543600B580CB /* StartConfigurator.swift in Sources */,
+				9F3776552050328400E9BB0A /* Validator.swift in Sources */,
 				9F64F64C204C1B4E00ED9EB4 /* BaseViewController.swift in Sources */,
 				9F64F648204C19EF00ED9EB4 /* Utils.swift in Sources */,
 			);
