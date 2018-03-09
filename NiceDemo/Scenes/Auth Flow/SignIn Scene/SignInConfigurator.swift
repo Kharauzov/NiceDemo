@@ -11,7 +11,7 @@ import Foundation
 class SignInConfigurator {
     
     /// Returns viewController, configured with its associated presenter.
-    func configuredViewController(delegate: SignInPresenterDelegate?) -> SignInViewController {
+    func configuredViewController(delegate: SignInSceneDelegate?) -> SignInViewController {
         let viewController = SignInViewController()
         let presenter = SignInPresenter(view: viewController)
         presenter.delegate = delegate

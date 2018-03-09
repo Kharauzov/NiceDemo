@@ -49,7 +49,7 @@ class AuthFlowCoordinator: Coordinator {
 
 // MARK: SignIn scene delegate
 
-extension AuthFlowCoordinator: SignInPresenterDelegate {
+extension AuthFlowCoordinator: SignInSceneDelegate {
     func handleSignUpButtonTap() {
         showSignUpScene()
     }
@@ -65,7 +65,7 @@ extension AuthFlowCoordinator: SignInPresenterDelegate {
 
 // MARK: ForgotPassword scene delegate
 
-extension AuthFlowCoordinator: ForgotPasswordPresenterDelegate {
+extension AuthFlowCoordinator: ForgotPasswordSceneDelegate {
     func userPerformedPasswordRecovery() {
         popView(animated: true)
     }

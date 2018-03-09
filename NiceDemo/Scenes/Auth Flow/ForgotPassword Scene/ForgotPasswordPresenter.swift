@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ForgotPasswordPresenterDelegate: class {
+protocol ForgotPasswordSceneDelegate: class {
     func userPerformedPasswordRecovery()
 }
 
@@ -16,7 +16,7 @@ class ForgotPasswordPresenter {
     
     // MARK: Public properties
     
-    weak var delegate: ForgotPasswordPresenterDelegate?
+    weak var delegate: ForgotPasswordSceneDelegate?
     
     // MARK: Private properties
 

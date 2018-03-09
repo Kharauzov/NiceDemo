@@ -1,5 +1,5 @@
 //
-//  ForgotPasswordConfigurator.swift
+//  DogsListConfigurator.swift
 //  NiceDemo
 //
 //  Created by Serhii Kharauzov on 3/9/18.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-class ForgotPasswordConfigurator {
+class DogsListConfigurator {
     
     /// Returns viewController, configured with its associated presenter.
-    func configuredViewController(delegate: ForgotPasswordSceneDelegate?) -> ForgotPasswordViewController {
-        let viewController = ForgotPasswordViewController()
-        let presenter = ForgotPasswordPresenter(view: viewController)
+    func configuredViewController(delegate: DogsListSceneDelegate?) -> DogsListViewController {
+        let viewController = DogsListViewController()
+        let presenter = DogsListPresenter(view: viewController)
         presenter.delegate = delegate
         viewController.setPresenter(presenter)
         return viewController

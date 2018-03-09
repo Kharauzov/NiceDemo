@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SignInPresenterDelegate: class {
+protocol SignInSceneDelegate: class {
     func handleSignUpButtonTap()
     func handleForgotPasswordButtonTap()
     func userPerformedAuthentication()
@@ -18,7 +18,7 @@ class SignInPresenter {
 
     // MARK: Public properties
     
-    weak var delegate: SignInPresenterDelegate?
+    weak var delegate: SignInSceneDelegate?
     
     // MARK: Private properties
 

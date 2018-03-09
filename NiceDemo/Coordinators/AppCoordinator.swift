@@ -25,7 +25,8 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        showStartScene()
+        //showStartScene()
+        showDogsFlow()
     }
     
     // MARK: Private methods
@@ -42,7 +43,10 @@ class AppCoordinator: Coordinator {
     }
     
     private func showDogsFlow() {
-        // TODO: implementation
+        let dogsFlowCoordinator = DogsFlowCoordinator(navigationController: navigationController)
+        dogsFlowCoordinator.delegate = self
+        childCoordinators.append(dogsFlowCoordinator)
+        dogsFlowCoordinator.start()
     }
 }
 
@@ -64,4 +68,10 @@ extension AppCoordinator: AuthFlowCoordinatorDelegate {
     func userPerformedAuthentication() {
         showDogsFlow()
     }
+}
+
+// MARK: DogsFlowCoordinator Delegate
+
+extension AppCoordinator: DogsFlowCoordinatorDelegate {
+    
 }
