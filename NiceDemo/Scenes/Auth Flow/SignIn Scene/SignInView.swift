@@ -14,13 +14,13 @@ class SignInView: UIView {
     
     var didPressSignInButton: (() -> Void)?
     var didPressForgotPasswordButton: (() -> Void)?
-    var emailTextField: UITextField!
-    var passwordTextField: UITextField!
     
     // MARK: Private properties
     
     private var forgotPasswordButton: UIButton!
     private var signInButton: UIButton!
+    private var emailTextField: UITextField!
+    private var passwordTextField: UITextField!
     
     // MARK: Init
     
@@ -128,6 +128,18 @@ class SignInView: UIView {
 extension SignInView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
+    }
+}
+
+// MARK: SignInView public methods
+
+extension SignInView {
+    func getEmailText() -> String? {
+        return emailTextField.text
+    }
+    
+    func getPasswordText() -> String? {
+        return passwordTextField.text
     }
 }
 

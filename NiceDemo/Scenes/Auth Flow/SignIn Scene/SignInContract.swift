@@ -12,7 +12,7 @@ protocol SignInViewInterface: class {
     func hideKeyboard()
     func getPasswordString() -> String?
     func getEmailString() -> String?
-    func showErrorAlert(title: String?, message: String?)
+    func showAlert(title: String?, message: String?)
 }
 
 protocol SignInPresentation: class {

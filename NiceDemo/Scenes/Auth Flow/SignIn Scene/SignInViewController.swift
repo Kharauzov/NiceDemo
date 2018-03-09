@@ -66,14 +66,14 @@ extension SignInViewController: SignInViewInterface {
     }
     
     func getPasswordString() -> String? {
-        return customView.passwordTextField.text
+        return customView.getEmailText()
     }
     
     func getEmailString() -> String? {
-        return customView.emailTextField.text
+        return customView.getPasswordText()
     }
     
-    func showErrorAlert(title: String?, message: String?) {
+    func showAlert(title: String?, message: String?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Okey", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)

@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol AuthFlowCoordinatorDelegate: class {
+    func userPerformedAuthentication()
+}
+
 /// Responsible for auth flow in the project.
 class AuthFlowCoordinator: Coordinator {
     
@@ -16,6 +20,7 @@ class AuthFlowCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
     let navigationController: UINavigationController
+    weak var delegate: AuthFlowCoordinatorDelegate?
     
     // MARK: Public methods
     
@@ -32,20 +37,36 @@ class AuthFlowCoordinator: Coordinator {
     private func showSignInScene() {
         navigationController.setViewControllers([SignInConfigurator().configuredViewController(delegate: self)], animated: true)
     }
+    
+    private func showForgotPasswordScene() {
+        navigationController.pushViewController(ForgotPasswordConfigurator().configuredViewController(delegate: self), animated: true)
+    }
+    
+    private func showSignUpScene() {
+        // TODO: implementation
+    }
 }
 
-// MARK: SignInPresenter Delegate
+// MARK: SignIn scene delegate
 
 extension AuthFlowCoordinator: SignInPresenterDelegate {
     func handleSignUpButtonTap() {
-        
+        showSignUpScene()
     }
     
     func handleForgotPasswordButtonTap() {
-        
+        showForgotPasswordScene()
     }
     
     func userPerformedAuthentication() {
-        
+        delegate?.userPerformedAuthentication()
+    }
+}
+
+// MARK: ForgotPassword scene delegate
+
+extension AuthFlowCoordinator: ForgotPasswordPresenterDelegate {
+    func userPerformedPasswordRecovery() {
+        popView(animated: true)
     }
 }

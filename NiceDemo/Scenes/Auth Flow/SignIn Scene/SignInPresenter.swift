@@ -39,7 +39,7 @@ class SignInPresenter {
         do {
             try validator.validateEmail(value)
         } catch let error as Validator.ValidationError {
-            view.showErrorAlert(title: nil, message: error.localizedDescription)
+            view.showAlert(title: nil, message: error.localizedDescription)
             return nil
         } catch {
             return nil
@@ -52,7 +52,7 @@ class SignInPresenter {
         do {
             try validator.validatePassword(value)
         } catch let error as Validator.ValidationError {
-           view.showErrorAlert(title: nil, message: error.localizedDescription)
+           view.showAlert(title: nil, message: error.localizedDescription)
             return nil
         } catch {
             return nil
