@@ -9,7 +9,7 @@
 import Foundation
 
 protocol DogsListSceneDelegate: class {
-    
+    func didSelectDog(_ dog: Dog)
 }
 
 class DogsListPresenter {
@@ -58,7 +58,7 @@ class DogsListPresenter {
 
 extension DogsListPresenter: DogsListTableViewProviderDelegate {
     func didSelectItem(at index: Int) {
-        // TODO: handle
+        delegate?.didSelectDog(dogs[index])
     }
     
     func getFormattedDescriptionForItem(at index: Int) -> String {

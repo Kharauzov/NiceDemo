@@ -23,15 +23,17 @@ class UrlSessionService: ServerService {
     
     func performRequest<T>(_ request: URLRequestable, completion: ServerRequestResponseCompletion<T>?) {
         session.dataTask(with: request.asURLRequest()) { (data, response, error) in
-            DispatchQueue.main.async {
-                let result: Result<T>
-                if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
-                    guard let data = data as? T else { return result = .failure(HTTPRequestError.invalidResponseDataType) }
-                    result = .success(data)
-                } else {
-                    result = .failure(self.getFormattedError(responseData: data, defaultError: error))
+            let result: Result<T>
+            defer {
+                DispatchQueue.main.async {
+                    completion?(result)
                 }
-                completion?(result)
+            }
+            if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode {
+                guard let data = data as? T else { return result = .failure(HTTPRequestError.invalidResponseDataType) }
+                result = .success(data)
+            } else {
+                result = .failure(self.getFormattedError(responseData: data, defaultError: error))
             }
         }.resume()
     }

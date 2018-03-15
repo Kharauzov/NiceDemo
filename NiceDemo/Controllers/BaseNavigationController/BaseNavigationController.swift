@@ -9,15 +9,20 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
-
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeNotTranslucent()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         debugPrint("\(#function) at \(self)")
+    }
+    
+    func makeNotTranslucent() {
+        navigationBar.isTranslucent = false
     }
 }

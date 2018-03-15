@@ -30,11 +30,8 @@ class GetAllDogsServerResponse: BaseResponse {
     }
 }
 
-
 extension GetAllDogsServerResponse {
     enum CodingKeys: String, CodingKey {
         case data = "message"
-        //case formattedData
-        //case someString
     }
 }

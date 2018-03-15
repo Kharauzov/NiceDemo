@@ -9,10 +9,11 @@
 import Foundation
 
  /// Responsible for performing network requests relating to Dogs.
- /// We used `core` property, that is abstract class for any network manager, that could
+ ///
+ /// We used *core* property, that is abstract class for any network manager, that could
  /// be used for implementing network requests. One can replace it on any class, that implements
- /// `ServerService` protocol. For now we use `UrlSession` as a simple example, but
- /// it can be easily replaced on Alamofire, AFNetworking, etc.
+ /// **ServerService** protocol. For now we use `UrlSession` as a simple example, but
+ /// it can be easily replaced on `Alamofire`, `AFNetworking`, etc.
 class DogsServerService {
     
     // MARK: Private properties
@@ -36,6 +37,17 @@ class DogsServerService {
         }
     }
     
+    func getDogRandomImageUrl(breed: String, completion: @escaping GetDogRandomImageUrlResponseCompletion) {
+        core.performRequest(ServerRouter.getDogRandomImage(breed)) { (result: Result<Data>) in
+            switch result {
+            case .success(let data):
+                completion(self.parseGetDogRandomImageUrlResponse(data: data), nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
     // MARK: Private methods
     
     private func parseGetAllDogsResponse(data: Data) -> [Dog]? {
@@ -46,10 +58,20 @@ class DogsServerService {
             return nil
         }
     }
+    
+    private func parseGetDogRandomImageUrlResponse(data: Data) -> String? {
+        do {
+            let parsedResponse = try JSONDecoder().decode(GetRandomDogImageServerResponse.self, from: data)
+            return parsedResponse.data
+        } catch {
+            return nil
+        }
+    }
 }
 
 // MARK: Templates
 
 extension DogsServerService {
     typealias GetAllDogsResponseCompletion = ([Dog]?, Error?) -> Void
+    typealias GetDogRandomImageUrlResponseCompletion = (String?, Error?) -> Void
 }

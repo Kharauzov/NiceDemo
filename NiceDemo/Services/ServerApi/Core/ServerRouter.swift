@@ -34,6 +34,7 @@ enum ServerRouter: URLRequestable {
     // MARK: Requests
     
     case getAllDogsBreeds
+    case getDogRandomImage(String)
     
     // MARK: Interface
 
@@ -44,13 +45,13 @@ enum ServerRouter: URLRequestable {
     func asURLRequest() -> URLRequest {
         var method: HTTPMethod {
             switch self {
-            case .getAllDogsBreeds:
+            case .getAllDogsBreeds, .getDogRandomImage:
                 return .get
             }
         }
         var params: (URLRequestParameters?) {
             switch self {
-            case .getAllDogsBreeds:
+            case .getAllDogsBreeds, .getDogRandomImage:
                 return nil
             }
         }
@@ -59,6 +60,8 @@ enum ServerRouter: URLRequestable {
             switch self {
             case .getAllDogsBreeds:
                 relativePath = "breeds/list/all"
+            case .getDogRandomImage(let string):
+                relativePath = "breed/\(string)/images/random"
             }
             return URL(string: ServerRouter.baseURLString)!.appendingPathComponent(relativePath)
         }()

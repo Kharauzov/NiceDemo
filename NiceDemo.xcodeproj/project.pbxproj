@@ -21,6 +21,9 @@
 		9F091AA7204D6A0000B580CB /* SignInConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */; };
 		9F091AA9204D6A6100B580CB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA8204D6A6100B580CB /* SignInView.swift */; };
 		9F091AAB204D6B0400B580CB /* AuthFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AAA204D6B0400B580CB /* AuthFlowCoordinator.swift */; };
+		9F21E80F205A6F1800156B30 /* DogGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21E80E205A6F1800156B30 /* DogGalleryView.swift */; };
+		9F21E811205A740D00156B30 /* GetRandomDogImageServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21E810205A740D00156B30 /* GetRandomDogImageServerResponse.swift */; };
+		9F21E814205A82C200156B30 /* SimpleImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21E813205A82C200156B30 /* SimpleImageLoader.swift */; };
 		9F32C976205A608D00F5C3CA /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32C975205A608D00F5C3CA /* ServerService.swift */; };
 		9F3776552050328400E9BB0A /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3776542050328400E9BB0A /* Validator.swift */; };
 		9F495B642057CE840054FB4E /* ServerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F495B632057CE840054FB4E /* ServerRouter.swift */; };
@@ -41,6 +44,10 @@
 		9F67C51B2052C4050031C8FB /* TableViewProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51A2052C4050031C8FB /* TableViewProviderDelegate.swift */; };
 		9F67C51D2052C46F0031C8FB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51C2052C46F0031C8FB /* Dog.swift */; };
 		9F67C51F2052CF9F0031C8FB /* DogsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51E2052CF9F0031C8FB /* DogsFlowCoordinator.swift */; };
+		9F9F2950205A6E7B0008F285 /* DogGalleryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294C205A6E7B0008F285 /* DogGalleryContract.swift */; };
+		9F9F2951205A6E7B0008F285 /* DogGalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294D205A6E7B0008F285 /* DogGalleryPresenter.swift */; };
+		9F9F2952205A6E7B0008F285 /* DogGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294E205A6E7B0008F285 /* DogGalleryViewController.swift */; };
+		9F9F2953205A6E7B0008F285 /* DogGalleryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294F205A6E7B0008F285 /* DogGalleryConfigurator.swift */; };
 		9FAA4C662052787700DBD109 /* ForgotPasswordContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA4C622052787700DBD109 /* ForgotPasswordContract.swift */; };
 		9FAA4C672052787700DBD109 /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA4C632052787700DBD109 /* ForgotPasswordPresenter.swift */; };
 		9FAA4C682052787700DBD109 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA4C642052787700DBD109 /* ForgotPasswordViewController.swift */; };
@@ -73,6 +80,9 @@
 		9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInConfigurator.swift; sourceTree = "<group>"; };
 		9F091AA8204D6A6100B580CB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		9F091AAA204D6B0400B580CB /* AuthFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoordinator.swift; sourceTree = "<group>"; };
+		9F21E80E205A6F1800156B30 /* DogGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryView.swift; sourceTree = "<group>"; };
+		9F21E810205A740D00156B30 /* GetRandomDogImageServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomDogImageServerResponse.swift; sourceTree = "<group>"; };
+		9F21E813205A82C200156B30 /* SimpleImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleImageLoader.swift; sourceTree = "<group>"; };
 		9F32C975205A608D00F5C3CA /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		9F3776542050328400E9BB0A /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		9F495B632057CE840054FB4E /* ServerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRouter.swift; sourceTree = "<group>"; };
@@ -93,6 +103,10 @@
 		9F67C51A2052C4050031C8FB /* TableViewProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProviderDelegate.swift; sourceTree = "<group>"; };
 		9F67C51C2052C46F0031C8FB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		9F67C51E2052CF9F0031C8FB /* DogsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsFlowCoordinator.swift; sourceTree = "<group>"; };
+		9F9F294C205A6E7B0008F285 /* DogGalleryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryContract.swift; sourceTree = "<group>"; };
+		9F9F294D205A6E7B0008F285 /* DogGalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryPresenter.swift; sourceTree = "<group>"; };
+		9F9F294E205A6E7B0008F285 /* DogGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryViewController.swift; sourceTree = "<group>"; };
+		9F9F294F205A6E7B0008F285 /* DogGalleryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryConfigurator.swift; sourceTree = "<group>"; };
 		9FAA4C622052787700DBD109 /* ForgotPasswordContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordContract.swift; sourceTree = "<group>"; };
 		9FAA4C632052787700DBD109 /* ForgotPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenter.swift; sourceTree = "<group>"; };
 		9FAA4C642052787700DBD109 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +196,7 @@
 		9F091A9E204D69D600B580CB /* Dogs Flow */ = {
 			isa = PBXGroup;
 			children = (
+				9F9F294B205A6E240008F285 /* DogGallery Scene */,
 				9FE95E6B2052B88C0080CBAA /* DogsList Scene */,
 			);
 			path = "Dogs Flow";
@@ -197,6 +212,14 @@
 				9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */,
 			);
 			path = "SignIn Scene";
+			sourceTree = "<group>";
+		};
+		9F21E812205A82B300156B30 /* SimpleImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				9F21E813205A82C200156B30 /* SimpleImageLoader.swift */,
+			);
+			path = SimpleImageLoader;
 			sourceTree = "<group>";
 		};
 		9F3776532050327200E9BB0A /* Validator */ = {
@@ -238,6 +261,7 @@
 			children = (
 				9F495B6D2057E0E40054FB4E /* BaseResponse */,
 				9F495B6E2057E0FB0054FB4E /* GetAllDogsServerResponse.swift */,
+				9F21E810205A740D00156B30 /* GetRandomDogImageServerResponse.swift */,
 			);
 			path = "Server Responses";
 			sourceTree = "<group>";
@@ -308,6 +332,7 @@
 		9F64F63D204C15EC00ED9EB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9F21E812205A82B300156B30 /* SimpleImageLoader */,
 				9F495B612057CE6A0054FB4E /* ServerApi */,
 				9F3776532050327200E9BB0A /* Validator */,
 				9F091A96204D63A700B580CB /* Local Storage */,
@@ -375,6 +400,18 @@
 				9F67C5182052C3D90031C8FB /* DogsListTableViewProvider.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		9F9F294B205A6E240008F285 /* DogGallery Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9F9F294E205A6E7B0008F285 /* DogGalleryViewController.swift */,
+				9F21E80E205A6F1800156B30 /* DogGalleryView.swift */,
+				9F9F294D205A6E7B0008F285 /* DogGalleryPresenter.swift */,
+				9F9F294C205A6E7B0008F285 /* DogGalleryContract.swift */,
+				9F9F294F205A6E7B0008F285 /* DogGalleryConfigurator.swift */,
+			);
+			path = "DogGallery Scene";
 			sourceTree = "<group>";
 		};
 		9FAA4C612052782600DBD109 /* ForgotPassword Scene */ = {
@@ -521,7 +558,9 @@
 				9F091A8A204D52A800B580CB /* AppCoordinator.swift in Sources */,
 				9F67C51D2052C46F0031C8FB /* Dog.swift in Sources */,
 				9FAA4C682052787700DBD109 /* ForgotPasswordViewController.swift in Sources */,
+				9F21E811205A740D00156B30 /* GetRandomDogImageServerResponse.swift in Sources */,
 				9F67C51F2052CF9F0031C8FB /* DogsFlowCoordinator.swift in Sources */,
+				9F9F2951205A6E7B0008F285 /* DogGalleryPresenter.swift in Sources */,
 				9F091A95204D54EE00B580CB /* StartView.swift in Sources */,
 				9F64F64F204C1C0400ED9EB4 /* BaseNavigationController.swift in Sources */,
 				9F495B6F2057E0FB0054FB4E /* GetAllDogsServerResponse.swift in Sources */,
@@ -536,10 +575,14 @@
 				9FB14B4920591A6100EA64EF /* UrlSessionService.swift in Sources */,
 				9F091A99204D63DA00B580CB /* UserCredentialsStorageService.swift in Sources */,
 				9F64F646204C194100ED9EB4 /* UIView+Extension.swift in Sources */,
+				9F9F2953205A6E7B0008F285 /* DogGalleryConfigurator.swift in Sources */,
 				9FE95E712052B8A70080CBAA /* DogsListPresenter.swift in Sources */,
 				9F091AA9204D6A6100B580CB /* SignInView.swift in Sources */,
+				9F9F2952205A6E7B0008F285 /* DogGalleryViewController.swift in Sources */,
 				9F091AA6204D6A0000B580CB /* SignInViewController.swift in Sources */,
 				9F67C5172052BF7C0031C8FB /* DogBreedTableViewCell.swift in Sources */,
+				9F21E80F205A6F1800156B30 /* DogGalleryView.swift in Sources */,
+				9F21E814205A82C200156B30 /* SimpleImageLoader.swift in Sources */,
 				9FAA4C672052787700DBD109 /* ForgotPasswordPresenter.swift in Sources */,
 				9F64F659204C465C00ED9EB4 /* UserDefaultsLayer.swift in Sources */,
 				9F32C976205A608D00F5C3CA /* ServerService.swift in Sources */,
@@ -550,6 +593,7 @@
 				9FAA4C692052787700DBD109 /* ForgotPasswordConfigurator.swift in Sources */,
 				9F091A93204D543600B580CB /* StartConfigurator.swift in Sources */,
 				9F3776552050328400E9BB0A /* Validator.swift in Sources */,
+				9F9F2950205A6E7B0008F285 /* DogGalleryContract.swift in Sources */,
 				9F64F64C204C1B4E00ED9EB4 /* BaseViewController.swift in Sources */,
 				9FAA4C6B2052788C00DBD109 /* ForgotPasswordView.swift in Sources */,
 				9F64F648204C19EF00ED9EB4 /* Utils.swift in Sources */,

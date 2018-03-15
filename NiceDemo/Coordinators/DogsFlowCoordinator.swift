@@ -37,10 +37,22 @@ class DogsFlowCoordinator: Coordinator {
     private func showDogsListScene() {
         navigationController.setViewControllers([DogsListConfigurator().configuredViewController(delegate: self)], animated: true)
     }
+    
+    private func showDogGalleryScene(dogBreed: String) {
+        navigationController.pushViewController(DogGalleryConfigurator().configuredViewController(breed: dogBreed, delegate: self), animated: true)
+    }
 }
 
 // MARK: DogsList scene delegate
 
 extension DogsFlowCoordinator: DogsListSceneDelegate {
+    func didSelectDog(_ dog: Dog) {
+        showDogGalleryScene(dogBreed: dog.breed)
+    }
+}
+
+// MARK: DogGallery scene delegate
+
+extension DogsFlowCoordinator: DogsGallerySceneDelegate {
     
 }
