@@ -47,4 +47,10 @@ extension DogsListViewController: DogsListViewInterface {
     func setTableViewProvider(_ provider: DogsListTableViewProvider) {
         customView.setTableViewProvider(provider)
     }
+    
+    func showAlert(title: String?, message: String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Okey", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
 }

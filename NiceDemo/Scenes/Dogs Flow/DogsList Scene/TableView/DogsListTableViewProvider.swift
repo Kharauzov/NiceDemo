@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
+protocol DogsListTableViewProviderDelegate: TableViewProviderDelegate {
+    func getFormattedDescriptionForItem(at index: Int) -> String
+}
+
 class DogsListTableViewProvider: NSObject, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: Properties
+    
     private var dataItems = [Dog]()
-    weak var delegate: TableViewProviderDelegate?
-    
-    // MARK: Init
-    
-    override init() {
-        super.init()
-    }
+    weak var delegate: DogsListTableViewProviderDelegate?
     
     // MARK: UITableView DataSource + Delegate
     
@@ -28,11 +28,13 @@ class DogsListTableViewProvider: NSObject, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DogBreedTableViewCell.reuseIdentifier, for: indexPath) as! DogBreedTableViewCell
-        cell.setDogDescriptionValue("data")
+        let description = delegate?.getFormattedDescriptionForItem(at: indexPath.row) ?? ""
+        cell.setDogDescription(value: description)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         delegate?.didSelectItem(at: indexPath.row)
     }
 }

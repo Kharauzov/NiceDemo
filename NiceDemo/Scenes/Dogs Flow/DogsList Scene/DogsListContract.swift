@@ -11,6 +11,7 @@ import Foundation
 protocol DogsListViewInterface: class {
     func reloadData()
     func setTableViewProvider(_ provider: DogsListTableViewProvider)
+    func showAlert(title: String?, message: String?)
 }
 
 protocol DogsListPresentation: class {

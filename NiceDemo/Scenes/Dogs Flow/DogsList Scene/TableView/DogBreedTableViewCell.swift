@@ -29,19 +29,20 @@ class DogBreedTableViewCell: UITableViewCell {
     
     private func addDogDescriptionLabel() {
         dogDescriptionLabel = UILabel(frame: .zero)
+        dogDescriptionLabel.numberOfLines = 0
         dogDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(dogDescriptionLabel)
-        NSLayoutConstraint(item: dogDescriptionLabel, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: dogDescriptionLabel, attribute: .leading, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: dogDescriptionLabel, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: dogDescriptionLabel, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: dogDescriptionLabel, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 10).isActive = true
+        NSLayoutConstraint(item: dogDescriptionLabel, attribute: .leading, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1.0, constant: 10).isActive = true
+        NSLayoutConstraint(item: dogDescriptionLabel, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .trailing, multiplier: 1.0, constant: -10).isActive = true
+        NSLayoutConstraint(item: dogDescriptionLabel, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1.0, constant: -10).isActive = true
     }
 }
 
 // MARK: Public methods
 
 extension DogBreedTableViewCell {
-    func setDogDescriptionValue(_ value: String) {
+    func setDogDescription(value: String) {
         dogDescriptionLabel.text = value
     }
 }
