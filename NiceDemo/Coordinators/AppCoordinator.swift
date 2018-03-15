@@ -25,8 +25,8 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        //showStartScene()
-        showDogsFlow()
+        showStartScene()
+        //showDogsFlow()
     }
     
     // MARK: Private methods

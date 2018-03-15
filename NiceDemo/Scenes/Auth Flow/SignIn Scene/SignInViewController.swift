@@ -66,11 +66,11 @@ extension SignInViewController: SignInViewInterface {
     }
     
     func getPasswordString() -> String? {
-        return customView.getEmailText()
+        return customView.getPasswordText()
     }
     
     func getEmailString() -> String? {
-        return customView.getPasswordText()
+        return customView.getEmailText()
     }
     
     func showAlert(title: String?, message: String?) {
