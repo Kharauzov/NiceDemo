@@ -27,10 +27,6 @@ class StartViewController: BaseViewController {
         hideNavigationBar()
         presenter.onViewDidLoad()
     }
-    
-    deinit {
-        debugPrint(self)
-    }
 
     // MARK: Public methods
     

@@ -15,7 +15,7 @@ class GetAllDogsServerResponse: BaseResponse {
         data.forEach({ (item) in
             dogs.append(Dog(breed: item.key, subbreeds: item.value))
         })
-        return dogs
+        return dogs.sorted(by: {$0.breed < $1.breed})
     }
     
     private let data: [String: [String]]?

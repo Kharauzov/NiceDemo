@@ -24,6 +24,7 @@ class DogsListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        showNavigationBar()
         navigationItem.title = "List of dogs"
         presenter.onViewDidLoad()
     }
