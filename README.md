@@ -9,9 +9,13 @@ iOS project, built on MVP architecture using Coordinator pattern.
 Text.
 
 ## Navigation scheme
-Illustrates all flows of the project. 
-<p align="center">
-<img src="https://github.com/Kharauzov/NiceDemo/blob/master/Diagram/NiceDemo.png" width="600px" height="300px"/>
+Illustrates all flows of the project:
+- Starting flow
+- Auth flow
+- Dogs flow
+
+<p align="left">
+<img src="https://github.com/Kharauzov/NiceDemo/blob/master/Diagram/NiceDemo.png" width="1000px" height="500px"/>
 </p>
 
 ## License
