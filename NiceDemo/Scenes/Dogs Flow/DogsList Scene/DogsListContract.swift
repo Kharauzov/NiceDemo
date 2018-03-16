@@ -12,6 +12,8 @@ protocol DogsListViewInterface: class {
     func reloadData()
     func setTableViewProvider(_ provider: DogsListTableViewProvider)
     func showAlert(title: String?, message: String?)
+    func showLoadingView(animation: Bool)
+    func hideLoadingView(animation: Bool)
 }
 
 protocol DogsListPresentation: class {

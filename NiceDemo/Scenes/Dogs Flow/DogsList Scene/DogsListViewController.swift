@@ -24,8 +24,8 @@ class DogsListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        showNavigationBar()
         navigationItem.title = "List of dogs"
+        showNavigationBar()
         presenter.onViewDidLoad()
     }
     
@@ -53,5 +53,13 @@ extension DogsListViewController: DogsListViewInterface {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Okey", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func showLoadingView(animation: Bool) {
+        customView.showLoadingView(animation: animation)
+    }
+    
+    func hideLoadingView(animation: Bool) {
+        customView.hideLoadingView(animation: animation)
     }
 }

@@ -54,4 +54,12 @@ extension DogGalleryViewController: DogGalleryViewInterface {
     func setDogBreed(_ breed: String) {
         customView.setDogBreed(breed)
     }
+    
+    func showLoadingView(animation: Bool) {
+        customView.showLoadingView(animation: animation)
+    }
+    
+    func hideLoadingView(animation: Bool) {
+        customView.hideLoadingView(animation: animation)
+    }
 }

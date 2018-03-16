@@ -34,7 +34,9 @@ class DogsListPresenter {
     // MARK: Private methods
     
     private func fetchListOfDogs(completion: @escaping (_ data: [Dog]) -> Void) {
+        view.showLoadingView(animation: true)
         dogsServerService.getAllDogs { [weak self] (data, error) in
+            self?.view.hideLoadingView(animation: true)
             if let data = data {
                 completion(data)
             } else if let error = error {

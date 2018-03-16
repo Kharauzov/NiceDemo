@@ -26,26 +26,26 @@ class StartView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Public methods
+    // MARK: Private methods
     
+    private func addActivityIndicatorView() {
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicator.color = .black
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(activityIndicator)
+        NSLayoutConstraint(item: activityIndicator, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: activityIndicator, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
+    }
+}
+
+// MARK: Public methods
+
+extension StartView {
     func startActivityIndicator() {
         activityIndicator.startAnimating()
     }
     
     func stopActivityIndicator() {
         activityIndicator.stopAnimating()
-    }
-    
-    // MARK: Private methods
-    
-    private func addActivityIndicatorView() {
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-        activityIndicator.color = .cyan
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(activityIndicator)
-        
-        NSLayoutConstraint(item: activityIndicator, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: activityIndicator, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
     }
 }

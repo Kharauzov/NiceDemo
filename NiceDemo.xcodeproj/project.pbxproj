@@ -44,6 +44,7 @@
 		9F67C51B2052C4050031C8FB /* TableViewProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51A2052C4050031C8FB /* TableViewProviderDelegate.swift */; };
 		9F67C51D2052C46F0031C8FB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51C2052C46F0031C8FB /* Dog.swift */; };
 		9F67C51F2052CF9F0031C8FB /* DogsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51E2052CF9F0031C8FB /* DogsFlowCoordinator.swift */; };
+		9F8008C8205BCBB600F64C5C /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8008C7205BCBB600F64C5C /* LoadingIndicatorView.swift */; };
 		9F9F2950205A6E7B0008F285 /* DogGalleryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294C205A6E7B0008F285 /* DogGalleryContract.swift */; };
 		9F9F2951205A6E7B0008F285 /* DogGalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294D205A6E7B0008F285 /* DogGalleryPresenter.swift */; };
 		9F9F2952205A6E7B0008F285 /* DogGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294E205A6E7B0008F285 /* DogGalleryViewController.swift */; };
@@ -103,6 +104,7 @@
 		9F67C51A2052C4050031C8FB /* TableViewProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProviderDelegate.swift; sourceTree = "<group>"; };
 		9F67C51C2052C46F0031C8FB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		9F67C51E2052CF9F0031C8FB /* DogsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsFlowCoordinator.swift; sourceTree = "<group>"; };
+		9F8008C7205BCBB600F64C5C /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		9F9F294C205A6E7B0008F285 /* DogGalleryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryContract.swift; sourceTree = "<group>"; };
 		9F9F294D205A6E7B0008F285 /* DogGalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryPresenter.swift; sourceTree = "<group>"; };
 		9F9F294E205A6E7B0008F285 /* DogGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		9F64F638204C151C00ED9EB4 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				9F8008C6205BCB7400F64C5C /* LoadingIndicatorView */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -400,6 +403,14 @@
 				9F67C5182052C3D90031C8FB /* DogsListTableViewProvider.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		9F8008C6205BCB7400F64C5C /* LoadingIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				9F8008C7205BCBB600F64C5C /* LoadingIndicatorView.swift */,
+			);
+			path = LoadingIndicatorView;
 			sourceTree = "<group>";
 		};
 		9F9F294B205A6E240008F285 /* DogGallery Scene */ = {
@@ -590,6 +601,7 @@
 				9FB14B4B2059202800EA64EF /* Result.swift in Sources */,
 				9F64F642204C17DC00ED9EB4 /* Coordinator.swift in Sources */,
 				9F67C51B2052C4050031C8FB /* TableViewProviderDelegate.swift in Sources */,
+				9F8008C8205BCBB600F64C5C /* LoadingIndicatorView.swift in Sources */,
 				9FAA4C692052787700DBD109 /* ForgotPasswordConfigurator.swift in Sources */,
 				9F091A93204D543600B580CB /* StartConfigurator.swift in Sources */,
 				9F3776552050328400E9BB0A /* Validator.swift in Sources */,
@@ -727,6 +739,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B375T6ZNZC;
 				INFOPLIST_FILE = "$(SRCROOT)/NiceDemo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -742,6 +755,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B375T6ZNZC;
 				INFOPLIST_FILE = "$(SRCROOT)/NiceDemo/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

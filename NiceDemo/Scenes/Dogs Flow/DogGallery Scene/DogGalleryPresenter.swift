@@ -47,9 +47,11 @@ class DogGalleryPresenter {
     }
     
     private func loadRandomDogImage() {
+        view.showLoadingView(animation: true)
         performRequestToGetRandomDogImage { [weak self] (urlString) in
             self?.imageLoader.loadImageFrom(urlString: urlString, completion: { [weak self] (image) in
                 if let image = image {
+                    self?.view.hideLoadingView(animation: true)
                     self?.view.setDogImage(image)
                 }
             })
