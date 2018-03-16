@@ -6,7 +6,11 @@ iOS project, built on MVP architecture using Coordinator pattern.
 [![License](https://img.shields.io/badge/license-mit-blue.svg)](https://doge.mit-license.org)
 
 ## Overview
-Text.
+- *Сleanness* 💎 - Project is built using S.O.L.I.D principles.
+- *Stability* ✊ - Coordinator for routing + improved MVP for scenes.
+- *Transparency* 👓 - No third-party frameworks and Pods.
+- *Reuse* - UI is implmeneted programmatically too. No Storyboard or Xibs.
+- *Testable* - coming soon.
 
 ## Navigation scheme
 Illustrates all flows of the project:
