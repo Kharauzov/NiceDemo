@@ -9,6 +9,7 @@
 import Foundation
 
 /// Wrapper, responsible for storing/retrieving data using UserDefaults.
+///
 /// You shouldn't call its properties explicitly! Please use it as an abstract layer in
 /// storage services via protocols.
 class UserDefaultsLayer: UserCredentialsStorage {

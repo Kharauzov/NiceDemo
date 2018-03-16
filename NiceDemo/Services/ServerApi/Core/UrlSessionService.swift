@@ -9,6 +9,9 @@
 import Foundation
 
 /// Responsible for performing network requests, using `URLSession`.
+///
+/// You shouldn't call its methods explicitly! Please use it as an abstract layer in
+/// server services via protocols.
 class UrlSessionService: ServerService {
  
     // MARK: Private properties
