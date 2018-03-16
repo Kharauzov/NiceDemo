@@ -15,7 +15,7 @@ Illustrates all flows of the project:
 - Dogs flow
 
 <p align="left">
-<img src="https://github.com/Kharauzov/NiceDemo/blob/master/Diagram/NiceDemo.png" width="1000px" height="500px"/>
+<img src="https://github.com/Kharauzov/NiceDemo/blob/master/Diagram/NiceDemo.png" width="800px" height="400px"/>
 </p>
 
 ## License
