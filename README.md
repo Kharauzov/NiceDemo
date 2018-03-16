@@ -10,7 +10,9 @@ Text.
 
 ## Navigation scheme
 Illustrates all flows of the project. 
-<img align="left" src="https://github.com/Kharauzov/NiceDemo/blob/master/Diagram/NiceDemo.png" width="600px" height="300px"/>
+<p align="center">
+<img src="https://github.com/Kharauzov/NiceDemo/blob/master/Diagram/NiceDemo.png" width="600px" height="300px"/>
+</p>
 
 ## License
 NiceDemo and all its cla is available under the MIT license. See the LICENSE file for more info.
