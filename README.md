@@ -14,7 +14,9 @@
 
 ## Overview
 This project was built for demonstration purpose using iOS best practices. It doesn't have or provide any commercial usage.
+
 Auth flow only imitates user's authentication/actions.
+
 App uses [Dog-api](https://dog.ceo/dog-api/) for backend. It is free and amazing 🐕.
 
 ## Navigation scheme
