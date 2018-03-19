@@ -18,12 +18,13 @@ class HUDView: UIView {
     
     // MARK: Init
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, backgroundColor: UIColor?, tintColor: UIColor?) {
         super.init(frame: frame)
         alpha = 0
-        backgroundColor = UIColor.black.withAlphaComponent(0.4)
         translatesAutoresizingMaskIntoConstraints = false
         addActivityIndicatorView()
+        self.backgroundColor = backgroundColor ?? UIColor.black.withAlphaComponent(0.4)
+        activityIndicatorView.color = tintColor ?? .white
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,7 +35,6 @@ class HUDView: UIView {
     
     private func addActivityIndicatorView() {
         activityIndicatorView = UIActivityIndicatorView(frame: .zero)
-        activityIndicatorView.color = .white
         activityIndicatorView.activityIndicatorViewStyle = .whiteLarge
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(activityIndicatorView)
@@ -54,14 +54,6 @@ extension HUDView {
     
     func stopAnimating() {
         activityIndicatorView.stopAnimating()
-    }
-    
-    func setBackgroundColor(_ color: UIColor) {
-        backgroundColor = color
-    }
-    
-    func setTintColor(_ color: UIColor) {
-        activityIndicatorView.color = color
     }
     
     /// Returns `HUDView` if it is subview of view. Else returns nil.

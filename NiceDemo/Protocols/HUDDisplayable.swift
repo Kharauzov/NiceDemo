@@ -11,13 +11,13 @@ import UIKit
 
 /// Displays animating HUD above `UIView`.
 protocol HUDDisplayable {
-    func showHUDAt(view: UIView, animated: Bool)
+    func showHUDAt(view: UIView, backgroundColor: UIColor?, tintColor: UIColor?, animated: Bool)
     func hideHUD(hud: HUDView, animated: Bool)
 }
 
 extension HUDDisplayable {
-    func showHUDAt(view: UIView, animated: Bool) {
-        let hudView = HUDView(frame: .zero)
+    func showHUDAt(view: UIView, backgroundColor: UIColor?, tintColor: UIColor?, animated: Bool) {
+        let hudView = HUDView(frame: .zero, backgroundColor: backgroundColor, tintColor: tintColor)
         view.addSubview(hudView)
         pinEdgesOf(hudView, to: view)
         if animated {

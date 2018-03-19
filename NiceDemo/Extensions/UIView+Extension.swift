@@ -12,11 +12,11 @@ import UIKit
 extension UIView: ReusableView {}
 
 extension UIView: HUDDisplayable {
-    func showHUD(animated: Bool) {
+    func showHUD(backgroundColor: UIColor? = nil, tintColor: UIColor? = nil, animated: Bool = true) {
         // check, if view has presented `HUD` already.
         // to avoid dublication of `HUD`
         guard HUDView.hudIn(view: self) == nil else { return }
-        showHUDAt(view: self, animated: animated)
+        showHUDAt(view: self, backgroundColor: backgroundColor, tintColor: tintColor, animated: animated)
     }
     
     func hideHUD(animated: Bool) {

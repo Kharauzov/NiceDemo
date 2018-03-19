@@ -39,7 +39,7 @@ class StartViewController: BaseViewController {
 
 extension StartViewController: StartViewInterface {
     func showHUD(animated: Bool) {
-        customView.showHUD(animated: animated)
+        customView.showHUD(backgroundColor: .white, tintColor: .black, animated: true)
     }
     
     func hideHUD(animated: Bool) {
