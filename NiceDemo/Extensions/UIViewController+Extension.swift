@@ -9,4 +9,11 @@
 import Foundation
 import UIKit
 
-extension UIViewController: ReusableView {}
+extension UIViewController: ReusableView, Alertable {}
+
+extension UIViewController {
+    /// Hides keyboard of active textField of `UIViewController`.
+    func dismissKeyboard(force: Bool = true) {
+        view.endEditing(true)
+    }
+}

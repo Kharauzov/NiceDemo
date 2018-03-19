@@ -9,8 +9,8 @@
 import Foundation
 
 protocol StartViewInterface: class {
-    func showLoading()
-    func hideLoading()
+    func showHUD(animated: Bool)
+    func hideHUD(animated: Bool)
 }
 
 protocol StartPresentation: class {

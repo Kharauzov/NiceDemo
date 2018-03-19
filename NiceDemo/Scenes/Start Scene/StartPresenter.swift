@@ -33,11 +33,12 @@ class StartPresenter {
     // MARK: Private methods
     
     private func checkUserState() {
+        view.showHUD(animated: true)
         // could be some url request here
         // immitation via 'asyncAfter'.
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) { [unowned self] in
             // handle of result
-            self.view.hideLoading()
+            self.view.hideHUD(animated: true)
             if self.userCredentialsStorage.isUserAuthenticated { // user is authenticated
                 self.delegate?.userIsAuthenticated()
             } else { // user needs to authenticate
@@ -51,7 +52,6 @@ class StartPresenter {
 
 extension StartPresenter: StartPresentation {
     func onViewDidLoad() {
-        view.showLoading()
         checkUserState()
     }
 }

@@ -47,7 +47,7 @@ class ForgotPasswordViewController: BaseViewController {
 
 extension ForgotPasswordViewController: ForgotPasswordViewInterface {
     func hideKeyboard() {
-        view.endEditing(true)
+        dismissKeyboard()
     }
     
     func getEmailText() -> String? {
@@ -55,10 +55,8 @@ extension ForgotPasswordViewController: ForgotPasswordViewInterface {
     }
     
     func showAlert(title: String?, message: String?, completion: (() -> Void)?) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Okey", style: .cancel, handler: { (action) in
+        presentAlert(title: title, message: message, defaultButtonTitle: "Okay") {
             completion?()
-        }))
-        present(alertController, animated: true, completion: nil)
+        }
     }
 }

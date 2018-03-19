@@ -10,7 +10,7 @@ import UIKit
 
 /// Responsible for showing dim view with loading activity indicator.
 
-class LoadingIndicatorView: UIView {
+class HUDView: UIView {
 
     // MARK: Private properties
     
@@ -20,7 +20,9 @@ class LoadingIndicatorView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        alpha = 0
         backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        translatesAutoresizingMaskIntoConstraints = false
         addActivityIndicatorView()
     }
     
@@ -45,7 +47,7 @@ class LoadingIndicatorView: UIView {
 
 // MARK: Public methods
 
-extension LoadingIndicatorView {
+extension HUDView {
     func startAnimating() {
         activityIndicatorView.startAnimating()
     }
@@ -56,5 +58,14 @@ extension LoadingIndicatorView {
     
     func setBackgroundColor(_ color: UIColor) {
         backgroundColor = color
+    }
+    
+    func setTintColor(_ color: UIColor) {
+        activityIndicatorView.color = color
+    }
+    
+    /// Returns `HUDView` if it is subview of view. Else returns nil.
+    static func hudIn(view: UIView) -> HUDView? {
+        return view.subviews.filter({$0 is HUDView}).first as? HUDView
     }
 }

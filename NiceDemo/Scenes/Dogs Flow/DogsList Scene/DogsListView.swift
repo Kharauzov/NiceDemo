@@ -13,7 +13,6 @@ class DogsListView: UIView {
     // MARK: Private properties
     
     private var tableView: UITableView!
-    private var loadingView: LoadingIndicatorView!
     
     // MARK: Init
     
@@ -21,7 +20,6 @@ class DogsListView: UIView {
         super.init(frame: frame)
         backgroundColor = .white
         addTableView()
-        addLoadingView()
         registerTableViewCells()
     }
     
@@ -30,17 +28,6 @@ class DogsListView: UIView {
     }
     
     // MARK: Private methods
-    
-    private func addLoadingView() {
-        loadingView = LoadingIndicatorView(frame: .zero)
-        loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.alpha = 0
-        addSubview(loadingView)
-        NSLayoutConstraint(item: loadingView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: loadingView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: loadingView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: loadingView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
-    }
     
     private func addTableView() {
         tableView = UITableView(frame: .zero, style: .plain)
@@ -75,27 +62,5 @@ extension DogsListView {
     func setTableViewProvider(_ provider: DogsListTableViewProvider) {
         tableView.delegate = provider
         tableView.dataSource = provider
-    }
-    
-    func showLoadingView(animation: Bool) {
-        if animation {
-            loadingView.startAnimating()
-            UIView.animate(withDuration: 1, animations: {
-                self.loadingView.alpha = 1
-            })
-        } else {
-            loadingView.alpha = 1
-        }
-    }
-    
-    func hideLoadingView(animation: Bool) {
-        if animation {
-            loadingView.stopAnimating()
-            UIView.animate(withDuration: 1, animations: {
-                self.loadingView.alpha = 0
-            })
-        } else {
-            loadingView.alpha = 0
-        }
     }
 }

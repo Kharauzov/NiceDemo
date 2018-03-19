@@ -50,16 +50,14 @@ extension DogsListViewController: DogsListViewInterface {
     }
     
     func showAlert(title: String?, message: String?) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Okey", style: .cancel, handler: nil))
-        present(alertController, animated: true, completion: nil)
+        presentAlert(title: title, message: message)
     }
     
-    func showLoadingView(animation: Bool) {
-        customView.showLoadingView(animation: animation)
+    func showHUD(animated: Bool) {
+        customView.showHUD(animated: animated)
     }
     
-    func hideLoadingView(animation: Bool) {
-        customView.hideLoadingView(animation: animation)
+    func hideHUD(animated: Bool) {
+        customView.hideHUD(animated: animated)
     }
 }

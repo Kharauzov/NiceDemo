@@ -38,11 +38,11 @@ class StartViewController: BaseViewController {
 // MARK: StartView Protocol
 
 extension StartViewController: StartViewInterface {
-    func showLoading() {
-        customView.startActivityIndicator()
+    func showHUD(animated: Bool) {
+        customView.showHUD(animated: animated)
     }
     
-    func hideLoading() {
-        customView.stopActivityIndicator()
+    func hideHUD(animated: Bool) {
+        customView.hideHUD(animated: animated)
     }
 }

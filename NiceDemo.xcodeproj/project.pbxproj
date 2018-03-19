@@ -24,6 +24,7 @@
 		9F21E80F205A6F1800156B30 /* DogGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21E80E205A6F1800156B30 /* DogGalleryView.swift */; };
 		9F21E811205A740D00156B30 /* GetRandomDogImageServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21E810205A740D00156B30 /* GetRandomDogImageServerResponse.swift */; };
 		9F21E814205A82C200156B30 /* SimpleImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21E813205A82C200156B30 /* SimpleImageLoader.swift */; };
+		9F222830205FA60D004324B6 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22282F205FA60D004324B6 /* Alertable.swift */; };
 		9F32C976205A608D00F5C3CA /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32C975205A608D00F5C3CA /* ServerService.swift */; };
 		9F3776552050328400E9BB0A /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3776542050328400E9BB0A /* Validator.swift */; };
 		9F495B642057CE840054FB4E /* ServerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F495B632057CE840054FB4E /* ServerRouter.swift */; };
@@ -44,7 +45,8 @@
 		9F67C51B2052C4050031C8FB /* TableViewProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51A2052C4050031C8FB /* TableViewProviderDelegate.swift */; };
 		9F67C51D2052C46F0031C8FB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51C2052C46F0031C8FB /* Dog.swift */; };
 		9F67C51F2052CF9F0031C8FB /* DogsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51E2052CF9F0031C8FB /* DogsFlowCoordinator.swift */; };
-		9F8008C8205BCBB600F64C5C /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8008C7205BCBB600F64C5C /* LoadingIndicatorView.swift */; };
+		9F6C2C96205FB12F008E5F7F /* HUDDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C2C95205FB12F008E5F7F /* HUDDisplayable.swift */; };
+		9F8008C8205BCBB600F64C5C /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8008C7205BCBB600F64C5C /* HUDView.swift */; };
 		9F9F2950205A6E7B0008F285 /* DogGalleryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294C205A6E7B0008F285 /* DogGalleryContract.swift */; };
 		9F9F2951205A6E7B0008F285 /* DogGalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294D205A6E7B0008F285 /* DogGalleryPresenter.swift */; };
 		9F9F2952205A6E7B0008F285 /* DogGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294E205A6E7B0008F285 /* DogGalleryViewController.swift */; };
@@ -84,6 +86,7 @@
 		9F21E80E205A6F1800156B30 /* DogGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryView.swift; sourceTree = "<group>"; };
 		9F21E810205A740D00156B30 /* GetRandomDogImageServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomDogImageServerResponse.swift; sourceTree = "<group>"; };
 		9F21E813205A82C200156B30 /* SimpleImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleImageLoader.swift; sourceTree = "<group>"; };
+		9F22282F205FA60D004324B6 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		9F32C975205A608D00F5C3CA /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		9F3776542050328400E9BB0A /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		9F495B632057CE840054FB4E /* ServerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRouter.swift; sourceTree = "<group>"; };
@@ -104,7 +107,8 @@
 		9F67C51A2052C4050031C8FB /* TableViewProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProviderDelegate.swift; sourceTree = "<group>"; };
 		9F67C51C2052C46F0031C8FB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		9F67C51E2052CF9F0031C8FB /* DogsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsFlowCoordinator.swift; sourceTree = "<group>"; };
-		9F8008C7205BCBB600F64C5C /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
+		9F6C2C95205FB12F008E5F7F /* HUDDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDisplayable.swift; sourceTree = "<group>"; };
+		9F8008C7205BCBB600F64C5C /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		9F9F294C205A6E7B0008F285 /* DogGalleryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryContract.swift; sourceTree = "<group>"; };
 		9F9F294D205A6E7B0008F285 /* DogGalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryPresenter.swift; sourceTree = "<group>"; };
 		9F9F294E205A6E7B0008F285 /* DogGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 				9F64F640204C17DC00ED9EB4 /* Coordinator.swift */,
 				9F67C51A2052C4050031C8FB /* TableViewProviderDelegate.swift */,
 				9F32C975205A608D00F5C3CA /* ServerService.swift */,
+				9F22282F205FA60D004324B6 /* Alertable.swift */,
+				9F6C2C95205FB12F008E5F7F /* HUDDisplayable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -408,7 +414,7 @@
 		9F8008C6205BCB7400F64C5C /* LoadingIndicatorView */ = {
 			isa = PBXGroup;
 			children = (
-				9F8008C7205BCBB600F64C5C /* LoadingIndicatorView.swift */,
+				9F8008C7205BCBB600F64C5C /* HUDView.swift */,
 			);
 			path = LoadingIndicatorView;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 				9F495B6F2057E0FB0054FB4E /* GetAllDogsServerResponse.swift in Sources */,
 				9F091A90204D543600B580CB /* StartContract.swift in Sources */,
 				9FE95E732052B8A70080CBAA /* DogsListConfigurator.swift in Sources */,
+				9F222830205FA60D004324B6 /* Alertable.swift in Sources */,
 				9FAA4C662052787700DBD109 /* ForgotPasswordContract.swift in Sources */,
 				9F64F645204C194100ED9EB4 /* UIViewController+Extension.swift in Sources */,
 				9FD5E209204BFDE7002536E7 /* AppDelegate.swift in Sources */,
@@ -600,8 +607,9 @@
 				9F64F65B204C467900ED9EB4 /* AppDelegateService.swift in Sources */,
 				9FB14B4B2059202800EA64EF /* Result.swift in Sources */,
 				9F64F642204C17DC00ED9EB4 /* Coordinator.swift in Sources */,
+				9F6C2C96205FB12F008E5F7F /* HUDDisplayable.swift in Sources */,
 				9F67C51B2052C4050031C8FB /* TableViewProviderDelegate.swift in Sources */,
-				9F8008C8205BCBB600F64C5C /* LoadingIndicatorView.swift in Sources */,
+				9F8008C8205BCBB600F64C5C /* HUDView.swift in Sources */,
 				9FAA4C692052787700DBD109 /* ForgotPasswordConfigurator.swift in Sources */,
 				9F091A93204D543600B580CB /* StartConfigurator.swift in Sources */,
 				9F3776552050328400E9BB0A /* Validator.swift in Sources */,

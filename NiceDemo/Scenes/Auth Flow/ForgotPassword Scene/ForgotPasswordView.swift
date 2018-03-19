@@ -41,6 +41,7 @@ class ForgotPasswordView: UIView {
         emailTextField.placeholder = "Email"
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocapitalizationType = .none
+        emailTextField.autocorrectionType = .no
         emailTextField.delegate = self
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(emailTextField)
