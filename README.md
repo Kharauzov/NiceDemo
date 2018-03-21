@@ -6,10 +6,10 @@
 *Own blueprint*.
 
 ## Foundation
-- *Сleanness* 💎    - Project is built using S.O.L.I.D principles.
+- *Сleanness* 💎    - Project is built using SOLID principles.
 - *Stability* ✊    - Coordinator for routing + improved MVP for scenes.
 - *Transparency* 👓 - No third-party frameworks and Pods.
-- *Reuse* 🤹‍       - UI is implmeneted programmatically too. No Storyboard or Xibs.
+- *Reuse* 🤹‍       - UI is implemented programmatically too. No Storyboard or Xibs.
 - *Testable* 🔒     - coming soon.
 
 ## Overview
@@ -32,4 +32,4 @@ Illustrates all flows of the project:
 If you have any questions/remarks or suggestions, feel free to open issue just at this project.
 
 ## License
-NiceDemo and all its cla is available under the MIT license. See the LICENSE file for more info.
+NiceDemo and all its classes are available under the MIT license. See the LICENSE file for more info.

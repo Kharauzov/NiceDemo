@@ -38,7 +38,6 @@ class DogGalleryPresenter {
     private func performRequestToGetRandomDogImage(completion: @escaping (_ url: String) -> Void) {
         dogsServerService.getDogRandomImageUrl(breed: breed) { (urlString, error) in
             if let urlString = urlString {
-                debugPrint("\(Date().description) - \(urlString)")
                 completion(urlString)
             } else if let _ = error {
                 // show error message

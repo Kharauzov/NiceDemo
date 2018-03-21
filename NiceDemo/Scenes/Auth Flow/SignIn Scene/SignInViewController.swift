@@ -45,7 +45,6 @@ class SignInViewController: BaseViewController {
     }
     
     @objc private func signUpButtonTapped() {
-        debugPrint(#function)
     }
     
     private func subscribeOnCustomViewActions() {
