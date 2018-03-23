@@ -27,7 +27,7 @@ class SignInPresenter {
     private let validator = Validator()
     
     // MARK: Public methods
-       
+    
     init(view: SignInViewInterface, userCredentialsStorage: UserCredentialsStorageService) {
         self.view = view
         self.userCredentialsStorage = userCredentialsStorage

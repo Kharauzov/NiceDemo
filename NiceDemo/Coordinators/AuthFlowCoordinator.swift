@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol AuthFlowCoordinatorDelegate: class {
-    func userPerformedAuthentication()
+    func userPerformedAuthentication(coordinator: Coordinator)
 }
 
 /// Responsible for auth flow in the project.
@@ -59,7 +59,7 @@ extension AuthFlowCoordinator: SignInSceneDelegate {
     }
     
     func userPerformedAuthentication() {
-        delegate?.userPerformedAuthentication()
+        delegate?.userPerformedAuthentication(coordinator: self)
     }
 }
 

@@ -37,14 +37,14 @@ class AppCoordinator: Coordinator {
     func showAuthenticationFlow() {
         let authFlowCoordinator = AuthFlowCoordinator(navigationController: navigationController)
         authFlowCoordinator.delegate = self
-        childCoordinators.append(authFlowCoordinator)
+        addChildCoordinator(authFlowCoordinator)
         authFlowCoordinator.start()
     }
     
     func showDogsFlow() {
         let dogsFlowCoordinator = DogsFlowCoordinator(navigationController: navigationController)
         dogsFlowCoordinator.delegate = self
-        childCoordinators.append(dogsFlowCoordinator)
+        addChildCoordinator(dogsFlowCoordinator)
         dogsFlowCoordinator.start()
     }
 }
@@ -64,7 +64,8 @@ extension AppCoordinator: StartPresenterDelegate {
 // MARK: AuthFlowCoordinator Delegate
 
 extension AppCoordinator: AuthFlowCoordinatorDelegate {
-    func userPerformedAuthentication() {
+    func userPerformedAuthentication(coordinator: Coordinator) {
+        removeChildCoordinator(coordinator)
         showDogsFlow()
     }
 }
