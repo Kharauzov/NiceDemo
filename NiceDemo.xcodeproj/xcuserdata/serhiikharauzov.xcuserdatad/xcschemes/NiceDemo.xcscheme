@@ -34,9 +34,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F704BA0205FFFDA0027FE97"
-               BuildableName = "NiceDemoNetworkTests.xctest"
-               BlueprintName = "NiceDemoNetworkTests"
+               BlueprintIdentifier = "9F768D272062ADC7005BC464"
+               BuildableName = "NiceDemoTests.xctest"
+               BlueprintName = "NiceDemoTests"
                ReferencedContainer = "container:NiceDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -11,9 +11,9 @@ import UIKit
 
 class SignInViewController: BaseViewController {
     
-    // MARK: Private properties
+    // MARK: Properties
 
-    private var presenter: SignInPresentation!
+    var presenter: SignInPresentation!
     lazy var customView = view as! SignInView
     
     // MARK: Lifecycle
@@ -70,6 +70,14 @@ extension SignInViewController: SignInViewInterface {
     
     func getEmailString() -> String? {
         return customView.getEmailText()
+    }
+    
+    func setEmailText(_ value: String) {
+        customView.setEmailText(value)
+    }
+    
+    func setPasswordText(_ value: String) {
+        customView.setPasswordText(value)
     }
     
     func showAlert(title: String?, message: String?) {

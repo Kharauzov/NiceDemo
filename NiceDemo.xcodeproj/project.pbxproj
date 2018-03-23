@@ -21,6 +21,8 @@
 		9F091AA7204D6A0000B580CB /* SignInConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */; };
 		9F091AA9204D6A6100B580CB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AA8204D6A6100B580CB /* SignInView.swift */; };
 		9F091AAB204D6B0400B580CB /* AuthFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091AAA204D6B0400B580CB /* AuthFlowCoordinator.swift */; };
+		9F0ACA8B206542B000BA7F74 /* ImageLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0ACA8A206542B000BA7F74 /* ImageLoaderTests.swift */; };
+		9F0ACA8E206543AC00BA7F74 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0ACA8D206543AC00BA7F74 /* AppCoordinatorTests.swift */; };
 		9F21E80F205A6F1800156B30 /* DogGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21E80E205A6F1800156B30 /* DogGalleryView.swift */; };
 		9F21E811205A740D00156B30 /* GetRandomDogImageServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21E810205A740D00156B30 /* GetRandomDogImageServerResponse.swift */; };
 		9F21E814205A82C200156B30 /* SimpleImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F21E813205A82C200156B30 /* SimpleImageLoader.swift */; };
@@ -48,7 +50,9 @@
 		9F67C51D2052C46F0031C8FB /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51C2052C46F0031C8FB /* Dog.swift */; };
 		9F67C51F2052CF9F0031C8FB /* DogsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67C51E2052CF9F0031C8FB /* DogsFlowCoordinator.swift */; };
 		9F6C2C96205FB12F008E5F7F /* HUDDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C2C95205FB12F008E5F7F /* HUDDisplayable.swift */; };
-		9F704BA4205FFFDA0027FE97 /* NiceDemoNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F704BA3205FFFDA0027FE97 /* NiceDemoNetworkTests.swift */; };
+		9F768D332062AEFC005BC464 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F768D322062AEFC005BC464 /* NetworkTests.swift */; };
+		9F768D352062AF42005BC464 /* SignInSceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F768D342062AF42005BC464 /* SignInSceneTests.swift */; };
+		9F768D372062B950005BC464 /* SignInConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F768D362062B950005BC464 /* SignInConfiguratorTests.swift */; };
 		9F8008C8205BCBB600F64C5C /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8008C7205BCBB600F64C5C /* HUDView.swift */; };
 		9F9F2950205A6E7B0008F285 /* DogGalleryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294C205A6E7B0008F285 /* DogGalleryContract.swift */; };
 		9F9F2951205A6E7B0008F285 /* DogGalleryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9F294D205A6E7B0008F285 /* DogGalleryPresenter.swift */; };
@@ -69,10 +73,11 @@
 		9FE95E722052B8A70080CBAA /* DogsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE95E6E2052B8A70080CBAA /* DogsListViewController.swift */; };
 		9FE95E732052B8A70080CBAA /* DogsListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE95E6F2052B8A70080CBAA /* DogsListConfigurator.swift */; };
 		9FE95E752052BCA80080CBAA /* DogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE95E742052BCA80080CBAA /* DogsListView.swift */; };
+		9FFBAAF320652D8600A98008 /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBAAF220652D8600A98008 /* ValidatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9F704BA6205FFFDA0027FE97 /* PBXContainerItemProxy */ = {
+		9F768D2D2062ADC7005BC464 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FD5E1FD204BFDE7002536E7 /* Project object */;
 			proxyType = 1;
@@ -96,6 +101,8 @@
 		9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInConfigurator.swift; sourceTree = "<group>"; };
 		9F091AA8204D6A6100B580CB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		9F091AAA204D6B0400B580CB /* AuthFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoordinator.swift; sourceTree = "<group>"; };
+		9F0ACA8A206542B000BA7F74 /* ImageLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTests.swift; sourceTree = "<group>"; };
+		9F0ACA8D206543AC00BA7F74 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		9F21E80E205A6F1800156B30 /* DogGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryView.swift; sourceTree = "<group>"; };
 		9F21E810205A740D00156B30 /* GetRandomDogImageServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomDogImageServerResponse.swift; sourceTree = "<group>"; };
 		9F21E813205A82C200156B30 /* SimpleImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleImageLoader.swift; sourceTree = "<group>"; };
@@ -123,9 +130,11 @@
 		9F67C51C2052C46F0031C8FB /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		9F67C51E2052CF9F0031C8FB /* DogsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsFlowCoordinator.swift; sourceTree = "<group>"; };
 		9F6C2C95205FB12F008E5F7F /* HUDDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDDisplayable.swift; sourceTree = "<group>"; };
-		9F704BA1205FFFDA0027FE97 /* NiceDemoNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NiceDemoNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F704BA3205FFFDA0027FE97 /* NiceDemoNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceDemoNetworkTests.swift; sourceTree = "<group>"; };
-		9F704BA5205FFFDA0027FE97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F768D282062ADC7005BC464 /* NiceDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NiceDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F768D2C2062ADC7005BC464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F768D322062AEFC005BC464 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		9F768D342062AF42005BC464 /* SignInSceneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSceneTests.swift; sourceTree = "<group>"; };
+		9F768D362062B950005BC464 /* SignInConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInConfiguratorTests.swift; sourceTree = "<group>"; };
 		9F8008C7205BCBB600F64C5C /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		9F9F294C205A6E7B0008F285 /* DogGalleryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryContract.swift; sourceTree = "<group>"; };
 		9F9F294D205A6E7B0008F285 /* DogGalleryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryPresenter.swift; sourceTree = "<group>"; };
@@ -148,10 +157,11 @@
 		9FE95E6E2052B8A70080CBAA /* DogsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListViewController.swift; sourceTree = "<group>"; };
 		9FE95E6F2052B8A70080CBAA /* DogsListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListConfigurator.swift; sourceTree = "<group>"; };
 		9FE95E742052BCA80080CBAA /* DogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListView.swift; sourceTree = "<group>"; };
+		9FFBAAF220652D8600A98008 /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9F704B9E205FFFDA0027FE97 /* Frameworks */ = {
+		9F768D252062ADC7005BC464 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -243,6 +253,14 @@
 				9F091AA3204D6A0000B580CB /* SignInConfigurator.swift */,
 			);
 			path = "SignIn Scene";
+			sourceTree = "<group>";
+		};
+		9F0ACA8C2065438500BA7F74 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9F0ACA8D206543AC00BA7F74 /* AppCoordinatorTests.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		9F21E812205A82B300156B30 /* SimpleImageLoader */ = {
@@ -446,13 +464,16 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		9F704BA2205FFFDA0027FE97 /* NiceDemoNetworkTests */ = {
+		9F768D292062ADC7005BC464 /* NiceDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F704BA3205FFFDA0027FE97 /* NiceDemoNetworkTests.swift */,
-				9F704BA5205FFFDA0027FE97 /* Info.plist */,
+				9F0ACA8C2065438500BA7F74 /* Coordinator */,
+				9FFBAAF120652D6A00A98008 /* Validator */,
+				9FFBAAF020652C9A00A98008 /* Network */,
+				9FFBAAEF20652C9000A98008 /* SignInScene */,
+				9F768D2C2062ADC7005BC464 /* Info.plist */,
 			);
-			path = NiceDemoNetworkTests;
+			path = NiceDemoTests;
 			sourceTree = "<group>";
 		};
 		9F8008C6205BCB7400F64C5C /* LoadingIndicatorView */ = {
@@ -491,7 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				9FD5E207204BFDE7002536E7 /* NiceDemo */,
-				9F704BA2205FFFDA0027FE97 /* NiceDemoNetworkTests */,
+				9F768D292062ADC7005BC464 /* NiceDemoTests */,
 				9FD5E206204BFDE7002536E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -500,7 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				9FD5E205204BFDE7002536E7 /* NiceDemo.app */,
-				9F704BA1205FFFDA0027FE97 /* NiceDemoNetworkTests.xctest */,
+				9F768D282062ADC7005BC464 /* NiceDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -536,25 +557,51 @@
 			path = "DogsList Scene";
 			sourceTree = "<group>";
 		};
+		9FFBAAEF20652C9000A98008 /* SignInScene */ = {
+			isa = PBXGroup;
+			children = (
+				9F768D362062B950005BC464 /* SignInConfiguratorTests.swift */,
+				9F768D342062AF42005BC464 /* SignInSceneTests.swift */,
+			);
+			path = SignInScene;
+			sourceTree = "<group>";
+		};
+		9FFBAAF020652C9A00A98008 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9F768D322062AEFC005BC464 /* NetworkTests.swift */,
+				9F0ACA8A206542B000BA7F74 /* ImageLoaderTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9FFBAAF120652D6A00A98008 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				9FFBAAF220652D8600A98008 /* ValidatorTests.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9F704BA0205FFFDA0027FE97 /* NiceDemoNetworkTests */ = {
+		9F768D272062ADC7005BC464 /* NiceDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F704BAA205FFFDA0027FE97 /* Build configuration list for PBXNativeTarget "NiceDemoNetworkTests" */;
+			buildConfigurationList = 9F768D2F2062ADC7005BC464 /* Build configuration list for PBXNativeTarget "NiceDemoTests" */;
 			buildPhases = (
-				9F704B9D205FFFDA0027FE97 /* Sources */,
-				9F704B9E205FFFDA0027FE97 /* Frameworks */,
-				9F704B9F205FFFDA0027FE97 /* Resources */,
+				9F768D242062ADC7005BC464 /* Sources */,
+				9F768D252062ADC7005BC464 /* Frameworks */,
+				9F768D262062ADC7005BC464 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9F704BA7205FFFDA0027FE97 /* PBXTargetDependency */,
+				9F768D2E2062ADC7005BC464 /* PBXTargetDependency */,
 			);
-			name = NiceDemoNetworkTests;
-			productName = NiceDemoNetworkTests;
-			productReference = 9F704BA1205FFFDA0027FE97 /* NiceDemoNetworkTests.xctest */;
+			name = NiceDemoTests;
+			productName = NiceDemoTests;
+			productReference = 9F768D282062ADC7005BC464 /* NiceDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		9FD5E204204BFDE7002536E7 /* NiceDemo */ = {
@@ -584,8 +631,9 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Serhii Kharauzov";
 				TargetAttributes = {
-					9F704BA0205FFFDA0027FE97 = {
+					9F768D272062ADC7005BC464 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9FD5E204204BFDE7002536E7;
 					};
@@ -609,13 +657,13 @@
 			projectRoot = "";
 			targets = (
 				9FD5E204204BFDE7002536E7 /* NiceDemo */,
-				9F704BA0205FFFDA0027FE97 /* NiceDemoNetworkTests */,
+				9F768D272062ADC7005BC464 /* NiceDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9F704B9F205FFFDA0027FE97 /* Resources */ = {
+		9F768D262062ADC7005BC464 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -634,11 +682,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9F704B9D205FFFDA0027FE97 /* Sources */ = {
+		9F768D242062ADC7005BC464 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F704BA4205FFFDA0027FE97 /* NiceDemoNetworkTests.swift in Sources */,
+				9F0ACA8B206542B000BA7F74 /* ImageLoaderTests.swift in Sources */,
+				9FFBAAF320652D8600A98008 /* ValidatorTests.swift in Sources */,
+				9F0ACA8E206543AC00BA7F74 /* AppCoordinatorTests.swift in Sources */,
+				9F768D372062B950005BC464 /* SignInConfiguratorTests.swift in Sources */,
+				9F768D352062AF42005BC464 /* SignInSceneTests.swift in Sources */,
+				9F768D332062AEFC005BC464 /* NetworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,10 +764,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9F704BA7205FFFDA0027FE97 /* PBXTargetDependency */ = {
+		9F768D2E2062ADC7005BC464 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9FD5E204204BFDE7002536E7 /* NiceDemo */;
-			targetProxy = 9F704BA6205FFFDA0027FE97 /* PBXContainerItemProxy */;
+			targetProxy = 9F768D2D2062ADC7005BC464 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -730,29 +783,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9F704BA8205FFFDA0027FE97 /* Debug */ = {
+		9F768D302062ADC7005BC464 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NiceDemoNetworkTests/Info.plist;
+				INFOPLIST_FILE = NiceDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Serhii-Kharauzov.NiceDemoNetworkTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Serhii-Kharauzov.NiceDemoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NiceDemo.app/NiceDemo";
 			};
 			name = Debug;
 		};
-		9F704BA9205FFFDA0027FE97 /* Release */ = {
+		9F768D312062ADC7005BC464 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NiceDemoNetworkTests/Info.plist;
+				INFOPLIST_FILE = NiceDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Serhii-Kharauzov.NiceDemoNetworkTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Serhii-Kharauzov.NiceDemoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -902,11 +958,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9F704BAA205FFFDA0027FE97 /* Build configuration list for PBXNativeTarget "NiceDemoNetworkTests" */ = {
+		9F768D2F2062ADC7005BC464 /* Build configuration list for PBXNativeTarget "NiceDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9F704BA8205FFFDA0027FE97 /* Debug */,
-				9F704BA9205FFFDA0027FE97 /* Release */,
+				9F768D302062ADC7005BC464 /* Debug */,
+				9F768D312062ADC7005BC464 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

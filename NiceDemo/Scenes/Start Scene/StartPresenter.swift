@@ -22,12 +22,13 @@ class StartPresenter {
     // MARK: Private properties
 
     private weak var view: StartViewInterface!
-    private let userCredentialsStorage = UserCredentialsStorageService(storage: UserDefaultsLayer())
+    private let userCredentialsStorage: UserCredentialsStorageService
     
     // MARK: Public methods
     
-    init(view: StartViewInterface) {
+    init(view: StartViewInterface, userCredentialsStorage: UserCredentialsStorageService) {
         self.view = view
+        self.userCredentialsStorage = userCredentialsStorage
     }
     
     // MARK: Private methods

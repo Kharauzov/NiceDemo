@@ -1,13 +1,17 @@
 //
-//  NiceDemoNetworkTests.swift
-//  NiceDemoNetworkTests
+//  NetworkTests.swift
+//  NiceDemoTests
 //
-//  Created by Serhii Kharauzov on 3/19/18.
+//  Created by Serhii Kharauzov on 3/21/18.
 //  Copyright © 2018 Serhii Kharauzov. All rights reserved.
 //
 
 import XCTest
 @testable import NiceDemo
+
+///
+/// SUT: DogsServerService
+///
 
 class NiceDemoNetworkTests: XCTestCase {
     
@@ -22,7 +26,7 @@ class NiceDemoNetworkTests: XCTestCase {
         dogsServerService = nil
         super.tearDown()
     }
-   
+    
     func testGetAllDogsNetworkRequest() {
         // given
         let promise = expectation(description: "Completion handler invoked")
@@ -41,7 +45,7 @@ class NiceDemoNetworkTests: XCTestCase {
         XCTAssertNotNil(responseData)
     }
     
-    func testGetDogRandomImageUrl() {
+    func testGetDogRandomImageUrlRequest() {
         // given
         let promise = expectation(description: "Completion handler invoked")
         var responseData: Any?
@@ -59,3 +63,4 @@ class NiceDemoNetworkTests: XCTestCase {
     }
     
 }
+

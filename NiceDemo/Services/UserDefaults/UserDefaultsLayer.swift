@@ -14,6 +14,10 @@ import Foundation
 /// storage services via protocols.
 class UserDefaultsLayer: UserCredentialsStorage {
 
+    init(userDefaultsSuiteName: String? = nil) {
+        defaults = UserDefaults(suiteName: userDefaultsSuiteName)!
+    }
+    
     // MARK: Public Properties
     
     var launchesCounter: Int {
@@ -42,7 +46,7 @@ class UserDefaultsLayer: UserCredentialsStorage {
     
     // MARK: Private properties
     
-    private let defaults = UserDefaults()
+    private let defaults: UserDefaults
 }
 
 extension UserDefaultsLayer {

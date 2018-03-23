@@ -46,7 +46,7 @@ class Validator {
 
 extension Validator {
     /// Represents error type with detailed description.
-    enum ValidationError: Error {
+    enum ValidationError: Error, Equatable {
         case emailFormatIsWrong
         case emailFormatIsDublicated
         case passwordLengthIsWrong
@@ -65,6 +65,17 @@ extension Validator {
                 return "\(value) is empty. Please fill it."
             default:
                 return "Unknown error occured."
+            }
+        }
+        
+        static func ==(lhs: ValidationError, rhs: ValidationError) -> Bool {
+            switch (lhs, rhs) {
+                case (.emailFormatIsWrong, .emailFormatIsWrong): return true
+                case (.emailFormatIsDublicated, emailFormatIsDublicated): return true
+                case (.passwordLengthIsWrong, .passwordLengthIsWrong): return true
+                case let (.valueIsEmpty(l), .valueIsEmpty(r)): return l == r
+                case (.unknown, .unknown) : return true
+                default: return false
             }
         }
     }

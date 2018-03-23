@@ -19,17 +19,18 @@ class SignInPresenter {
     // MARK: Public properties
     
     weak var delegate: SignInSceneDelegate?
+    weak var view: SignInViewInterface!
     
     // MARK: Private properties
 
-    private weak var view: SignInViewInterface!
-    private let userCredentialsStorage = UserCredentialsStorageService(storage: UserDefaultsLayer())
+    private let userCredentialsStorage: UserCredentialsStorageService
     private let validator = Validator()
     
     // MARK: Public methods
-    
-    init(view: SignInViewInterface) {
+       
+    init(view: SignInViewInterface, userCredentialsStorage: UserCredentialsStorageService) {
         self.view = view
+        self.userCredentialsStorage = userCredentialsStorage
     }
     
     // MARK: Private methods

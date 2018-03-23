@@ -1,5 +1,7 @@
 ![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
+![BuildPass](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![Codecoverage](https://img.shields.io/badge/coverage-37%25-orange.svg)
 [![License](https://img.shields.io/badge/license-mit-blue.svg)](https://doge.mit-license.org)
 
 # Sense

@@ -26,23 +26,22 @@ class AppCoordinator: Coordinator {
     
     func start() {
         showStartScene()
-        //showDogsFlow()
     }
     
-    // MARK: Private methods
+    // MARK: Public methods
     
-    private func showStartScene() {
+    func showStartScene() {
         navigationController.pushViewController(StartConfigurator().configuredViewController(delegate: self), animated: false)
     }
     
-    private func showAuthenticationFlow() {
+    func showAuthenticationFlow() {
         let authFlowCoordinator = AuthFlowCoordinator(navigationController: navigationController)
         authFlowCoordinator.delegate = self
         childCoordinators.append(authFlowCoordinator)
         authFlowCoordinator.start()
     }
     
-    private func showDogsFlow() {
+    func showDogsFlow() {
         let dogsFlowCoordinator = DogsFlowCoordinator(navigationController: navigationController)
         dogsFlowCoordinator.delegate = self
         childCoordinators.append(dogsFlowCoordinator)

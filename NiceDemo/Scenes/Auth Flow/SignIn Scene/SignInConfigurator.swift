@@ -13,7 +13,7 @@ class SignInConfigurator {
     /// Returns viewController, configured with its associated presenter.
     func configuredViewController(delegate: SignInSceneDelegate?) -> SignInViewController {
         let viewController = SignInViewController()
-        let presenter = SignInPresenter(view: viewController)
+        let presenter = SignInPresenter(view: viewController, userCredentialsStorage: UserCredentialsStorageService(storage: UserDefaultsLayer()))
         presenter.delegate = delegate
         viewController.setPresenter(presenter)
         return viewController

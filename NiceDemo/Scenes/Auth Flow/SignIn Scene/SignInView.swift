@@ -148,5 +148,13 @@ extension SignInView {
     func getPasswordText() -> String? {
         return passwordTextField.text
     }
+    
+    func setEmailText(_ value: String) {
+        emailTextField.text = value
+    }
+    
+    func setPasswordText(_ value: String) {
+        passwordTextField.text = value
+    }
 }
 
