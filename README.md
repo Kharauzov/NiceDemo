@@ -12,7 +12,7 @@
 - *Stability* ✊    - Coordinator for routing + improved MVP for scenes.
 - *Transparency* 👓 - No third-party frameworks and Pods.
 - *Reuse* 🤹‍       - UI is implemented programmatically too. No Storyboard or Xibs.
-- *Testable* 🔒     - coming soon.
+- *Testable* 🔒     - Not fully yet, but code already covered by Unit Tests.
 
 ## Overview
 This project was built for demonstration purpose using iOS best practices. It doesn't have or provide any commercial usage.
