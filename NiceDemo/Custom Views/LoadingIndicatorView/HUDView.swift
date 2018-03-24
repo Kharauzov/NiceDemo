@@ -56,6 +56,10 @@ extension HUDView {
         activityIndicatorView.stopAnimating()
     }
     
+    func isAnimating() -> Bool {
+        return activityIndicatorView.isAnimating
+    }
+    
     /// Returns `HUDView` if it is subview of view. Else returns nil.
     static func hudIn(view: UIView) -> HUDView? {
         return view.subviews.filter({$0 is HUDView}).first as? HUDView

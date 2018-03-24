@@ -32,17 +32,15 @@ class AuthFlowCoordinator: Coordinator {
         showSignInScene()
     }
     
-    // MARK: Private methods
-    
-    private func showSignInScene() {
+    func showSignInScene() {
         navigationController.setViewControllers([SignInConfigurator().configuredViewController(delegate: self)], animated: true)
     }
     
-    private func showForgotPasswordScene() {
+    func showForgotPasswordScene() {
         navigationController.pushViewController(ForgotPasswordConfigurator().configuredViewController(delegate: self), animated: true)
     }
     
-    private func showSignUpScene() {
+    func showSignUpScene() {
         // TODO: implementation
     }
 }
@@ -67,6 +65,6 @@ extension AuthFlowCoordinator: SignInSceneDelegate {
 
 extension AuthFlowCoordinator: ForgotPasswordSceneDelegate {
     func userPerformedPasswordRecovery() {
-        popView(animated: true)
+        popViewController(animated: true)
     }
 }

@@ -28,8 +28,6 @@ class AppCoordinator: Coordinator {
         showStartScene()
     }
     
-    // MARK: Public methods
-    
     func showStartScene() {
         navigationController.pushViewController(StartConfigurator().configuredViewController(delegate: self), animated: false)
     }

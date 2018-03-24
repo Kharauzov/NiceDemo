@@ -1,5 +1,5 @@
 //
-//  AppCoordinatorTests.swift
+//  DogsFlowCoordinatorTests.swift
 //  NiceDemoTests
 //
 //  Created by Serhii Kharauzov on 3/23/18.
@@ -9,14 +9,18 @@
 import XCTest
 @testable import NiceDemo
 
-class AppCoordinatorTests: XCTestCase {
+///
+/// SUT: DogsFlowCoordinator
+///
 
-    var coordinator: AppCoordinator!
+class DogsFlowCoordinatorTests: XCTestCase {
+    
+    var coordinator: DogsFlowCoordinator!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        coordinator = AppCoordinator(navigationController: UINavigationController())
+        coordinator = DogsFlowCoordinator(navigationController: UINavigationController())
     }
     
     override func tearDown() {
@@ -32,19 +36,18 @@ class AppCoordinatorTests: XCTestCase {
         XCTAssertFalse(coordinator.navigationController.viewControllers.isEmpty, "Coordinator's navigationController must not be empty after `start` method call.")
     }
     
-    func testShowDogFlowM() {
+    func testShowDogsListScene() {
         // when
-        coordinator.showDogsFlow()
+        coordinator.showDogsListScene()
         // then
-        XCTAssertFalse(coordinator.childCoordinators.isEmpty, "Coordinator's childControllers must have value.")
         XCTAssertTrue(coordinator.navigationController.visibleViewController is DogsListViewController, "Visible viewcontroller must be of class `DogsListViewController`")
     }
     
-    func testShowAuthFlow() {
+    func testShowDogGalleryScene() {
         // when
-        coordinator.showAuthenticationFlow()
+        coordinator.showDogGalleryScene(dogBreed: "")
         // then
-        XCTAssertFalse(coordinator.childCoordinators.isEmpty, "Coordinator's childControllers must have value.")
-        XCTAssertTrue(coordinator.navigationController.visibleViewController is SignInViewController, "Visible viewcontroller must be of class `SignInViewController`")
+        XCTAssertTrue(coordinator.navigationController.visibleViewController is DogGalleryViewController, "Visible viewcontroller must be of class `DogGalleryViewController`")
     }
 }
+

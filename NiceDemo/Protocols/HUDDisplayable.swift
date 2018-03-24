@@ -39,7 +39,7 @@ extension HUDDisplayable {
                 hud.removeFromSuperview()
             })
         } else {
-            hud.alpha = 0
+            hud.removeFromSuperview()
         }
     }
     

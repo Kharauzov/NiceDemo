@@ -29,6 +29,10 @@
 		9F222830205FA60D004324B6 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22282F205FA60D004324B6 /* Alertable.swift */; };
 		9F32C976205A608D00F5C3CA /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32C975205A608D00F5C3CA /* ServerService.swift */; };
 		9F3776552050328400E9BB0A /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3776542050328400E9BB0A /* Validator.swift */; };
+		9F3936552065880200AFD3CD /* AuthFlowCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3936542065880200AFD3CD /* AuthFlowCoordinatorTests.swift */; };
+		9F393657206589DC00AFD3CD /* DogsFlowCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F393656206589DC00AFD3CD /* DogsFlowCoordinatorTests.swift */; };
+		9F39365920658AFC00AFD3CD /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F39365820658AFC00AFD3CD /* CoordinatorTests.swift */; };
+		9F3E9C092066914100C1BB0D /* HUDViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E9C082066914100C1BB0D /* HUDViewTests.swift */; };
 		9F495B642057CE840054FB4E /* ServerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F495B632057CE840054FB4E /* ServerRouter.swift */; };
 		9F495B672057D9AD0054FB4E /* DogsServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F495B662057D9AD0054FB4E /* DogsServerService.swift */; };
 		9F495B6B2057E0130054FB4E /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F495B6A2057E0130054FB4E /* BaseResponse.swift */; };
@@ -65,6 +69,7 @@
 		9FAA4C6B2052788C00DBD109 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA4C6A2052788C00DBD109 /* ForgotPasswordView.swift */; };
 		9FB14B4920591A6100EA64EF /* UrlSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB14B4820591A6100EA64EF /* UrlSessionService.swift */; };
 		9FB14B4B2059202800EA64EF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB14B4A2059202800EA64EF /* Result.swift */; };
+		9FD123B12066712400BD3DD7 /* ReusableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD123B02066712400BD3DD7 /* ReusableViewTests.swift */; };
 		9FD5E209204BFDE7002536E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD5E208204BFDE7002536E7 /* AppDelegate.swift */; };
 		9FD5E210204BFDE7002536E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FD5E20F204BFDE7002536E7 /* Assets.xcassets */; };
 		9FD5E213204BFDE7002536E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FD5E211204BFDE7002536E7 /* LaunchScreen.storyboard */; };
@@ -109,6 +114,10 @@
 		9F22282F205FA60D004324B6 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		9F32C975205A608D00F5C3CA /* ServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		9F3776542050328400E9BB0A /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		9F3936542065880200AFD3CD /* AuthFlowCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoordinatorTests.swift; sourceTree = "<group>"; };
+		9F393656206589DC00AFD3CD /* DogsFlowCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsFlowCoordinatorTests.swift; sourceTree = "<group>"; };
+		9F39365820658AFC00AFD3CD /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		9F3E9C082066914100C1BB0D /* HUDViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewTests.swift; sourceTree = "<group>"; };
 		9F495B632057CE840054FB4E /* ServerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRouter.swift; sourceTree = "<group>"; };
 		9F495B662057D9AD0054FB4E /* DogsServerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsServerService.swift; sourceTree = "<group>"; };
 		9F495B6A2057E0130054FB4E /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
@@ -147,6 +156,7 @@
 		9FAA4C6A2052788C00DBD109 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		9FB14B4820591A6100EA64EF /* UrlSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionService.swift; sourceTree = "<group>"; };
 		9FB14B4A2059202800EA64EF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		9FD123B02066712400BD3DD7 /* ReusableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewTests.swift; sourceTree = "<group>"; };
 		9FD5E205204BFDE7002536E7 /* NiceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FD5E208204BFDE7002536E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FD5E20F204BFDE7002536E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -255,12 +265,15 @@
 			path = "SignIn Scene";
 			sourceTree = "<group>";
 		};
-		9F0ACA8C2065438500BA7F74 /* Coordinator */ = {
+		9F0ACA8C2065438500BA7F74 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				9F39365820658AFC00AFD3CD /* CoordinatorTests.swift */,
 				9F0ACA8D206543AC00BA7F74 /* AppCoordinatorTests.swift */,
+				9F3936542065880200AFD3CD /* AuthFlowCoordinatorTests.swift */,
+				9F393656206589DC00AFD3CD /* DogsFlowCoordinatorTests.swift */,
 			);
-			path = Coordinator;
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		9F21E812205A82B300156B30 /* SimpleImageLoader */ = {
@@ -277,6 +290,14 @@
 				9F3776542050328400E9BB0A /* Validator.swift */,
 			);
 			path = Validator;
+			sourceTree = "<group>";
+		};
+		9F3E9C072066910300C1BB0D /* HUDView */ = {
+			isa = PBXGroup;
+			children = (
+				9F3E9C082066914100C1BB0D /* HUDViewTests.swift */,
+			);
+			path = HUDView;
 			sourceTree = "<group>";
 		};
 		9F495B612057CE6A0054FB4E /* ServerApi */ = {
@@ -467,10 +488,12 @@
 		9F768D292062ADC7005BC464 /* NiceDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F0ACA8C2065438500BA7F74 /* Coordinator */,
+				9F3E9C072066910300C1BB0D /* HUDView */,
+				9FD123B2206690BC00BD3DD7 /* Scenes */,
+				9F0ACA8C2065438500BA7F74 /* Coordinators */,
+				9FD123AF2066711200BD3DD7 /* Other */,
 				9FFBAAF120652D6A00A98008 /* Validator */,
 				9FFBAAF020652C9A00A98008 /* Network */,
-				9FFBAAEF20652C9000A98008 /* SignInScene */,
 				9F768D2C2062ADC7005BC464 /* Info.plist */,
 			);
 			path = NiceDemoTests;
@@ -506,6 +529,22 @@
 				9FAA4C652052787700DBD109 /* ForgotPasswordConfigurator.swift */,
 			);
 			path = "ForgotPassword Scene";
+			sourceTree = "<group>";
+		};
+		9FD123AF2066711200BD3DD7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9FD123B02066712400BD3DD7 /* ReusableViewTests.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		9FD123B2206690BC00BD3DD7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9FFBAAEF20652C9000A98008 /* SignInScene */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		9FD5E1FC204BFDE7002536E7 = {
@@ -690,6 +729,11 @@
 				9FFBAAF320652D8600A98008 /* ValidatorTests.swift in Sources */,
 				9F0ACA8E206543AC00BA7F74 /* AppCoordinatorTests.swift in Sources */,
 				9F768D372062B950005BC464 /* SignInConfiguratorTests.swift in Sources */,
+				9F3936552065880200AFD3CD /* AuthFlowCoordinatorTests.swift in Sources */,
+				9F39365920658AFC00AFD3CD /* CoordinatorTests.swift in Sources */,
+				9F3E9C092066914100C1BB0D /* HUDViewTests.swift in Sources */,
+				9F393657206589DC00AFD3CD /* DogsFlowCoordinatorTests.swift in Sources */,
+				9FD123B12066712400BD3DD7 /* ReusableViewTests.swift in Sources */,
 				9F768D352062AF42005BC464 /* SignInSceneTests.swift in Sources */,
 				9F768D332062AEFC005BC464 /* NetworkTests.swift in Sources */,
 			);

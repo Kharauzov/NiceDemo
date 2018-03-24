@@ -32,13 +32,11 @@ class DogsFlowCoordinator: Coordinator {
         showDogsListScene()
     }
     
-    // MARK: Private methods
-    
-    private func showDogsListScene() {
+    func showDogsListScene() {
         navigationController.setViewControllers([DogsListConfigurator().configuredViewController(delegate: self)], animated: true)
     }
     
-    private func showDogGalleryScene(dogBreed: String) {
+    func showDogGalleryScene(dogBreed: String) {
         navigationController.pushViewController(DogGalleryConfigurator().configuredViewController(breed: dogBreed, delegate: self), animated: true)
     }
 }
