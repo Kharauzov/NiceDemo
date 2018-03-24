@@ -12,12 +12,12 @@ import UIKit
 /// Responsible for handling all business logic, that should be established at AppDelegate.
 class AppDelegateService {
     
-    // MARK: Private properties
+    // MARK: Public properties
     
-    /// root window of the app
-    private let window: UIWindow!
     /// root coordinator
-    private var appCoordinator: AppCoordinator!
+    var appCoordinator: AppCoordinator!
+    /// root window of the app
+    let window: UIWindow
     
     // MARK: Init
     

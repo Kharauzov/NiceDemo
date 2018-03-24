@@ -69,6 +69,8 @@
 		9FAA4C6B2052788C00DBD109 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAA4C6A2052788C00DBD109 /* ForgotPasswordView.swift */; };
 		9FB14B4920591A6100EA64EF /* UrlSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB14B4820591A6100EA64EF /* UrlSessionService.swift */; };
 		9FB14B4B2059202800EA64EF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB14B4A2059202800EA64EF /* Result.swift */; };
+		9FCF0A502066A84500EB86AA /* DogsListTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF0A4F2066A84500EB86AA /* DogsListTableViewTests.swift */; };
+		9FCF0A532066B6BE00EB86AA /* AppDelegateServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF0A522066B6BE00EB86AA /* AppDelegateServiceTests.swift */; };
 		9FD123B12066712400BD3DD7 /* ReusableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD123B02066712400BD3DD7 /* ReusableViewTests.swift */; };
 		9FD5E209204BFDE7002536E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD5E208204BFDE7002536E7 /* AppDelegate.swift */; };
 		9FD5E210204BFDE7002536E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FD5E20F204BFDE7002536E7 /* Assets.xcassets */; };
@@ -156,6 +158,8 @@
 		9FAA4C6A2052788C00DBD109 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		9FB14B4820591A6100EA64EF /* UrlSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionService.swift; sourceTree = "<group>"; };
 		9FB14B4A2059202800EA64EF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		9FCF0A4F2066A84500EB86AA /* DogsListTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListTableViewTests.swift; sourceTree = "<group>"; };
+		9FCF0A522066B6BE00EB86AA /* AppDelegateServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateServiceTests.swift; sourceTree = "<group>"; };
 		9FD123B02066712400BD3DD7 /* ReusableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewTests.swift; sourceTree = "<group>"; };
 		9FD5E205204BFDE7002536E7 /* NiceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FD5E208204BFDE7002536E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -488,9 +492,10 @@
 		9F768D292062ADC7005BC464 /* NiceDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				9F3E9C072066910300C1BB0D /* HUDView */,
+				9FCF0A512066B6B400EB86AA /* AppDelegateService */,
 				9FD123B2206690BC00BD3DD7 /* Scenes */,
 				9F0ACA8C2065438500BA7F74 /* Coordinators */,
+				9F3E9C072066910300C1BB0D /* HUDView */,
 				9FD123AF2066711200BD3DD7 /* Other */,
 				9FFBAAF120652D6A00A98008 /* Validator */,
 				9FFBAAF020652C9A00A98008 /* Network */,
@@ -531,6 +536,22 @@
 			path = "ForgotPassword Scene";
 			sourceTree = "<group>";
 		};
+		9FCF0A4E2066A7D400EB86AA /* DogsListScene */ = {
+			isa = PBXGroup;
+			children = (
+				9FCF0A4F2066A84500EB86AA /* DogsListTableViewTests.swift */,
+			);
+			path = DogsListScene;
+			sourceTree = "<group>";
+		};
+		9FCF0A512066B6B400EB86AA /* AppDelegateService */ = {
+			isa = PBXGroup;
+			children = (
+				9FCF0A522066B6BE00EB86AA /* AppDelegateServiceTests.swift */,
+			);
+			path = AppDelegateService;
+			sourceTree = "<group>";
+		};
 		9FD123AF2066711200BD3DD7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +563,7 @@
 		9FD123B2206690BC00BD3DD7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9FCF0A4E2066A7D400EB86AA /* DogsListScene */,
 				9FFBAAEF20652C9000A98008 /* SignInScene */,
 			);
 			path = Scenes;
@@ -726,7 +748,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F0ACA8B206542B000BA7F74 /* ImageLoaderTests.swift in Sources */,
+				9FCF0A532066B6BE00EB86AA /* AppDelegateServiceTests.swift in Sources */,
 				9FFBAAF320652D8600A98008 /* ValidatorTests.swift in Sources */,
+				9FCF0A502066A84500EB86AA /* DogsListTableViewTests.swift in Sources */,
 				9F0ACA8E206543AC00BA7F74 /* AppCoordinatorTests.swift in Sources */,
 				9F768D372062B950005BC464 /* SignInConfiguratorTests.swift in Sources */,
 				9F3936552065880200AFD3CD /* AuthFlowCoordinatorTests.swift in Sources */,

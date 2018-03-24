@@ -10,5 +10,5 @@ import Foundation
 
 struct Dog {
     let breed: String
-    let subbreeds: [String]
+    let subbreeds: [String]?
 }

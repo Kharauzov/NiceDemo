@@ -53,8 +53,14 @@ class DogsListPresenter {
     
     private func getFormattedDescriptionForDog(at index: Int) -> String {
         let dog = dogs[index]
-        let dogBreed = dog.breed.uppercased()
-        return "\(dogBreed)\n\n" + "Subreeds (\(dog.subbreeds.count))"
+        let dogBreedTitle = dog.breed.uppercased()
+        let dogSubreedSubtitle: String
+        if let dogSubreeds = dog.subbreeds, !dogSubreeds.isEmpty {
+            dogSubreedSubtitle = "Has subreeds: (\(dogSubreeds.count))"
+        } else {
+            dogSubreedSubtitle = "No subreeds"
+        }
+        return dogBreedTitle + "\n\n" + dogSubreedSubtitle
     }
 }
 

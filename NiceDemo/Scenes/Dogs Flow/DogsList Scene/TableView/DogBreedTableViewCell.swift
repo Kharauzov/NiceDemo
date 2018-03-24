@@ -45,4 +45,8 @@ extension DogBreedTableViewCell {
     func setDogDescription(value: String) {
         dogDescriptionLabel.text = value
     }
+    
+    func getDogDescription() -> String? {
+        return dogDescriptionLabel.text
+    }
 }
