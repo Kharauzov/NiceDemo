@@ -35,7 +35,7 @@ class HUDView: UIView {
     
     private func addActivityIndicatorView() {
         activityIndicatorView = UIActivityIndicatorView(frame: .zero)
-        activityIndicatorView.activityIndicatorViewStyle = .whiteLarge
+        activityIndicatorView.style = .whiteLarge
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(activityIndicatorView)
         NSLayoutConstraint(item: activityIndicatorView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
