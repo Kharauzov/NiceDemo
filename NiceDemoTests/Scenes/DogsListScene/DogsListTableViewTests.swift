@@ -9,20 +9,6 @@
 import XCTest
 @testable import NiceDemo
 
-class MockDogsListTableViewProviderDelegate: DogsListTableViewProviderDelegate {
-    
-    var didSelectItemAtIndex: Int?
-    
-    func didSelectItem(at index: Int) {
-        didSelectItemAtIndex = index
-    }
-    
-    /// For test purpose only.
-    func getFormattedDescriptionForItem(at index: Int) -> String {
-        return "Dog \(index)"
-    }
-}
-
 ///
 /// SUT: DogsListTableView Components: DogsListTableViewProvider, DogsListTableViewProviderDelegate,
 ///      DogBreedTableViewCell
@@ -32,7 +18,7 @@ class DogsListTableViewTests: XCTestCase {
     
     var tableView: UITableView!
     var tableViewProvider: DogsListTableViewProvider!
-    var tableViewDelegate: MockDogsListTableViewProviderDelegate!
+    var selectedIndex: Int?
     
     override func setUp() {
         super.setUp()
@@ -40,10 +26,11 @@ class DogsListTableViewTests: XCTestCase {
         tableView = UITableView()
         tableView.register(DogBreedTableViewCell.self, forCellReuseIdentifier: DogBreedTableViewCell.reuseIdentifier)
         tableViewProvider = DogsListTableViewProvider()
+        tableViewProvider.didSelectItem = { [unowned self] (_ atIndex: Int) in
+            self.selectedIndex = atIndex
+        }
         let data = [Dog(breed: "Akita", subbreeds: nil), Dog(breed: "Terrier", subbreeds: ["Westhighland", "Yorkshire"])]
-        tableViewProvider.setData(data)
-        tableViewDelegate = MockDogsListTableViewProviderDelegate()
-        tableViewProvider.delegate = tableViewDelegate
+        tableViewProvider.data = data
         tableView.dataSource = tableViewProvider
         tableView.delegate = tableViewProvider
     }
@@ -52,6 +39,7 @@ class DogsListTableViewTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         tableViewProvider = nil
         tableView = nil
+        selectedIndex = nil
         super.tearDown()
     }
     
@@ -67,14 +55,14 @@ class DogsListTableViewTests: XCTestCase {
         // then
         XCTAssertNotNil(cell, "Must exists.")
         XCTAssertNotNil(description, "Must exists.")
-        XCTAssertEqual(description, "Dog 0", "Dismatch.")
+        XCTAssertEqual(description, "AKITA\n\nNo subreeds", "Dismatch.")
     }
     
     func testTableViewDelegate() {
         // when
         tableViewProvider.tableView(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
         // then
-        XCTAssertEqual(tableViewDelegate.didSelectItemAtIndex, 0, "Index must be equal to 0.")
+        XCTAssertEqual(selectedIndex, 0, "Index must be equal to 0.")
     }
     
 }

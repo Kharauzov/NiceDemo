@@ -10,7 +10,7 @@ import Foundation
 
 protocol DogsListViewInterface: class {
     func reloadData()
-    func setTableViewProvider(_ provider: DogsListTableViewProvider)
+    func setTableViewProvider(_ provider: TableViewProvider)
     func showAlert(title: String?, message: String?)
     func showHUD(animated: Bool)
     func hideHUD(animated: Bool)

@@ -9,38 +9,29 @@
 import Foundation
 import UIKit
 
-protocol DogsListTableViewProviderDelegate: TableViewProviderDelegate {
-    func getFormattedDescriptionForItem(at index: Int) -> String
-}
-
-class DogsListTableViewProvider: NSObject, UITableViewDelegate, UITableViewDataSource {
+class DogsListTableViewProvider: NSObject, TableViewProvider {
     
     // MARK: Properties
     
-    private var dataItems = [Dog]()
-    weak var delegate: DogsListTableViewProviderDelegate?
+    var data = [Dog]()
+    var didSelectItem: ((_ atIndex: Int) -> Void)?
+    private let dogDescriptionFormatter = DogDescriptionFormatter()
     
-    // MARK: UITableView DataSource + Delegate
+    // MARK: TableViewProvider methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataItems.count
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DogBreedTableViewCell.reuseIdentifier, for: indexPath) as! DogBreedTableViewCell
-        let description = delegate?.getFormattedDescriptionForItem(at: indexPath.row) ?? ""
+        let description = dogDescriptionFormatter.getBreedDescriptionFrom(dog: data[indexPath.row])
         cell.setDogDescription(value: description)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate?.didSelectItem(at: indexPath.row)
-    }
-}
-
-extension DogsListTableViewProvider {
-    func setData(_ data: [Dog]) {
-        dataItems = data
+        didSelectItem?(indexPath.row)
     }
 }

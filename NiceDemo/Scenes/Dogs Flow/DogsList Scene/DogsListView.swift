@@ -59,7 +59,7 @@ extension DogsListView {
         tableView.reloadData()
     }
     
-    func setTableViewProvider(_ provider: DogsListTableViewProvider) {
+    func setTableViewProvider(_ provider: TableViewProvider) {
         tableView.delegate = provider
         tableView.dataSource = provider
     }

@@ -17,13 +17,16 @@ class DogsListPresenter {
     // MARK: Public properties
     
     weak var delegate: DogsListSceneDelegate?
-    
-    // MARK: Private properties
-
-    private weak var view: DogsListViewInterface!
-    private let dogsServerService = DogsServerService(core: UrlSessionService())
-    private let tableViewProvicer = DogsListTableViewProvider()
-    private var dogs = [Dog]()
+    weak var view: DogsListViewInterface!
+    let dogsServerService = DogsServerService(core: UrlSessionService())
+    lazy var tableViewProvider: DogsListTableViewProvider = {
+        let tableViewProvider = DogsListTableViewProvider()
+        tableViewProvider.didSelectItem = { [unowned self] (atIndex: Int) in
+            let dog = tableViewProvider.data[atIndex]
+            self.delegate?.didSelectDog(dog)
+        }
+        return tableViewProvider
+    }()
     
     // MARK: Public methods
     
@@ -31,9 +34,7 @@ class DogsListPresenter {
         self.view = view
     }
     
-    // MARK: Private methods
-    
-    private func fetchListOfDogs(completion: @escaping (_ data: [Dog]) -> Void) {
+    func fetchListOfDogs(completion: @escaping (_ data: [Dog]) -> Void) {
         view.showHUD(animated: true)
         dogsServerService.getAllDogs { [weak self] (data, error) in
             self?.view.hideHUD(animated: true)
@@ -45,32 +46,9 @@ class DogsListPresenter {
         }
     }
     
-    private func handleListOfDogsFetchResult(data: [Dog]) {
-        dogs = data
-        tableViewProvicer.setData(data)
+    func handleListOfDogsFetchResult(data: [Dog]) {
+        tableViewProvider.data = data
         view.reloadData()
-    }
-    
-    private func getFormattedDescriptionForDog(at index: Int) -> String {
-        let dog = dogs[index]
-        let dogBreedTitle = dog.breed.uppercased()
-        let dogSubreedSubtitle: String
-        if let dogSubreeds = dog.subbreeds, !dogSubreeds.isEmpty {
-            dogSubreedSubtitle = "Has subreeds: (\(dogSubreeds.count))"
-        } else {
-            dogSubreedSubtitle = "No subreeds"
-        }
-        return dogBreedTitle + "\n\n" + dogSubreedSubtitle
-    }
-}
-
-extension DogsListPresenter: DogsListTableViewProviderDelegate {
-    func didSelectItem(at index: Int) {
-        delegate?.didSelectDog(dogs[index])
-    }
-    
-    func getFormattedDescriptionForItem(at index: Int) -> String {
-        return getFormattedDescriptionForDog(at: index)
     }
 }
 
@@ -78,8 +56,7 @@ extension DogsListPresenter: DogsListTableViewProviderDelegate {
 
 extension DogsListPresenter: DogsListPresentation {
     func onViewDidLoad() {
-        tableViewProvicer.delegate = self
-        view.setTableViewProvider(tableViewProvicer)
+        view.setTableViewProvider(tableViewProvider)
         fetchListOfDogs { [weak self] (data) in
             self?.handleListOfDogsFetchResult(data: data)
         }

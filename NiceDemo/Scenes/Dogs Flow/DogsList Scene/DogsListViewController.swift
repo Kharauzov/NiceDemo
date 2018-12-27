@@ -45,7 +45,7 @@ extension DogsListViewController: DogsListViewInterface {
         customView.reloadDataInTableView()
     }
     
-    func setTableViewProvider(_ provider: DogsListTableViewProvider) {
+    func setTableViewProvider(_ provider: TableViewProvider) {
         customView.setTableViewProvider(provider)
     }
     
