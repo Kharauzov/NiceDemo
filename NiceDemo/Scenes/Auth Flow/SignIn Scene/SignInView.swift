@@ -94,7 +94,7 @@ class SignInView: UIView {
     private func addForgotPasswordButton() {
         forgotPasswordButton = UIButton(type: .roundedRect)
         forgotPasswordButton.setTitle("Forgot password?", for: .normal)
-        forgotPasswordButton.setTitleColor(.darkGray, for: .normal)
+        forgotPasswordButton.setTitleColor(UIColor.AppColors.primaryColor, for: .normal)
         forgotPasswordButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         forgotPasswordButton.addTarget(self, action: #selector(forgotButtonTapped(_:)), for: .touchUpInside)
         forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
@@ -117,10 +117,10 @@ class SignInView: UIView {
     private func addSignInButton() {
         signInButton = UIButton(type: .roundedRect)
         signInButton.setTitle("Sign in", for: .normal)
-        signInButton.setTitleColor(.white, for: .normal)
+        signInButton.setTitleColor(UIColor.AppColors.secondaryColor, for: .normal)
         signInButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         signInButton.layer.cornerRadius = 10.0
-        signInButton.backgroundColor = UIColor.darkGray
+        signInButton.backgroundColor = UIColor.AppColors.primaryColor
         signInButton.addTarget(self, action: #selector(signInButtonTapped(_:)), for: .touchUpInside)
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(signInButton)

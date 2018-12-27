@@ -63,7 +63,7 @@ class ForgotPasswordView: UIView {
     private func addDescriptionLabel() {
         descriptionLabel = UILabel(frame: .zero)
         descriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        descriptionLabel.textColor = .gray
+        descriptionLabel.textColor = UIColor.AppColors.primaryColor
         descriptionLabel.textAlignment = .left
         descriptionLabel.text = "Enter your email and we’ll send you a link to get back to your account."
         descriptionLabel.numberOfLines = 0
@@ -77,9 +77,9 @@ class ForgotPasswordView: UIView {
     private func addForgotPasswordButton() {
         submitButton = UIButton(type: .roundedRect)
         submitButton.setTitle("Submit", for: .normal)
-        submitButton.setTitleColor(.white, for: .normal)
+        submitButton.setTitleColor(UIColor.AppColors.secondaryColor, for: .normal)
         submitButton.layer.cornerRadius = 10.0
-        submitButton.backgroundColor = UIColor.darkGray
+        submitButton.backgroundColor = UIColor.AppColors.primaryColor
         submitButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         submitButton.addTarget(self, action: #selector(submitButtonTapped(_:)), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false

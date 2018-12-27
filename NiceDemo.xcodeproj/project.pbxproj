@@ -10,6 +10,7 @@
 		4970A26C21D4905E00D228F9 /* TableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A26B21D4905E00D228F9 /* TableViewProvider.swift */; };
 		4970A26E21D4907B00D228F9 /* CollectionViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A26D21D4907B00D228F9 /* CollectionViewProvider.swift */; };
 		4970A27021D4949400D228F9 /* DogDescriptionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A26F21D4949400D228F9 /* DogDescriptionFormatter.swift */; };
+		4970A27221D4B2FE00D228F9 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A27121D4B2FE00D228F9 /* UIColor+Extension.swift */; };
 		9F091A8A204D52A800B580CB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A89204D52A800B580CB /* AppCoordinator.swift */; };
 		9F091A90204D543600B580CB /* StartContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A8C204D543600B580CB /* StartContract.swift */; };
 		9F091A91204D543600B580CB /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A8D204D543600B580CB /* StartPresenter.swift */; };
@@ -99,6 +100,7 @@
 		4970A26B21D4905E00D228F9 /* TableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProvider.swift; sourceTree = "<group>"; };
 		4970A26D21D4907B00D228F9 /* CollectionViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewProvider.swift; sourceTree = "<group>"; };
 		4970A26F21D4949400D228F9 /* DogDescriptionFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDescriptionFormatter.swift; sourceTree = "<group>"; };
+		4970A27121D4B2FE00D228F9 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		9F091A89204D52A800B580CB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9F091A8C204D543600B580CB /* StartContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartContract.swift; sourceTree = "<group>"; };
 		9F091A8D204D543600B580CB /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 			children = (
 				9F64F644204C194100ED9EB4 /* UIView+Extension.swift */,
 				9F64F643204C194100ED9EB4 /* UIViewController+Extension.swift */,
+				4970A27121D4B2FE00D228F9 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				9FE95E712052B8A70080CBAA /* DogsListPresenter.swift in Sources */,
 				4970A26E21D4907B00D228F9 /* CollectionViewProvider.swift in Sources */,
 				9F091AA9204D6A6100B580CB /* SignInView.swift in Sources */,
+				4970A27221D4B2FE00D228F9 /* UIColor+Extension.swift in Sources */,
 				9F9F2952205A6E7B0008F285 /* DogGalleryViewController.swift in Sources */,
 				9F091AA6204D6A0000B580CB /* SignInViewController.swift in Sources */,
 				9F67C5172052BF7C0031C8FB /* DogBreedTableViewCell.swift in Sources */,

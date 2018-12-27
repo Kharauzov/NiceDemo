@@ -38,7 +38,6 @@ class SignInViewController: BaseViewController {
     func setupNavigationItem() {
         navigationItem.title = "Sign In"
         let signUpBarButtonItem = UIBarButtonItem(title: "Sign up", style: .done, target: self, action: #selector(signUpButtonTapped))
-        signUpBarButtonItem.tintColor = .darkGray
         navigationItem.rightBarButtonItem = signUpBarButtonItem
     }
     

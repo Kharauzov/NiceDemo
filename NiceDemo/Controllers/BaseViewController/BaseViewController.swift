@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBarColors()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,5 +30,11 @@ class BaseViewController: UIViewController {
     
     func showNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    // MARK: Private methods
+    
+    private func setupNavigationBarColors() {
+        navigationController?.navigationBar.tintColor = UIColor.AppColors.barItemTintColor
     }
 }

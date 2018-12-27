@@ -75,9 +75,9 @@ class DogGalleryView: UIView {
     private func addActionButton() {
         actionButton = UIButton(type: .roundedRect)
         actionButton.setTitle("Get another one", for: .normal)
-        actionButton.setTitleColor(.white, for: .normal)
+        actionButton.setTitleColor(UIColor.AppColors.secondaryColor, for: .normal)
         actionButton.layer.cornerRadius = 10.0
-        actionButton.backgroundColor = UIColor.darkGray
+        actionButton.backgroundColor = UIColor.AppColors.primaryColor
         actionButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         actionButton.addTarget(self, action: #selector(actionButtonTapped(_:)), for: .touchUpInside)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
