@@ -27,12 +27,18 @@ struct ScreenSize {
 /// Type of device, based on screen size.
 
 struct DeviceType {
-    static let IS_IPHONE_4_OR_LESS  = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH < 568.0
-    static let IS_IPHONE_SE          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
-    static let IS_IPHONE_8          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
-    static let IS_IPHONE_8Plus      = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
-    static let IS_IPHONE_X          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 812.0
-    static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad
+    static let IS_IPHONE_5_OR_LESS          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH <= 568.0
+    static let IS_IPHONE_8                  = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
+    static let IS_IPHONE_8_Plus_OR_MORE     = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH >= 736.0
+    static let IS_IPHONE_X                  = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 812.0
+    static let IS_IPAD                      = UIDevice.current.userInterfaceIdiom == .pad
+    
+    static var hasTopNotch: Bool {
+        if #available(iOS 11.0,  *) {
+            return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
+        }
+        return false
+    }
 }
 
 // MARK: App internal constants

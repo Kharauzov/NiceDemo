@@ -82,10 +82,14 @@ class DogGalleryView: UIView {
         actionButton.addTarget(self, action: #selector(actionButtonTapped(_:)), for: .touchUpInside)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(actionButton)
-        NSLayoutConstraint(item: actionButton, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -16).isActive = true
         NSLayoutConstraint(item: actionButton, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16.0).isActive = true
         NSLayoutConstraint(item: actionButton, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -16.0).isActive = true
         NSLayoutConstraint(item: actionButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 54.0).isActive = true
+        if #available(iOS 11.0, *), DeviceType.hasTopNotch {
+            NSLayoutConstraint(item: actionButton, attribute: .bottom, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
+        } else {
+            NSLayoutConstraint(item: actionButton, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -16).isActive = true
+        }
     }
     
     @objc private func actionButtonTapped(_ sender: UIButton) {
