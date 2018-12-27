@@ -11,9 +11,9 @@ import UIKit
 
 class DogGalleryViewController: BaseViewController {
     
-    // MARK: Private properties
+    // MARK: Properties
 
-    private var presenter: DogGalleryPresentation!
+    var presenter: DogGalleryPresentation!
     lazy var customView = view as! DogGalleryView
     
     // MARK: Lifecycle
@@ -35,16 +35,14 @@ class DogGalleryViewController: BaseViewController {
         self.presenter = presenter
     }
     
-    // MARK: Private methods
-    
-    private func subscribeOnCustomViewActions() {
+    func subscribeOnCustomViewActions() {
         customView.didPressActionButton = { [unowned self] in
             self.presenter.handleActionButtonTap()
         }
     }
 }
 
-// MARK: DogGalleryView Protocol
+// MARK: DogGalleryViewInterface
 
 extension DogGalleryViewController: DogGalleryViewInterface {
     func setDogImage(_ image: UIImage) {

@@ -11,10 +11,10 @@ import UIKit
 
 class ForgotPasswordViewController: BaseViewController {
     
-    // MARK: Private properties
+    // MARK: Properties
 
-    private var presenter: ForgotPasswordPresentation!
-    private lazy var customView = view as! ForgotPasswordView
+    var presenter: ForgotPasswordPresentation!
+    lazy var customView = view as! ForgotPasswordView
     
     // MARK: Lifecycle
 
@@ -33,17 +33,15 @@ class ForgotPasswordViewController: BaseViewController {
     func setPresenter(_ presenter: ForgotPasswordPresentation) {
         self.presenter = presenter
     }
-    
-    // MARK: Private methods
-    
-    private func subscribeOnCustomViewActions() {
+
+    func subscribeOnCustomViewActions() {
         customView.didPressSubmitButton = { [unowned self] in
             self.presenter.handleSubmitButtonTap()
         }
     }
 }
 
-// MARK: ForgotPasswordView Protocol
+// MARK: ForgotPasswordViewInterface
 
 extension ForgotPasswordViewController: ForgotPasswordViewInterface {
     func hideKeyboard() {

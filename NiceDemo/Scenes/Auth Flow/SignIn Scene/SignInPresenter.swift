@@ -20,11 +20,8 @@ class SignInPresenter {
     
     weak var delegate: SignInSceneDelegate?
     weak var view: SignInViewInterface!
-    
-    // MARK: Private properties
-
-    private let userCredentialsStorage: UserCredentialsStorageService
-    private let validator = Validator()
+    let userCredentialsStorage: UserCredentialsStorageService
+    let validator = Validator()
     
     // MARK: Public methods
     
@@ -33,10 +30,8 @@ class SignInPresenter {
         self.userCredentialsStorage = userCredentialsStorage
     }
     
-    // MARK: Private methods
-    
     /// Returns value if it is valid. In other case returns nil.
-    private func validateEmail(_ value: String?) -> String? {
+    func validateEmail(_ value: String?) -> String? {
         do {
             try validator.validateEmail(value)
         } catch let error as Validator.ValidationError {
@@ -49,7 +44,7 @@ class SignInPresenter {
     }
     
     /// Returns value if it is valid. In other case returns nil.
-    private func validatePassword(_ value: String?) -> String? {
+    func validatePassword(_ value: String?) -> String? {
         do {
             try validator.validatePassword(value)
         } catch let error as Validator.ValidationError {

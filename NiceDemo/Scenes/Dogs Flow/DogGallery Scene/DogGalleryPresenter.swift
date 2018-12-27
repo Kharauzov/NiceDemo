@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 protocol DogsGallerySceneDelegate: class {
-    
 }
 
 class DogGalleryPresenter {
@@ -18,13 +17,10 @@ class DogGalleryPresenter {
     // MARK: Public properties
     
     weak var delegate: DogsGallerySceneDelegate?
-    
-    // MARK: Private properties
-
-    private weak var view: DogGalleryViewInterface!
-    private let breed: String
-    private let dogsServerService = DogsServerService(core: UrlSessionService())
-    private let imageLoader = SimpleImageLoader()
+    weak var view: DogGalleryViewInterface!
+    let breed: String
+    let dogsServerService = DogsServerService(core: UrlSessionService())
+    let imageLoader = SimpleImageLoader()
     
     // MARK: Public methods
     
@@ -33,9 +29,7 @@ class DogGalleryPresenter {
         self.breed = breed
     }
     
-    // MARK: Private methods
-    
-    private func performRequestToGetRandomDogImage(completion: @escaping (_ url: String) -> Void) {
+    func performRequestToGetRandomDogImage(completion: @escaping (_ url: String) -> Void) {
         dogsServerService.getDogRandomImageUrl(breed: breed) { (urlString, error) in
             if let urlString = urlString {
                 completion(urlString)
@@ -45,7 +39,7 @@ class DogGalleryPresenter {
         }
     }
     
-    private func loadRandomDogImage() {
+    func loadRandomDogImage() {
         view.showHUD(animated: true)
         performRequestToGetRandomDogImage { [weak self] (urlString) in
             self?.imageLoader.loadImageFrom(urlString: urlString, completion: { [weak self] (image) in

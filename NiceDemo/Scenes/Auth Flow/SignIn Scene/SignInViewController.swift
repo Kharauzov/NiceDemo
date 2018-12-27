@@ -35,19 +35,17 @@ class SignInViewController: BaseViewController {
         self.presenter = presenter
     }
     
-    // MARK: Private methods
-    
-    private func setupNavigationItem() {
+    func setupNavigationItem() {
         navigationItem.title = "Sign In"
         let signUpBarButtonItem = UIBarButtonItem(title: "Sign up", style: .done, target: self, action: #selector(signUpButtonTapped))
         signUpBarButtonItem.tintColor = .darkGray
         navigationItem.rightBarButtonItem = signUpBarButtonItem
     }
     
-    @objc private func signUpButtonTapped() {
+    @objc func signUpButtonTapped() {
     }
     
-    private func subscribeOnCustomViewActions() {
+    func subscribeOnCustomViewActions() {
         customView.didPressForgotPasswordButton = { [unowned self] in
             self.presenter.handleForgotPasswordButtonTap()
         }
@@ -57,7 +55,7 @@ class SignInViewController: BaseViewController {
     }
 }
 
-// MARK: SignInView Protocol
+// MARK: SignInViewInterface
 
 extension SignInViewController: SignInViewInterface {
     func hideKeyboard() {

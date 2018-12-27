@@ -15,14 +15,11 @@ protocol StartPresenterDelegate: class {
 
 class StartPresenter {
 
-    // MARK: Public properties
+    // MARK: Properties
     
     weak var delegate: StartPresenterDelegate?
-    
-    // MARK: Private properties
-
-    private weak var view: StartViewInterface!
-    private let userCredentialsStorage: UserCredentialsStorageService
+    weak var view: StartViewInterface!
+    let userCredentialsStorage: UserCredentialsStorageService
     
     // MARK: Public methods
     
@@ -31,9 +28,7 @@ class StartPresenter {
         self.userCredentialsStorage = userCredentialsStorage
     }
     
-    // MARK: Private methods
-    
-    private func checkUserState() {
+    func checkUserState() {
         view.showHUD(animated: true)
         // could be some url request here
         // immitation via 'asyncAfter'.

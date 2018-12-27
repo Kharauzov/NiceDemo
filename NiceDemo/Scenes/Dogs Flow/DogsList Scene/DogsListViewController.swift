@@ -11,10 +11,10 @@ import UIKit
 
 class DogsListViewController: BaseViewController {
     
-    // MARK: Private properties
+    // MARK: Properties
 
-    private var presenter: DogsListPresentation!
-    private lazy var customView = view as! DogsListView
+    var presenter: DogsListPresentation!
+    lazy var customView = view as! DogsListView
     
     // MARK: Lifecycle
     
@@ -34,11 +34,9 @@ class DogsListViewController: BaseViewController {
     func setPresenter(_ presenter: DogsListPresentation) {
         self.presenter = presenter
     }
-    
-    // MARK: Private methods
 }
 
-// MARK: DogsListView Protocol
+// MARK: DogsListViewInterface
 
 extension DogsListViewController: DogsListViewInterface {
     func reloadData() {

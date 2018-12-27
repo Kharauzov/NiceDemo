@@ -17,11 +17,8 @@ class ForgotPasswordPresenter {
     // MARK: Public properties
     
     weak var delegate: ForgotPasswordSceneDelegate?
-    
-    // MARK: Private properties
-
-    private weak var view: ForgotPasswordViewInterface!
-    private let validator = Validator()
+    weak var view: ForgotPasswordViewInterface!
+    let validator = Validator()
     
     // MARK: Public methods
     
@@ -29,10 +26,8 @@ class ForgotPasswordPresenter {
         self.view = view
     }
     
-    // MARK: Private methods
-    
     /// Returns value if it is valid. In other case returns nil.
-    private func validateEmail(_ value: String?) -> String? {
+    func validateEmail(_ value: String?) -> String? {
         do {
             try validator.validateEmail(value)
         } catch let error as Validator.ValidationError {

@@ -11,10 +11,10 @@ import UIKit
 
 class StartViewController: BaseViewController {
     
-    // MARK: Private properties
+    // MARK: Properties
 
     lazy var customView = view as! StartView
-    private var presenter: StartPresentation!
+    var presenter: StartPresentation!
 
     // MARK: Lifecycle
     
@@ -35,7 +35,7 @@ class StartViewController: BaseViewController {
     }
 }
 
-// MARK: StartView Protocol
+// MARK: StartViewInterface
 
 extension StartViewController: StartViewInterface {
     func showHUD(animated: Bool) {
