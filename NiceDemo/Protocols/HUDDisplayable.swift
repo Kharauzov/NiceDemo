@@ -11,15 +11,23 @@ import UIKit
 
 /// Displays animating HUD above `UIView`.
 protocol HUDDisplayable {
-    func showHUDAt(view: UIView, backgroundColor: UIColor?, tintColor: UIColor?, animated: Bool)
-    func hideHUD(hud: HUDView, animated: Bool)
+    func showHUD(animated: Bool)
+    func showHUD(backgroundColor: UIColor?, tintColor: UIColor?, animated: Bool)
+    func hideHUD(animated: Bool)
 }
 
-extension HUDDisplayable {
-    func showHUDAt(view: UIView, backgroundColor: UIColor?, tintColor: UIColor?, animated: Bool) {
+extension HUDDisplayable where Self: UIView {
+    func showHUD(animated: Bool) {
+        showHUD(backgroundColor: nil, tintColor: nil, animated: animated)
+    }
+    
+    func showHUD(backgroundColor: UIColor?, tintColor: UIColor?, animated: Bool) {
+        // check, if view has presented `HUD` already.
+        // to avoid dublication of `HUD`
+        guard HUDView.hudIn(view: self) == nil else { return }
         let hudView = HUDView(frame: .zero, backgroundColor: backgroundColor, tintColor: tintColor)
-        view.addSubview(hudView)
-        pinEdgesOf(hudView, to: view)
+        addSubview(hudView)
+        pinEdgesOf(hudView, to: self)
         if animated {
             hudView.startAnimating()
             UIView.animate(withDuration: 1, animations: {
@@ -30,7 +38,10 @@ extension HUDDisplayable {
         }
     }
     
-    func hideHUD(hud: HUDView, animated: Bool) {
+    func hideHUD(animated: Bool) {
+        // check, if view has presented `HUD` already.
+        // to have `HUD` for hiding..
+        guard let hud = HUDView.hudIn(view: self) else { return }
         if animated {
             hud.stopAnimating()
             UIView.animate(withDuration: 1, animations: {
