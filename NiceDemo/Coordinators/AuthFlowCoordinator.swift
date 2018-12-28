@@ -39,17 +39,13 @@ class AuthFlowCoordinator: Coordinator {
     func showForgotPasswordScene() {
         navigationController.pushViewController(ForgotPasswordConfigurator().configuredViewController(delegate: self), animated: true)
     }
-    
-    func showSignUpScene() {
-        // TODO: implementation
-    }
 }
 
 // MARK: SignIn scene delegate
 
 extension AuthFlowCoordinator: SignInSceneDelegate {
-    func handleSignUpButtonTap() {
-        showSignUpScene()
+    func handleSkipButtonTap() {
+        userPerformedAuthentication()
     }
     
     func handleForgotPasswordButtonTap() {

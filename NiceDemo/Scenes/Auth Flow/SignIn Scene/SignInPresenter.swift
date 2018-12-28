@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SignInSceneDelegate: class {
-    func handleSignUpButtonTap()
+    func handleSkipButtonTap()
     func handleForgotPasswordButtonTap()
     func userPerformedAuthentication()
 }
@@ -80,8 +80,8 @@ extension SignInPresenter: SignInPresentation {
         }
     }
     
-    func handleSignUpButtonTap() {
-        delegate?.handleSignUpButtonTap()
+    func handleSkipButtonTap() {
+        delegate?.handleSkipButtonTap()
     }
     
     func handleForgotPasswordButtonTap() {

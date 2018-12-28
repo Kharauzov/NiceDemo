@@ -17,6 +17,6 @@ protocol SignInViewInterface: class {
 
 protocol SignInPresentation: class {
     func handleSignInButtonTap()
-    func handleSignUpButtonTap()
+    func handleSkipButtonTap()
     func handleForgotPasswordButtonTap()
 }

@@ -37,11 +37,12 @@ class SignInViewController: BaseViewController {
     
     func setupNavigationItem() {
         navigationItem.title = "Sign In"
-        let signUpBarButtonItem = UIBarButtonItem(title: "Sign up", style: .done, target: self, action: #selector(signUpButtonTapped))
-        navigationItem.rightBarButtonItem = signUpBarButtonItem
+        let skipBarButtonItem = UIBarButtonItem(title: "Skip", style: .done, target: self, action: #selector(skipButtonTapped))
+        navigationItem.rightBarButtonItem = skipBarButtonItem
     }
     
-    @objc func signUpButtonTapped() {
+    @objc func skipButtonTapped() {
+        presenter.handleSkipButtonTap()
     }
     
     func subscribeOnCustomViewActions() {

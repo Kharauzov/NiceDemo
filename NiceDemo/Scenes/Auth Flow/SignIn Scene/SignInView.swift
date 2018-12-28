@@ -21,12 +21,14 @@ class SignInView: UIView {
     private var signInButton: UIButton!
     private var emailTextField: UITextField!
     private var passwordTextField: UITextField!
+    private var logoImageView: UIImageView!
     
     // MARK: Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
+        addLogoImageView()
         addEmailTextField()
         addPasswordTextField()
         addForgotPasswordButton()
@@ -38,6 +40,24 @@ class SignInView: UIView {
     }
     
     // MARK: Private methods
+    
+    private func addLogoImageView() {
+        logoImageView = UIImageView(image: #imageLiteral(resourceName: "dog").withRenderingMode(.alwaysTemplate))
+        logoImageView.tintColor = UIColor.AppColors.primaryColor
+        logoImageView.contentMode = .scaleAspectFill
+        logoImageView.clipsToBounds = true
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(logoImageView)
+        if #available(iOS 11.0, *), DeviceType.hasTopNotch {
+            NSLayoutConstraint(item: logoImageView, attribute: .top, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 44).isActive = true
+        }
+        else {
+            NSLayoutConstraint(item: logoImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 44).isActive = true
+        }
+        NSLayoutConstraint(item: logoImageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: logoImageView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 0.33, constant: 0).isActive = true
+        NSLayoutConstraint(item: logoImageView, attribute: .height, relatedBy: .equal, toItem: logoImageView, attribute: .width, multiplier: 0.85, constant: 0).isActive = true
+    }
     
     private func addEmailTextField() {
         emailTextField = UITextField(frame: .zero)
@@ -51,7 +71,7 @@ class SignInView: UIView {
         emailTextField.delegate = self
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(emailTextField)
-        NSLayoutConstraint(item: emailTextField, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: -100.0).isActive = true
+        NSLayoutConstraint(item: emailTextField, attribute: .top, relatedBy: .equal, toItem: logoImageView, attribute: .bottom, multiplier: 1.0, constant: 40).isActive = true
         NSLayoutConstraint(item: emailTextField, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16.0).isActive = true
         NSLayoutConstraint(item: emailTextField, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -16.0).isActive = true
         NSLayoutConstraint(item: emailTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 44.0).isActive = true
