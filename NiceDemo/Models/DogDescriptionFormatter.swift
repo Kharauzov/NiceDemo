@@ -9,7 +9,7 @@
 import Foundation
 
 struct DogDescriptionFormatter {
-    func getBreedDescriptionFrom(dog: Dog) -> String {
+    func getBreedDescriptionFrom(dog: Dog) -> (title: String, subtitle: String) {
         let dogBreedTitle = dog.breed.uppercased()
         let dogSubreedSubtitle: String
         if let dogSubreeds = dog.subbreeds, !dogSubreeds.isEmpty {
@@ -17,6 +17,6 @@ struct DogDescriptionFormatter {
         } else {
             dogSubreedSubtitle = "No subreeds"
         }
-        return dogBreedTitle + "\n\n" + dogSubreedSubtitle
+        return (dogBreedTitle, dogSubreedSubtitle)
     }
 }

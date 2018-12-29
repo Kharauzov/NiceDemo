@@ -26,7 +26,7 @@ class DogsListTableViewProvider: NSObject, TableViewProvider {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DogBreedTableViewCell.reuseIdentifier, for: indexPath) as! DogBreedTableViewCell
         let description = dogDescriptionFormatter.getBreedDescriptionFrom(dog: data[indexPath.row])
-        cell.setDogDescription(value: description)
+        cell.setTitle(description.title, subtitle: description.subtitle)
         return cell
     }
     
