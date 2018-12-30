@@ -1,4 +1,4 @@
-![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 ![BuildPass](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Codecoverage](https://img.shields.io/badge/coverage-51.66%25-yellow.svg)
@@ -26,12 +26,13 @@ Illustrates all flows of the project:
 - Auth flow
 - Dogs flow
 
+
 <p align="left">
 <img src="https://github.com/Kharauzov/NiceDemo/blob/master/Diagram/NiceDemo.png" width="800px" height="400px"/>
 </p>
 
 ## Feedback
-If you have any questions/remarks or suggestions, feel free to open issue just at this project.
+If you have any questions or suggestions, feel free to open issue just at this project.
 
 ## License
 NiceDemo and all its classes are available under the MIT license. See the LICENSE file for more info.
