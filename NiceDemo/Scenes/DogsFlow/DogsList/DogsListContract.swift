@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DogsListViewInterface: class {
     func reloadData()
@@ -18,4 +19,5 @@ protocol DogsListViewInterface: class {
 
 protocol DogsListPresentation: class {
     func onViewDidLoad()
+    func getGalleryViewForItem(at indexPath: IndexPath) -> UIViewController?
 }

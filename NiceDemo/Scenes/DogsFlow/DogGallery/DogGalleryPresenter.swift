@@ -18,19 +18,19 @@ class DogGalleryPresenter {
     
     weak var delegate: DogsGallerySceneDelegate?
     weak var view: DogGalleryViewInterface!
-    let breed: String
+    let dog: Dog
     let dogsServerService = DogsServerService(core: UrlSessionService())
     let imageLoader = SimpleImageLoader()
     
     // MARK: Public methods
     
-    init(view: DogGalleryViewInterface, breed: String) {
+    init(view: DogGalleryViewInterface, dog: Dog) {
         self.view = view
-        self.breed = breed
+        self.dog = dog
     }
     
     func performRequestToGetRandomDogImage(completion: @escaping (_ url: String) -> Void) {
-        dogsServerService.getDogRandomImageUrl(breed: breed) { (urlString, error) in
+        dogsServerService.getDogRandomImageUrl(breed: dog.breed) { (urlString, error) in
             if let urlString = urlString {
                 completion(urlString)
             } else if let _ = error {
@@ -56,7 +56,7 @@ class DogGalleryPresenter {
 
 extension DogGalleryPresenter: DogGalleryPresentation {
     func onViewDidLoad() {
-        view.setDogBreed(breed)
+        view.setNavigationTitle(dog.breed.capitalizingFirstLetter())
         loadRandomDogImage()
     }
     

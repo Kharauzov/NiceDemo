@@ -10,7 +10,7 @@ import Foundation
 
 struct DogDescriptionFormatter {
     func getBreedDescriptionFrom(dog: Dog) -> (title: String, subtitle: String) {
-        let dogBreedTitle = dog.breed.uppercased()
+        let dogBreedTitle = dog.breed.capitalizingFirstLetter()
         let dogSubreedSubtitle: String
         if let dogSubreeds = dog.subbreeds, !dogSubreeds.isEmpty {
             dogSubreedSubtitle = "Has subreeds: (\(dogSubreeds.count))"

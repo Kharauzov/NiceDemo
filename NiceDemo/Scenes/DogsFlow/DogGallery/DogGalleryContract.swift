@@ -11,7 +11,7 @@ import UIKit
 
 protocol DogGalleryViewInterface: class {
     func setDogImage(_ image: UIImage)
-    func setDogBreed(_ breed: String)
+    func setNavigationTitle(_ title: String)
     func showHUD(animated: Bool)
     func hideHUD(animated: Bool)
 }

@@ -74,7 +74,7 @@ class DogGalleryView: UIView {
     
     private func addActionButton() {
         actionButton = UIButton(type: .roundedRect)
-        actionButton.setTitle("Get another one", for: .normal)
+        actionButton.setTitle("Next image", for: .normal)
         actionButton.setTitleColor(UIColor.AppColors.secondaryColor, for: .normal)
         actionButton.layer.cornerRadius = 10.0
         actionButton.backgroundColor = UIColor.AppColors.primaryColor

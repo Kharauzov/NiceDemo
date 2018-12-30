@@ -24,7 +24,6 @@ class DogGalleryViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Dog gallery"
         subscribeOnCustomViewActions()
         presenter.onViewDidLoad()
     }
@@ -49,8 +48,8 @@ extension DogGalleryViewController: DogGalleryViewInterface {
         customView.setDogImage(image)
     }
     
-    func setDogBreed(_ breed: String) {
-        customView.setDogBreed(breed)
+    func setNavigationTitle(_ title: String) {
+        navigationItem.title = title
     }
     
     func showHUD(animated: Bool) {

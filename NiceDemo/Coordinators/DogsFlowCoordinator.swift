@@ -36,16 +36,27 @@ class DogsFlowCoordinator: Coordinator {
         navigationController.setViewControllers([DogsListConfigurator().configuredViewController(delegate: self)], animated: true)
     }
     
-    func showDogGalleryScene(dogBreed: String) {
-        navigationController.pushViewController(DogGalleryConfigurator().configuredViewController(breed: dogBreed, delegate: self), animated: true)
+    func showDogGalleryScene(dog: Dog) {
+        navigationController.pushViewController(getDogGallerySceneFrom(dog: dog), animated: true)
+    }
+    
+    func getDogGallerySceneFrom(dog: Dog) -> UIViewController {
+        return DogGalleryConfigurator().configuredViewController(dog: dog, delegate: self)
     }
 }
 
 // MARK: DogsList scene delegate
 
 extension DogsFlowCoordinator: DogsListSceneDelegate {
+    func getGalleryView(for dog: Dog) -> UIViewController {
+        let dogGalleryViewController = getDogGallerySceneFrom(dog: dog)
+        // we return scene wrapped at `UINavigationController` in order to show
+        // navigation bar at preview of Peek&Pop functional
+        return UINavigationController(rootViewController: dogGalleryViewController)
+    }
+    
     func didSelectDog(_ dog: Dog) {
-        showDogGalleryScene(dogBreed: dog.breed)
+        showDogGalleryScene(dog: dog)
     }
 }
 

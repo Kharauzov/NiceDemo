@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DogsListSceneDelegate: class {
     func didSelectDog(_ dog: Dog)
+    func getGalleryView(for dog: Dog) -> UIViewController
 }
 
 class DogsListPresenter {
@@ -60,5 +62,10 @@ extension DogsListPresenter: DogsListPresentation {
         fetchListOfDogs { [weak self] (data) in
             self?.handleListOfDogsFetchResult(data: data)
         }
+    }
+    
+    func getGalleryViewForItem(at indexPath: IndexPath) -> UIViewController? {
+        let dog = tableViewProvider.data[indexPath.row]
+        return delegate?.getGalleryView(for: dog)
     }
 }

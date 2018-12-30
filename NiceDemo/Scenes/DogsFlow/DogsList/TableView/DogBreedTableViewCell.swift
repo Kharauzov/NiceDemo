@@ -52,7 +52,6 @@ class DogBreedTableViewCell: UITableViewCell {
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 10).isActive = true
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1.0, constant: -10).isActive = true
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .leading, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1.0, constant: 16).isActive = true
-        NSLayoutConstraint(item: iconImageViewContainer, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: size).isActive = true
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .width, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .height, multiplier: 1.0, constant: 0).isActive = true
         iconImageView = UIImageView(image: #imageLiteral(resourceName: "pawPrint").withRenderingMode(.alwaysTemplate))
         iconImageView.tintColor = UIColor.AppColors.secondaryColor

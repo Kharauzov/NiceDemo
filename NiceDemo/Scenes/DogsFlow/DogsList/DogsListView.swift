@@ -12,7 +12,7 @@ class DogsListView: UIView {
 
     // MARK: Private properties
     
-    private var tableView: UITableView!
+    private(set) var tableView: UITableView!
     
     // MARK: Init
     
@@ -32,8 +32,7 @@ class DogsListView: UIView {
     private func addTableView() {
         tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.estimatedRowHeight = 44.0
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 70
         tableView.contentInset.bottom = 44.0
         addSubview(tableView)
         if #available(iOS 11.0, *) {
