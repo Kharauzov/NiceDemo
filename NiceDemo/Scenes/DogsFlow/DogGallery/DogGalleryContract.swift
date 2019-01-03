@@ -14,9 +14,11 @@ protocol DogGalleryViewInterface: class {
     func setNavigationTitle(_ title: String)
     func showHUD(animated: Bool)
     func hideHUD(animated: Bool)
+    func setRightBarButtonItemHighlightState(_ isOn: Bool, animated: Bool)
 }
 
 protocol DogGalleryPresentation: class {
     func onViewDidLoad()
     func handleActionButtonTap()
+    func handleFavouriteButtonTap()
 }

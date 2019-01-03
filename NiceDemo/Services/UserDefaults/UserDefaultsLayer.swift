@@ -12,7 +12,7 @@ import Foundation
 ///
 /// You shouldn't call its properties explicitly! Please use it as an abstract layer in
 /// storage services via protocols.
-class UserDefaultsLayer: UserCredentialsStorage {
+class UserDefaultsLayer: UserCredentialsStorage, DogsStorage {
 
     init(userDefaultsSuiteName: String? = nil) {
         defaults = UserDefaults(suiteName: userDefaultsSuiteName)!
@@ -36,11 +36,11 @@ class UserDefaultsLayer: UserCredentialsStorage {
         }
     }
     
-    var favouriteDogName: String? {
+    var favouriteDogBreed: String? {
         get {
-            return defaults.string(forKey: GeneralKeys.favouriteDogName)
+            return defaults.string(forKey: GeneralKeys.favouriteDogBreed)
         } set {
-            defaults.set(newValue, forKey: GeneralKeys.favouriteDogName)
+            defaults.set(newValue, forKey: GeneralKeys.favouriteDogBreed)
         }
     }
     
@@ -53,6 +53,6 @@ extension UserDefaultsLayer {
     private struct GeneralKeys {
         static let launchesCounter = "launchesCounter"
         static let isUserAuthenticated = "isUserAuthenticated"
-        static let favouriteDogName = "favouriteDogName"
+        static let favouriteDogBreed = "favouriteDogBreed"
     }
 }

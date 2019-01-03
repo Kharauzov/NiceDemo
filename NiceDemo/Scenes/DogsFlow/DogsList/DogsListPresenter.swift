@@ -21,6 +21,7 @@ class DogsListPresenter {
     weak var delegate: DogsListSceneDelegate?
     weak var view: DogsListViewInterface!
     let dogsServerService = DogsServerService(core: UrlSessionService())
+    let dogsStorageService = DogsStorageService(storage: UserDefaultsLayer())
     lazy var tableViewProvider: DogsListTableViewProvider = {
         let tableViewProvider = DogsListTableViewProvider()
         tableViewProvider.didSelectItem = { [unowned self] (atIndex: Int) in
@@ -29,6 +30,9 @@ class DogsListPresenter {
         }
         return tableViewProvider
     }()
+    var data: [Dog] {
+        return tableViewProvider.data
+    }
     
     // MARK: Public methods
     
@@ -52,6 +56,10 @@ class DogsListPresenter {
         tableViewProvider.data = data
         view.reloadData()
     }
+    
+    func getFavouriteDogBreed() -> String? {
+        return dogsStorageService.favouriteDogBreed
+    }
 }
 
 // MARK: DogsListPresentation Protocol
@@ -62,6 +70,24 @@ extension DogsListPresenter: DogsListPresentation {
         fetchListOfDogs { [weak self] (data) in
             self?.handleListOfDogsFetchResult(data: data)
         }
+    }
+    
+    func onViewWillAppear() {
+        if let _ = getFavouriteDogBreed() {
+            view.showFavouriteBarButton()
+        } else {
+            view.hideFavouriteBarButton()
+        }
+    }
+    
+    func handleFavouriteButtonTap() {
+        guard let breed = getFavouriteDogBreed() else {
+            return
+        }
+        guard let dog = data.filter({$0.breed == breed}).first else {
+            return
+        }
+        delegate?.didSelectDog(dog)
     }
     
     func getGalleryViewForItem(at indexPath: IndexPath) -> UIViewController? {

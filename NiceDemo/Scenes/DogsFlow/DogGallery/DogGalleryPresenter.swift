@@ -20,6 +20,7 @@ class DogGalleryPresenter {
     weak var view: DogGalleryViewInterface!
     let dog: Dog
     let dogsServerService = DogsServerService(core: UrlSessionService())
+    let dogsStorageService = DogsStorageService(storage: UserDefaultsLayer())
     let imageLoader = SimpleImageLoader()
     
     // MARK: Public methods
@@ -50,6 +51,13 @@ class DogGalleryPresenter {
             })
         }
     }
+    
+    func isBreedFavourite() -> Bool {
+        guard let favouriteBreed = dogsStorageService.favouriteDogBreed else {
+            return false
+        }
+        return favouriteBreed == dog.breed
+    }
 }
 
 // MARK: DogGalleryPresentation Protocol
@@ -57,10 +65,20 @@ class DogGalleryPresenter {
 extension DogGalleryPresenter: DogGalleryPresentation {
     func onViewDidLoad() {
         view.setNavigationTitle(dog.breed.capitalizingFirstLetter())
+        view.setRightBarButtonItemHighlightState(isBreedFavourite(), animated: true)
         loadRandomDogImage()
     }
     
     func handleActionButtonTap() {
         loadRandomDogImage()
+    }
+    
+    func handleFavouriteButtonTap() {
+        if isBreedFavourite() {
+            dogsStorageService.favouriteDogBreed = nil
+        } else {
+            dogsStorageService.favouriteDogBreed = dog.breed
+        }
+        view.setRightBarButtonItemHighlightState(isBreedFavourite(), animated: true)
     }
 }

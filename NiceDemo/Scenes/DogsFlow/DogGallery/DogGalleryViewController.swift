@@ -25,6 +25,7 @@ class DogGalleryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribeOnCustomViewActions()
+        setupNavigationItem()
         presenter.onViewDidLoad()
     }
     
@@ -38,6 +39,16 @@ class DogGalleryViewController: BaseViewController {
         customView.didPressActionButton = { [unowned self] in
             self.presenter.handleActionButtonTap()
         }
+    }
+    
+    func setupNavigationItem() {
+        let rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "pawPrintNotSelected").withRenderingMode(.alwaysTemplate), landscapeImagePhone: nil, style: .done, target: self, action: #selector(favouriteButtonTapped(_:)))
+        rightBarButtonItem.tintColor = UIColor.AppColors.primaryColor
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+    
+    @objc func favouriteButtonTapped(_ sender: Any) {
+        presenter.handleFavouriteButtonTap()
     }
 }
 
@@ -58,5 +69,16 @@ extension DogGalleryViewController: DogGalleryViewInterface {
     
     func hideHUD(animated: Bool) {
         customView.hideHUD(animated: animated)
+    }
+    
+    func setRightBarButtonItemHighlightState(_ isOn: Bool, animated: Bool) {
+        guard let rightBarButtonItem = navigationItem.rightBarButtonItem else {
+            return
+        }
+        if isOn {
+            rightBarButtonItem.image = #imageLiteral(resourceName: "pawPrintSelected").withRenderingMode(.alwaysTemplate)
+        } else {
+            rightBarButtonItem.image = #imageLiteral(resourceName: "pawPrintNotSelected").withRenderingMode(.alwaysTemplate)
+        }
     }
 }

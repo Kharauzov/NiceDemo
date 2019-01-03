@@ -30,6 +30,11 @@ class DogsListViewController: BaseViewController {
         presenter.onViewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.onViewWillAppear()
+    }
+    
     // MARK: Public methods
     
     func setPresenter(_ presenter: DogsListPresentation) {
@@ -45,6 +50,10 @@ class DogsListViewController: BaseViewController {
     func setupNavigationItem() {
         navigationItem.title = "List of dogs"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .done, target: nil, action: nil)
+    }
+    
+    @objc func favouriteButtonTapped(_ sender: Any) {
+        presenter.handleFavouriteButtonTap()
     }
 }
 
@@ -88,5 +97,13 @@ extension DogsListViewController: DogsListViewInterface {
     
     func hideHUD(animated: Bool) {
         customView.hideHUD(animated: animated)
+    }
+    
+    func showFavouriteBarButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favourite", style: .done, target: self, action: #selector(favouriteButtonTapped(_:)))
+    }
+    
+    func hideFavouriteBarButton() {
+        navigationItem.rightBarButtonItem = nil
     }
 }
