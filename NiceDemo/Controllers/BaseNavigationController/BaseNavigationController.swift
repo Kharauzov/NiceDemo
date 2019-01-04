@@ -14,6 +14,8 @@ class BaseNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        removeBorder()
         makeNotTranslucent()
     }
 
@@ -24,5 +26,11 @@ class BaseNavigationController: UINavigationController {
     
     func makeNotTranslucent() {
         navigationBar.isTranslucent = false
+    }
+    
+    func removeBorder() {
+        navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationBar.shadowImage = UIImage()
+        navigationBar.setValue(true, forKey: "hidesShadow")
     }
 }

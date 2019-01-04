@@ -30,8 +30,12 @@ class DogsListPresenter {
         }
         return tableViewProvider
     }()
-    var data: [Dog] {
-        return tableViewProvider.data
+    // data, fetched from server
+    var fetchedData = [Dog]() {
+        didSet {
+            updateViewData(data: fetchedData)
+            updateFavouriteButtonState()
+        }
     }
     
     // MARK: Public methods
@@ -52,13 +56,24 @@ class DogsListPresenter {
         }
     }
     
-    func handleListOfDogsFetchResult(data: [Dog]) {
+    func updateViewData(data: [Dog]) {
         tableViewProvider.data = data
         view.reloadData()
     }
     
-    func getFavouriteDogBreed() -> String? {
-        return dogsStorageService.favouriteDogBreed
+    func getFavouriteDog() -> Dog? {
+        guard let breed = dogsStorageService.favouriteDogBreed else {
+            return nil
+        }
+        return fetchedData.filter({$0.breed == breed}).first
+    }
+    
+    func updateFavouriteButtonState() {
+        if let _ = getFavouriteDog() {
+            view.showFavouriteBarButton()
+        } else {
+            view.hideFavouriteBarButton()
+        }
     }
 }
 
@@ -68,30 +83,30 @@ extension DogsListPresenter: DogsListPresentation {
     func onViewDidLoad() {
         view.setTableViewProvider(tableViewProvider)
         fetchListOfDogs { [weak self] (data) in
-            self?.handleListOfDogsFetchResult(data: data)
+            self?.fetchedData = data
         }
     }
     
     func onViewWillAppear() {
-        if let _ = getFavouriteDogBreed() {
-            view.showFavouriteBarButton()
-        } else {
-            view.hideFavouriteBarButton()
-        }
+        updateFavouriteButtonState()
     }
     
     func handleFavouriteButtonTap() {
-        guard let breed = getFavouriteDogBreed() else {
-            return
+        if let dog = getFavouriteDog() {
+            delegate?.didSelectDog(dog)
         }
-        guard let dog = data.filter({$0.breed == breed}).first else {
-            return
-        }
-        delegate?.didSelectDog(dog)
     }
     
     func getGalleryViewForItem(at indexPath: IndexPath) -> UIViewController? {
         let dog = tableViewProvider.data[indexPath.row]
         return delegate?.getGalleryView(for: dog)
+    }
+    
+    func handleSearchBarTextChange(_ text: String?) {
+        guard let text = text, !text.isEmpty else {
+            return updateViewData(data: fetchedData)
+        }
+        let filteredData = fetchedData.filter({$0.breed.lowercased().hasPrefix(text.lowercased())})
+        updateViewData(data: filteredData)
     }
 }

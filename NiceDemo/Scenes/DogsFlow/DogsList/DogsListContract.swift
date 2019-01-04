@@ -24,4 +24,5 @@ protocol DogsListPresentation: class {
     func onViewWillAppear()
     func getGalleryViewForItem(at indexPath: IndexPath) -> UIViewController?
     func handleFavouriteButtonTap()
+    func handleSearchBarTextChange(_ text: String?)
 }
