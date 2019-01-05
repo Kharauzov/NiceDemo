@@ -23,7 +23,7 @@ class HUDView: UIView {
         alpha = 0
         translatesAutoresizingMaskIntoConstraints = false
         addActivityIndicatorView()
-        self.backgroundColor = backgroundColor ?? UIColor.black.withAlphaComponent(0.4)
+        self.backgroundColor = backgroundColor ?? UIColor.black.withAlphaComponent(0.2)
         activityIndicatorView.color = tintColor ?? .white
     }
     

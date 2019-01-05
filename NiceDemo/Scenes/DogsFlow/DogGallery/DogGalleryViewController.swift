@@ -64,11 +64,11 @@ extension DogGalleryViewController: DogGalleryViewInterface {
     }
     
     func showHUD(animated: Bool) {
-        customView.showHUD(animated: animated)
+        customView.containerView.showHUD(animated: animated)
     }
     
     func hideHUD(animated: Bool) {
-        customView.hideHUD(animated: animated)
+        customView.containerView.hideHUD(animated: animated)
     }
     
     func setRightBarButtonItemHighlightState(_ isOn: Bool, animated: Bool) {
