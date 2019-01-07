@@ -22,6 +22,10 @@ class DogGalleryPresenter {
     let dogsServerService = DogsServerService(core: UrlSessionService())
     let dogsStorageService = DogsStorageService(storage: UserDefaultsLayer())
     let imageLoader = SimpleImageLoader()
+    lazy var collectionViewProvider: DogBreedsCollectionViewProvider = {
+        let collectionViewProvider = DogBreedsCollectionViewProvider()
+        return collectionViewProvider
+    }()
     
     // MARK: Public methods
     
@@ -58,12 +62,24 @@ class DogGalleryPresenter {
         }
         return favouriteBreed == dog.breed
     }
+    
+    func showDogSubbreeds() {
+        if let subbreeds = dog.subbreeds, !subbreeds.isEmpty {
+            collectionViewProvider.data = subbreeds.map({$0.capitalizingFirstLetter()})
+            view.reloadCollectionView()
+            view.hideNoDataLabel()
+        } else {
+            view.showNoDataLabel()
+        }
+    }
 }
 
 // MARK: DogGalleryPresentation Protocol
 
 extension DogGalleryPresenter: DogGalleryPresentation {
     func onViewDidLoad() {
+        view.setCollectionViewProvider(collectionViewProvider)
+        showDogSubbreeds()
         view.setNavigationTitle(dog.breed.capitalizingFirstLetter())
         view.setRightBarButtonItemHighlightState(isBreedFavourite(), animated: true)
         loadRandomDogImage()

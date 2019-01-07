@@ -63,9 +63,7 @@ class SignInView: UIView {
         emailTextField = UITextField(frame: .zero)
         emailTextField.placeholder = "Email"
         emailTextField.keyboardType = .emailAddress
-        if #available(iOS 10.0, *) {
-            emailTextField.textContentType = UITextContentType(rawValue: "")
-        }
+        emailTextField.textContentType = UITextContentType(rawValue: "")
         emailTextField.autocapitalizationType = .none
         emailTextField.autocorrectionType = .no
         emailTextField.delegate = self
@@ -91,9 +89,7 @@ class SignInView: UIView {
         passwordTextField.placeholder = "Password"
         passwordTextField.isSecureTextEntry = true
         passwordTextField.delegate = self
-        if #available(iOS 10.0, *) {
-            passwordTextField.textContentType = UITextContentType(rawValue: "")
-        }
+        passwordTextField.textContentType = UITextContentType(rawValue: "")
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(passwordTextField)
         NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1.0, constant: 8).isActive = true

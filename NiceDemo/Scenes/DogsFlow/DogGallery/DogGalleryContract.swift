@@ -15,6 +15,10 @@ protocol DogGalleryViewInterface: class {
     func showHUD(animated: Bool)
     func hideHUD(animated: Bool)
     func setRightBarButtonItemHighlightState(_ isOn: Bool, animated: Bool)
+    func setCollectionViewProvider(_ provider: CollectionViewProvider)
+    func reloadCollectionView()
+    func showNoDataLabel()    
+    func hideNoDataLabel()
 }
 
 protocol DogGalleryPresentation: class {

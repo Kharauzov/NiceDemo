@@ -55,6 +55,14 @@ class DogGalleryViewController: BaseViewController {
 // MARK: DogGalleryViewInterface
 
 extension DogGalleryViewController: DogGalleryViewInterface {
+    func setCollectionViewProvider(_ provider: CollectionViewProvider) {
+        customView.setCollectionViewProvider(provider)
+    }
+    
+    func reloadCollectionView() {
+        customView.reloadCollectionView()
+    }
+    
     func setDogImage(_ image: UIImage) {
         customView.setDogImage(image)
     }
@@ -80,5 +88,13 @@ extension DogGalleryViewController: DogGalleryViewInterface {
         } else {
             rightBarButtonItem.image = #imageLiteral(resourceName: "pawPrintNotSelected").withRenderingMode(.alwaysTemplate)
         }
+    }
+    
+    func showNoDataLabel() {
+        customView.showNoDataLabel()
+    }
+    
+    func hideNoDataLabel() {
+        customView.hideNoDataLabel()
     }
 }

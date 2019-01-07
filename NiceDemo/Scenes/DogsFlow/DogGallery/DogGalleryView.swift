@@ -16,10 +16,11 @@ class DogGalleryView: UIView {
     
     // MARK: Private properties
     
-    private var dogBreedLabel: UILabel!
+    private var noDataLabel: UILabel!
     private var dogImageView: UIImageView!
     private var actionButton: UIButton!
     private var shadowContainerView: UIView!
+    private var collectionView: UICollectionView!
     private(set) var containerView: UIView!
     
     // MARK: Init
@@ -31,6 +32,8 @@ class DogGalleryView: UIView {
         addContainerView()
         addActionButton()
         addDogImageView()
+        addCollectionView()
+        addNoDataLabel()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -69,15 +72,15 @@ class DogGalleryView: UIView {
         NSLayoutConstraint(item: containerView, attribute: .bottom, relatedBy: .equal, toItem: shadowContainerView, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
     }
     
-    private func addDogBreedLabel() {
-        dogBreedLabel = UILabel(frame: .zero)
-        dogBreedLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-        dogBreedLabel.textAlignment = .center
-        dogBreedLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(dogBreedLabel)
-        NSLayoutConstraint(item: dogBreedLabel, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 24).isActive = true
-        NSLayoutConstraint(item: dogBreedLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16).isActive = true
-        NSLayoutConstraint(item: dogBreedLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -16).isActive = true
+    private func addNoDataLabel() {
+        noDataLabel = UILabel(frame: .zero)
+        noDataLabel.text = "Has no subbreeds"
+        noDataLabel.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+        noDataLabel.textAlignment = .center
+        noDataLabel.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(noDataLabel)
+        NSLayoutConstraint(item: noDataLabel, attribute: .centerX, relatedBy: .equal, toItem: collectionView, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: noDataLabel, attribute: .centerY, relatedBy: .equal, toItem: collectionView, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
     }
     
     private func addDogImageView() {
@@ -87,9 +90,29 @@ class DogGalleryView: UIView {
         dogImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(dogImageView)
         NSLayoutConstraint(item: dogImageView, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: dogImageView, attribute: .height, relatedBy: .equal, toItem: containerView, attribute: .height, multiplier: 0.6, constant: 0).isActive = true
         NSLayoutConstraint(item: dogImageView, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: dogImageView, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
+    }
+    
+    private func addCollectionView() {
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+        collectionViewLayout.scrollDirection = .horizontal
+        collectionViewLayout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: DogBreedCollectionViewCell.height)
+        collectionViewLayout.itemSize = UICollectionViewFlowLayout.automaticSize
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .white
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        containerView.addSubview(collectionView)
+        NSLayoutConstraint(item: collectionView, attribute: .top, relatedBy: .equal, toItem: dogImageView, attribute: .bottom, multiplier: 1.0, constant: 30).isActive = true
+        NSLayoutConstraint(item: collectionView, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: collectionView, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: collectionView, attribute: .bottom, relatedBy: .equal, toItem: actionButton, attribute: .top, multiplier: 1.0, constant: -30).isActive = true
+        NSLayoutConstraint(item: collectionView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: DogBreedCollectionViewCell.height).isActive = true
+        // registering cells
+        collectionView.register(DogBreedCollectionViewCell.self, forCellWithReuseIdentifier: DogBreedCollectionViewCell.reuseIdentifier)
     }
     
     private func addActionButton() {
@@ -116,11 +139,24 @@ class DogGalleryView: UIView {
 // MARK: Public methods
 
 extension DogGalleryView {
+    func setCollectionViewProvider(_ provider: CollectionViewProvider) {
+        collectionView.dataSource = provider
+        collectionView.delegate = provider
+    }
+    
+    func reloadCollectionView() {
+        collectionView.reloadData()
+    }
+    
     func setDogImage(_ image: UIImage) {
         dogImageView.image = image
     }
     
-    func setDogBreed(_ breed: String) {
-        dogBreedLabel.text = breed
+    func showNoDataLabel() {
+        noDataLabel.isHidden = false
+    }
+    
+    func hideNoDataLabel() {
+        noDataLabel.isHidden = true
     }
 }
