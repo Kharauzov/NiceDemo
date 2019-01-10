@@ -29,8 +29,6 @@ class BaseNavigationController: UINavigationController {
     }
     
     func removeBorder() {
-        navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationBar.shadowImage = UIImage()
         navigationBar.setValue(true, forKey: "hidesShadow")
     }
 }
