@@ -23,7 +23,7 @@ App uses [Dog-api](https://dog.ceo/dog-api/) for backend. It is free and amazing
 ## User Interfaces
 
 <p align="left">
-<img src="https://github.com/Kharauzov/NiceDemo/blob/master/VisualFiles/NiceDemoUI.png" width="900px" height="800px"/>
+<img src="https://github.com/Kharauzov/NiceDemo/blob/master/VisualFiles/NiceDemoUI.png" width="900px" height="700px"/>
 </p>
 
 ## Navigation scheme
