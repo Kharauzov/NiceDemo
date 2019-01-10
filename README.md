@@ -20,6 +20,12 @@ Auth flow only imitates user's authentication/actions.
 
 App uses [Dog-api](https://dog.ceo/dog-api/) for backend. It is free and amazing 🐕.
 
+## User Interfaces
+
+<p align="left">
+<img src="https://github.com/Kharauzov/NiceDemo/blob/master/VisualFiles/NiceDemoUI.png" width="900px" height="800px"/>
+</p>
+
 ## Navigation scheme
 Illustrates all flows of the project:
 - Starting flow
@@ -28,7 +34,7 @@ Illustrates all flows of the project:
 
 
 <p align="left">
-<img src="https://github.com/Kharauzov/NiceDemo/blob/master/Diagram/NiceDemo.png" width="800px" height="400px"/>
+<img src="https://github.com/Kharauzov/NiceDemo/blob/master/VisualFiles/NiceDemo.png" width="800px" height="400px"/>
 </p>
 
 ## Feedback
