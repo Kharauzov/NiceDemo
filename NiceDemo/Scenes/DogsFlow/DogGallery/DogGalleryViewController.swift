@@ -83,11 +83,7 @@ extension DogGalleryViewController: DogGalleryViewInterface {
         guard let rightBarButtonItem = navigationItem.rightBarButtonItem else {
             return
         }
-        if isOn {
-            rightBarButtonItem.image = #imageLiteral(resourceName: "pawPrintSelected").withRenderingMode(.alwaysTemplate)
-        } else {
-            rightBarButtonItem.image = #imageLiteral(resourceName: "pawPrintNotSelected").withRenderingMode(.alwaysTemplate)
-        }
+        rightBarButtonItem.image = (isOn ? #imageLiteral(resourceName: "pawPrintSelected") : #imageLiteral(resourceName: "pawPrintNotSelected")).withRenderingMode(.alwaysTemplate)
     }
     
     func showNoDataLabel() {

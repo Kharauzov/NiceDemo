@@ -48,6 +48,7 @@ class DogsListView: UIView {
     
     private func registerTableViewCells() {
         tableView.register(DogBreedTableViewCell.self, forCellReuseIdentifier: DogBreedTableViewCell.reuseIdentifier)
+        tableView.register(LoadingTableViewCell.self, forCellReuseIdentifier: LoadingTableViewCell.reuseIdentifier)
     }
 }
 

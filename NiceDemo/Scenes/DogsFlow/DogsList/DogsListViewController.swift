@@ -114,14 +114,6 @@ extension DogsListViewController: DogsListViewInterface {
         presentAlert(title: title, message: message)
     }
     
-    func showHUD(animated: Bool) {
-        customView.showHUD(animated: animated)
-    }
-    
-    func hideHUD(animated: Bool) {
-        customView.hideHUD(animated: animated)
-    }
-    
     func showFavouriteBarButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favourite", style: .done, target: self, action: #selector(favouriteButtonTapped(_:)))
     }

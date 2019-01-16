@@ -13,8 +13,6 @@ protocol DogsListViewInterface: class {
     func reloadData()
     func setTableViewProvider(_ provider: TableViewProvider)
     func showAlert(title: String?, message: String?)
-    func showHUD(animated: Bool)
-    func hideHUD(animated: Bool)
     func showFavouriteBarButton()
     func hideFavouriteBarButton()
 }

@@ -32,7 +32,7 @@ class StartPresenter {
         view.showHUD(animated: true)
         // could be some url request here
         // immitation via 'asyncAfter'.
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) { [unowned self] in
             // handle of result
             self.view.hideHUD(animated: true)
             if self.userCredentialsStorage.isUserAuthenticated { // user is authenticated
