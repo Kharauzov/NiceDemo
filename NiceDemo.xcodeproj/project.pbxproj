@@ -253,26 +253,10 @@
 		9F091A96204D63A700B580CB /* LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
-				9F091A9A204D63DF00B580CB /* DogsStorageService */,
-				9F091A97204D63BB00B580CB /* UserCredentialsStorageService */,
-			);
-			path = LocalStorage;
-			sourceTree = "<group>";
-		};
-		9F091A97204D63BB00B580CB /* UserCredentialsStorageService */ = {
-			isa = PBXGroup;
-			children = (
+				9F091A9B204D63E900B580CB /* DogsStorageService.swift */,
 				9F091A98204D63DA00B580CB /* UserCredentialsStorageService.swift */,
 			);
-			path = UserCredentialsStorageService;
-			sourceTree = "<group>";
-		};
-		9F091A9A204D63DF00B580CB /* DogsStorageService */ = {
-			isa = PBXGroup;
-			children = (
-				9F091A9B204D63E900B580CB /* DogsStorageService.swift */,
-			);
-			path = DogsStorageService;
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 		9F091A9D204D69CE00B580CB /* AuthFlow */ = {
@@ -316,22 +300,6 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
-		9F21E812205A82B300156B30 /* SimpleImageLoader */ = {
-			isa = PBXGroup;
-			children = (
-				9F21E813205A82C200156B30 /* SimpleImageLoader.swift */,
-			);
-			path = SimpleImageLoader;
-			sourceTree = "<group>";
-		};
-		9F3776532050327200E9BB0A /* Validator */ = {
-			isa = PBXGroup;
-			children = (
-				9F3776542050328400E9BB0A /* Validator.swift */,
-			);
-			path = Validator;
-			sourceTree = "<group>";
-		};
 		9F3E9C072066910300C1BB0D /* HUDView */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,8 +311,8 @@
 		9F495B612057CE6A0054FB4E /* ServerApi */ = {
 			isa = PBXGroup;
 			children = (
-				9F495B652057D93F0054FB4E /* DogsServerService */,
 				9F495B622057CE790054FB4E /* Core */,
+				9F495B662057D9AD0054FB4E /* DogsServerService.swift */,
 			);
 			path = ServerApi;
 			sourceTree = "<group>";
@@ -356,14 +324,6 @@
 				9FB14B4820591A6100EA64EF /* UrlSessionService.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		9F495B652057D93F0054FB4E /* DogsServerService */ = {
-			isa = PBXGroup;
-			children = (
-				9F495B662057D9AD0054FB4E /* DogsServerService.swift */,
-			);
-			path = DogsServerService;
 			sourceTree = "<group>";
 		};
 		9F495B6C2057E0D90054FB4E /* ServerResponses */ = {
@@ -460,12 +420,12 @@
 		9F64F63D204C15EC00ED9EB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9F21E812205A82B300156B30 /* SimpleImageLoader */,
 				9F495B612057CE6A0054FB4E /* ServerApi */,
-				9F3776532050327200E9BB0A /* Validator */,
 				9F091A96204D63A700B580CB /* LocalStorage */,
-				9F64F657204C463C00ED9EB4 /* AppDelegateService */,
-				9F64F656204C463100ED9EB4 /* UserDefaults */,
+				9F64F658204C465C00ED9EB4 /* UserDefaultsLayer.swift */,
+				9F64F65A204C467900ED9EB4 /* AppDelegateService.swift */,
+				9F21E813205A82C200156B30 /* SimpleImageLoader.swift */,
+				9F3776542050328400E9BB0A /* Validator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -483,42 +443,10 @@
 		9F64F649204C1B3200ED9EB4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9F64F64D204C1BEF00ED9EB4 /* BaseNavigationController */,
-				9F64F64A204C1B4000ED9EB4 /* BaseViewController */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		9F64F64A204C1B4000ED9EB4 /* BaseViewController */ = {
-			isa = PBXGroup;
-			children = (
 				9F64F64B204C1B4E00ED9EB4 /* BaseViewController.swift */,
-			);
-			path = BaseViewController;
-			sourceTree = "<group>";
-		};
-		9F64F64D204C1BEF00ED9EB4 /* BaseNavigationController */ = {
-			isa = PBXGroup;
-			children = (
 				9F64F64E204C1C0400ED9EB4 /* BaseNavigationController.swift */,
 			);
-			path = BaseNavigationController;
-			sourceTree = "<group>";
-		};
-		9F64F656204C463100ED9EB4 /* UserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				9F64F658204C465C00ED9EB4 /* UserDefaultsLayer.swift */,
-			);
-			path = UserDefaults;
-			sourceTree = "<group>";
-		};
-		9F64F657204C463C00ED9EB4 /* AppDelegateService */ = {
-			isa = PBXGroup;
-			children = (
-				9F64F65A204C467900ED9EB4 /* AppDelegateService.swift */,
-			);
-			path = AppDelegateService;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		9F67C5152052BF4F0031C8FB /* TableView */ = {
