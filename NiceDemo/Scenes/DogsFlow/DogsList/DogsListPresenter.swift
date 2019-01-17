@@ -16,7 +16,7 @@ protocol DogsListSceneDelegate: class {
 
 class DogsListPresenter {
 
-    // MARK: Public properties
+    // MARK: Properties
     
     weak var delegate: DogsListSceneDelegate?
     weak var view: DogsListViewInterface!

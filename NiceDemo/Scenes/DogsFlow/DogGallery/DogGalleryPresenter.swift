@@ -14,7 +14,7 @@ protocol DogsGallerySceneDelegate: class {
 
 class DogGalleryPresenter {
     
-    // MARK: Public properties
+    // MARK: Properties
     
     weak var delegate: DogsGallerySceneDelegate?
     weak var view: DogGalleryViewInterface!
@@ -22,10 +22,12 @@ class DogGalleryPresenter {
     let dogsServerService = DogsServerService(core: UrlSessionService())
     let dogsStorageService = DogsStorageService(storage: UserDefaultsLayer())
     let imageLoader = SimpleImageLoader()
-    lazy var collectionViewProvider: DogBreedsCollectionViewProvider = {
-        let collectionViewProvider = DogBreedsCollectionViewProvider()
-        return collectionViewProvider
-    }()
+    lazy var collectionViewProvider = DogBreedsCollectionViewProvider()
+    var state = DogGalleryFlow.ViewState.loadingRandomImage {
+        didSet {
+            updateViewBasedOn(state: state)
+        }
+    }
     
     // MARK: Public methods
     
@@ -35,22 +37,22 @@ class DogGalleryPresenter {
     }
     
     func performRequestToGetRandomDogImage(completion: @escaping (_ url: String) -> Void) {
-        dogsServerService.getDogRandomImageUrl(breed: dog.breed) { (urlString, error) in
+        dogsServerService.getDogRandomImageUrl(breed: dog.breed) { [weak self] (urlString, error) in
             if let urlString = urlString {
                 completion(urlString)
-            } else if let _ = error {
-                // show error message
+            } else if let error = error {
+                self?.state = .errorGettingRandomImage(message: error.localizedDescription)
             }
         }
     }
     
     func loadRandomDogImage() {
-        view.showHUD(animated: true)
         performRequestToGetRandomDogImage { [weak self] (urlString) in
             self?.imageLoader.loadImageFrom(urlString: urlString, completion: { [weak self] (image) in
                 if let image = image {
-                    self?.view.hideHUD(animated: true)
-                    self?.view.setDogImage(image)
+                    self?.state = .resultRandomImage(image)
+                } else {
+                    self?.state = .errorGettingRandomImage(message: "Failed to load image from url")
                 }
             })
         }
@@ -65,11 +67,29 @@ class DogGalleryPresenter {
     
     func showDogSubbreeds() {
         if let subbreeds = dog.subbreeds, !subbreeds.isEmpty {
+            view.setCollectionViewProvider(collectionViewProvider)
             collectionViewProvider.data = subbreeds.map({$0.capitalizingFirstLetter()})
             view.reloadCollectionView()
             view.hideNoDataLabel()
         } else {
             view.showNoDataLabel()
+        }
+    }
+    
+    func updateRightBarButtonItemHighlightState() {
+        view.setRightBarButtonItemHighlightState(isBreedFavourite(), animated: true)
+    }
+    
+    func updateViewBasedOn(state: DogGalleryFlow.ViewState) {
+        switch state {
+        case .loadingRandomImage:
+            view.showHUD(animated: true)
+            loadRandomDogImage()
+        case .resultRandomImage(let image):
+            view.hideHUD(animated: true)
+            view.setDogImage(image)
+        case .errorGettingRandomImage(_):
+            view.hideHUD(animated: true)
         }
     }
 }
@@ -78,15 +98,14 @@ class DogGalleryPresenter {
 
 extension DogGalleryPresenter: DogGalleryPresentation {
     func onViewDidLoad() {
-        view.setCollectionViewProvider(collectionViewProvider)
         showDogSubbreeds()
         view.setNavigationTitle(dog.breed.capitalizingFirstLetter())
-        view.setRightBarButtonItemHighlightState(isBreedFavourite(), animated: true)
-        loadRandomDogImage()
+        updateRightBarButtonItemHighlightState()
+        state = .loadingRandomImage
     }
     
     func handleActionButtonTap() {
-        loadRandomDogImage()
+        state = .loadingRandomImage
     }
     
     func handleFavouriteButtonTap() {
@@ -95,6 +114,6 @@ extension DogGalleryPresenter: DogGalleryPresentation {
         } else {
             dogsStorageService.favouriteDogBreed = dog.breed
         }
-        view.setRightBarButtonItemHighlightState(isBreedFavourite(), animated: true)
+        updateRightBarButtonItemHighlightState()
     }
 }
