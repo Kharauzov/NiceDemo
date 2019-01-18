@@ -51,11 +51,15 @@ class DogsListTableViewTests: XCTestCase {
     func testTableViewCell() {
         // when
         let cell = tableViewProvider.tableView(tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? DogBreedTableViewCell
-        let description = cell?.getDogDescription()
+        let title = cell?.getTitle()
+        let subtitle = cell?.getSubtitle()
+        
         // then
         XCTAssertNotNil(cell, "Must exists.")
-        XCTAssertNotNil(description, "Must exists.")
-        XCTAssertEqual(description, "AKITA\n\nNo subreeds", "Dismatch.")
+        XCTAssertNotNil(title, "Must exists.")
+        XCTAssertEqual(title, "Akita", "Dismatch.")
+        XCTAssertNotNil(subtitle, "Must exists.")
+        XCTAssertEqual(subtitle, "No subreeds", "Dismatch.")
     }
     
     func testTableViewDelegate() {

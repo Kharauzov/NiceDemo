@@ -92,4 +92,12 @@ extension DogBreedTableViewCell {
         titleLabel.text = title
         subtitleLabel.text = subtitle
     }
+    
+    func getTitle() -> String? {
+        return titleLabel.text
+    }
+    
+    func getSubtitle() -> String? {
+        return subtitleLabel.text
+    }
 }

@@ -44,7 +44,7 @@ class HUDViewTests: XCTestCase {
     func testHUDViewAsSubview() {
         let view = UIView(frame: .zero)
         // when
-        view.showHUD()
+        view.showHUD(animated: true)
         // then
         var oldHUD = HUDView.hudIn(view: view)
         XCTAssertNotNil(oldHUD, "HUD must be subview of view.")

@@ -45,7 +45,8 @@ class DogsFlowCoordinatorTests: XCTestCase {
     
     func testShowDogGalleryScene() {
         // when
-        coordinator.showDogGalleryScene(dogBreed: "")
+        let dog = Dog(breed: "", subbreeds: [])
+        coordinator.showDogGalleryScene(dog: dog)
         // then
         XCTAssertTrue(coordinator.navigationController.visibleViewController is DogGalleryViewController, "Visible viewcontroller must be of class `DogGalleryViewController`")
     }
