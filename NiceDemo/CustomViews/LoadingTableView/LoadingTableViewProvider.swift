@@ -36,7 +36,12 @@ class LoadingTableViewProvider: NSObject, TableViewProvider {
 
 extension LoadingTableViewProvider {
     struct Configuration {
-        let numberOfSections: Int = 1
-        let numberOfRowsInSection: Int = 100
+        let numberOfSections: Int
+        let numberOfRowsInSection: Int
+        
+        init(numberOfSections: Int = 1, numberOfRowsInSection: Int = 100) {
+            self.numberOfSections = numberOfSections
+            self.numberOfRowsInSection = numberOfRowsInSection
+        }
     }
 }

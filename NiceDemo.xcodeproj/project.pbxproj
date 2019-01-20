@@ -16,6 +16,8 @@
 		4996379F21EEECA90036C3A1 /* DogsListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996379E21EEECA90036C3A1 /* DogsListFlow.swift */; };
 		49A3EA4421E08C3F00A7E779 /* DogBreedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3EA4321E08C3F00A7E779 /* DogBreedCollectionViewCell.swift */; };
 		49A3EA4621E0916800A7E779 /* DogBreedsCollectionViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3EA4521E0916800A7E779 /* DogBreedsCollectionViewProvider.swift */; };
+		49E3F14021F41D0900991504 /* LoadingTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3F13F21F41D0900991504 /* LoadingTableViewTests.swift */; };
+		49E3F14421F4279C00991504 /* DogsListConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3F14321F4279C00991504 /* DogsListConfiguratorTests.swift */; };
 		49E553E421F0611E00E08C78 /* DogGalleryFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E553E321F0611E00E08C78 /* DogGalleryFlow.swift */; };
 		49FC21F821D75B9500145D64 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC21F721D75B9500145D64 /* String+Extension.swift */; };
 		9F091A8A204D52A800B580CB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F091A89204D52A800B580CB /* AppCoordinator.swift */; };
@@ -113,6 +115,8 @@
 		4996379E21EEECA90036C3A1 /* DogsListFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListFlow.swift; sourceTree = "<group>"; };
 		49A3EA4321E08C3F00A7E779 /* DogBreedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedCollectionViewCell.swift; sourceTree = "<group>"; };
 		49A3EA4521E0916800A7E779 /* DogBreedsCollectionViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsCollectionViewProvider.swift; sourceTree = "<group>"; };
+		49E3F13F21F41D0900991504 /* LoadingTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewTests.swift; sourceTree = "<group>"; };
+		49E3F14321F4279C00991504 /* DogsListConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListConfiguratorTests.swift; sourceTree = "<group>"; };
 		49E553E321F0611E00E08C78 /* DogGalleryFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryFlow.swift; sourceTree = "<group>"; };
 		49FC21F721D75B9500145D64 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		9F091A89204D52A800B580CB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -230,6 +234,15 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		49E3F13E21F41CDD00991504 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				9F3E9C082066914100C1BB0D /* HUDViewTests.swift */,
+				49E3F13F21F41D0900991504 /* LoadingTableViewTests.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		9F091A88204D524500B580CB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,14 +313,6 @@
 				9F393656206589DC00AFD3CD /* DogsFlowCoordinatorTests.swift */,
 			);
 			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		9F3E9C072066910300C1BB0D /* HUDView */ = {
-			isa = PBXGroup;
-			children = (
-				9F3E9C082066914100C1BB0D /* HUDViewTests.swift */,
-			);
-			path = HUDView;
 			sourceTree = "<group>";
 		};
 		9F495B612057CE6A0054FB4E /* ServerApi */ = {
@@ -463,10 +468,10 @@
 		9F768D292062ADC7005BC464 /* NiceDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				49E3F13E21F41CDD00991504 /* CustomViews */,
 				9FCF0A512066B6B400EB86AA /* AppDelegateService */,
 				9FD123B2206690BC00BD3DD7 /* Scenes */,
 				9F0ACA8C2065438500BA7F74 /* Coordinators */,
-				9F3E9C072066910300C1BB0D /* HUDView */,
 				9FD123AF2066711200BD3DD7 /* Other */,
 				9FFBAAF120652D6A00A98008 /* Validator */,
 				9FFBAAF020652C9A00A98008 /* Network */,
@@ -505,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				9FCF0A4F2066A84500EB86AA /* DogsListTableViewTests.swift */,
+				49E3F14321F4279C00991504 /* DogsListConfiguratorTests.swift */,
 			);
 			path = DogsListScene;
 			sourceTree = "<group>";
@@ -722,6 +728,8 @@
 				9F768D372062B950005BC464 /* SignInConfiguratorTests.swift in Sources */,
 				9F3936552065880200AFD3CD /* AuthFlowCoordinatorTests.swift in Sources */,
 				9F39365920658AFC00AFD3CD /* CoordinatorTests.swift in Sources */,
+				49E3F14421F4279C00991504 /* DogsListConfiguratorTests.swift in Sources */,
+				49E3F14021F41D0900991504 /* LoadingTableViewTests.swift in Sources */,
 				9F3E9C092066914100C1BB0D /* HUDViewTests.swift in Sources */,
 				9F393657206589DC00AFD3CD /* DogsFlowCoordinatorTests.swift in Sources */,
 				9FD123B12066712400BD3DD7 /* ReusableViewTests.swift in Sources */,
