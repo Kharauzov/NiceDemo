@@ -34,8 +34,11 @@ class DogsListPresenter {
     // data, fetched from server
     var fetchedData = [Dog]() {
         didSet {
-            updateFavouriteButtonVisibility()
+            updateFavouriteButtonVisibility(hasFavouriteDog: isFavouriteDogAvailable)
         }
+    }
+    var isFavouriteDogAvailable: Bool {
+        return getFavouriteDog() != nil
     }
     var state = DogsListFlow.ViewState.loading {
         didSet {
@@ -67,8 +70,8 @@ class DogsListPresenter {
         return fetchedData.filter({$0.breed == breed}).first
     }
     
-    func updateFavouriteButtonVisibility() {
-        if let _ = getFavouriteDog() {
+    func updateFavouriteButtonVisibility(hasFavouriteDog: Bool) {
+        if hasFavouriteDog {
             view.showFavouriteBarButton()
         } else {
             view.hideFavouriteBarButton()
@@ -115,7 +118,7 @@ extension DogsListPresenter: DogsListPresentation {
     }
     
     func onViewWillAppear() {
-        updateFavouriteButtonVisibility()
+        updateFavouriteButtonVisibility(hasFavouriteDog: isFavouriteDogAvailable)
     }
     
     func handleFavouriteButtonTap() {
