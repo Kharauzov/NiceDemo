@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+protocol ImageLoader {
+    func loadImageFrom(urlString: String, completion: @escaping (UIImage?) -> Void)
+}
 
 /// Responsible for retrieving UIImage via url using `Data.contentsOfUrl` method.
 ///
@@ -16,7 +19,7 @@ import UIKit
 ///
 /// Please use another services like Kingfisher, Haneke etc. for such purposes.
 
-class SimpleImageLoader {
+class SimpleImageLoader: ImageLoader {
     func loadImageFrom(urlString: String, completion: @escaping (UIImage?) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(nil)

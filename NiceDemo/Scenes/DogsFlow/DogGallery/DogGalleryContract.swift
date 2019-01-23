@@ -9,6 +9,18 @@
 import Foundation
 import UIKit
 
+protocol DogsGallerySceneDelegate: class {
+}
+
+protocol DogGalleryServerProtocol {
+    func getDogRandomImageUrl(breed: String, completion: @escaping (String?, Error?) -> Void)
+}
+
+protocol DogGalleryStorageProtocol {
+    func getFavouriteDogBreed() -> String?
+    func setFavouriteDogBreed(_ breed: String?)
+}
+
 protocol DogGalleryViewInterface: class {
     func setDogImage(_ image: UIImage)
     func setNavigationTitle(_ title: String)

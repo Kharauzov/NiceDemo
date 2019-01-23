@@ -22,7 +22,7 @@ class UserCredentialsStorageService {
     
     private var storage: UserCredentialsStorage
     
-    init(storage: UserCredentialsStorage) {
+    init(storage: UserCredentialsStorage = UserDefaultsLayer()) {
         self.storage = storage
     }
     

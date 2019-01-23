@@ -9,19 +9,14 @@
 import Foundation
 import UIKit
 
-protocol DogsListSceneDelegate: class {
-    func didSelectDog(_ dog: Dog)
-    func getGalleryView(for dog: Dog) -> UIViewController
-}
-
 class DogsListPresenter {
 
     // MARK: Properties
     
     weak var delegate: DogsListSceneDelegate?
     weak var view: DogsListViewInterface!
-    let dogsServerService = DogsServerService(core: UrlSessionService())
-    let dogsStorageService = DogsStorageService(storage: UserDefaultsLayer())
+    let serverService: DogsListServerProtocol
+    let storageService: DogsListStorageProtocol
     let loadingTableViewProvider = LoadingTableViewProvider()
     lazy var contentTableViewProvider: DogsListTableViewProvider = {
         let tableViewProvider = DogsListTableViewProvider()
@@ -48,12 +43,14 @@ class DogsListPresenter {
     
     // MARK: Public methods
     
-    init(view: DogsListViewInterface) {
+    init(view: DogsListViewInterface, serverService: DogsListServerProtocol = DogsServerService(), storageService: DogsListStorageProtocol = DogsStorageService()) {
         self.view = view
+        self.serverService = serverService
+        self.storageService = storageService
     }
     
     func fetchListOfDogs() {
-        dogsServerService.getAllDogs { [weak self] (data, error) in
+        serverService.getAllDogs { [weak self] (data, error) in
             guard let self = self else { return }
             if let data = data {
                 self.state = .result(data)
@@ -64,7 +61,7 @@ class DogsListPresenter {
     }
     
     func getFavouriteDog() -> Dog? {
-        guard let breed = dogsStorageService.favouriteDogBreed else {
+        guard let breed = storageService.getFavouriteDogBreed() else {
             return nil
         }
         return fetchedData.filter({$0.breed == breed}).first

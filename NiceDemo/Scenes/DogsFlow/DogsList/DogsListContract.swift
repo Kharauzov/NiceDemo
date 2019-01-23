@@ -9,6 +9,19 @@
 import Foundation
 import UIKit
 
+protocol DogsListSceneDelegate: class {
+    func didSelectDog(_ dog: Dog)
+    func getGalleryView(for dog: Dog) -> UIViewController
+}
+
+protocol DogsListServerProtocol {
+    func getAllDogs(completion: @escaping ([Dog]?, Error?) -> Void)
+}
+
+protocol DogsListStorageProtocol {
+    func getFavouriteDogBreed() -> String?
+}
+
 protocol DogsListViewInterface: class {
     func reloadData()
     func setTableViewProvider(_ provider: TableViewProvider)

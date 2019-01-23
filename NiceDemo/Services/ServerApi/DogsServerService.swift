@@ -7,7 +7,9 @@
 //
 
 import Foundation
-
+ 
+extension DogsServerService: DogGalleryServerProtocol, DogsListServerProtocol {}
+ 
  /// Responsible for performing network requests relating to Dogs.
  ///
  /// We used *core* property, that is abstract class for any network manager, that could
@@ -19,14 +21,16 @@ class DogsServerService {
     // MARK: Private properties
     
     private let core: ServerService
+    private let decoder: JSONDecoder
     
     // MARK: Public methods
     
-    init(core: ServerService) {
+    init(core: ServerService = UrlSessionService(), decoder: JSONDecoder = JSONDecoder()) {
         self.core = core
+        self.decoder = decoder
     }
     
-    func getAllDogs(completion: @escaping GetAllDogsResponseCompletion) {
+    func getAllDogs(completion: @escaping ([Dog]?, Error?) -> Void) {
         core.performRequest(ServerRouter.getAllDogsBreeds) { (result: Result<Data>) in
             switch result {
             case .success(let data):
@@ -37,7 +41,7 @@ class DogsServerService {
         }
     }
     
-    func getDogRandomImageUrl(breed: String, completion: @escaping GetDogRandomImageUrlResponseCompletion) {
+    func getDogRandomImageUrl(breed: String, completion: @escaping (String?, Error?) -> Void) {
         core.performRequest(ServerRouter.getDogRandomImage(breed)) { (result: Result<Data>) in
             switch result {
             case .success(let data):
@@ -52,7 +56,7 @@ class DogsServerService {
     
     private func parseGetAllDogsResponse(data: Data) -> [Dog]? {
         do {
-            let parsedResponse = try JSONDecoder().decode(GetAllDogsServerResponse.self, from: data)
+            let parsedResponse = try decoder.decode(GetAllDogsServerResponse.self, from: data)
             return parsedResponse.formattedData
         } catch {
             return nil
@@ -61,17 +65,10 @@ class DogsServerService {
     
     private func parseGetDogRandomImageUrlResponse(data: Data) -> String? {
         do {
-            let parsedResponse = try JSONDecoder().decode(GetRandomDogImageServerResponse.self, from: data)
+            let parsedResponse = try decoder.decode(GetRandomDogImageServerResponse.self, from: data)
             return parsedResponse.data
         } catch {
             return nil
         }
     }
-}
-
-// MARK: Templates
-
-extension DogsServerService {
-    typealias GetAllDogsResponseCompletion = ([Dog]?, Error?) -> Void
-    typealias GetDogRandomImageUrlResponseCompletion = (String?, Error?) -> Void
 }

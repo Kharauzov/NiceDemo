@@ -9,9 +9,6 @@
 import Foundation
 import UIKit
 
-protocol DogsGallerySceneDelegate: class {
-}
-
 class DogGalleryPresenter {
     
     // MARK: Properties
@@ -19,9 +16,9 @@ class DogGalleryPresenter {
     weak var delegate: DogsGallerySceneDelegate?
     weak var view: DogGalleryViewInterface!
     let dog: Dog
-    let dogsServerService = DogsServerService(core: UrlSessionService())
-    let dogsStorageService = DogsStorageService(storage: UserDefaultsLayer())
-    let imageLoader = SimpleImageLoader()
+    let serverService: DogGalleryServerProtocol
+    let storageService: DogGalleryStorageProtocol
+    let imageLoader: ImageLoader
     lazy var collectionViewProvider = DogBreedsCollectionViewProvider()
     var state = DogGalleryFlow.ViewState.loadingRandomImage {
         didSet {
@@ -31,13 +28,16 @@ class DogGalleryPresenter {
     
     // MARK: Public methods
     
-    init(view: DogGalleryViewInterface, dog: Dog) {
+    init(view: DogGalleryViewInterface, dog: Dog, serverService: DogGalleryServerProtocol = DogsServerService(), storageService: DogGalleryStorageProtocol = DogsStorageService(), imageLoader: ImageLoader = SimpleImageLoader()) {
         self.view = view
         self.dog = dog
+        self.serverService = serverService
+        self.storageService = storageService
+        self.imageLoader = imageLoader
     }
     
     func performRequestToGetRandomDogImage(completion: @escaping (_ url: String) -> Void) {
-        dogsServerService.getDogRandomImageUrl(breed: dog.breed) { [weak self] (urlString, error) in
+        serverService.getDogRandomImageUrl(breed: dog.breed) { [weak self] (urlString, error) in
             if let urlString = urlString {
                 completion(urlString)
             } else if let error = error {
@@ -59,7 +59,7 @@ class DogGalleryPresenter {
     }
     
     func isBreedFavourite() -> Bool {
-        guard let favouriteBreed = dogsStorageService.favouriteDogBreed else {
+        guard let favouriteBreed = storageService.getFavouriteDogBreed() else {
             return false
         }
         return favouriteBreed == dog.breed
@@ -109,11 +109,8 @@ extension DogGalleryPresenter: DogGalleryPresentation {
     }
     
     func handleFavouriteButtonTap() {
-        if isBreedFavourite() {
-            dogsStorageService.favouriteDogBreed = nil
-        } else {
-            dogsStorageService.favouriteDogBreed = dog.breed
-        }
+        let valueToStore = isBreedFavourite() ? nil : dog.breed
+        storageService.setFavouriteDogBreed(valueToStore)
         updateRightBarButtonItemHighlightState()
     }
 }
