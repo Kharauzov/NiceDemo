@@ -1,7 +1,7 @@
 ![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 ![BuildPass](https://img.shields.io/badge/build-passing-brightgreen.svg)
-![Codecoverage](https://img.shields.io/badge/coverage-51.66%25-yellow.svg)
+![Codecoverage](https://img.shields.io/badge/coverage-65.9%25-yellow.svg)
 [![License](https://img.shields.io/badge/license-mit-blue.svg)](https://doge.mit-license.org)
 
 # Sense
@@ -12,7 +12,7 @@
 - *Stability* ✊    - Coordinator for routing + improved MVP for scenes.
 - *Transparency* 👓 - No third-party frameworks and Pods.
 - *Reuse* 🤹‍       - UI is implemented programmatically too. No Storyboard or Xibs.
-- *Testable* 🔒     - Not fully yet, but all main parts of code are covered by Unit Tests already.
+- *Testable* 🔒     - All main parts of code are covered by Unit Tests.
 
 ## Overview
 This project was built for demonstration purpose using iOS best practices. It doesn't have or provide any commercial usage.
