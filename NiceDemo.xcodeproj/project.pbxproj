@@ -15,6 +15,8 @@
 		4996379D21EEDD1B0036C3A1 /* LoadingTableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996379C21EEDD1B0036C3A1 /* LoadingTableViewProvider.swift */; };
 		4996379F21EEECA90036C3A1 /* DogsListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996379E21EEECA90036C3A1 /* DogsListFlow.swift */; };
 		49A1322F21F960D800CC6C74 /* DogGalleryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1322E21F960D800CC6C74 /* DogGalleryPresenterTests.swift */; };
+		49A1323221F9832900CC6C74 /* ForgotPasswordConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1323121F9832900CC6C74 /* ForgotPasswordConfiguratorTests.swift */; };
+		49A1323421F9836F00CC6C74 /* ForgotPasswordPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1323321F9836F00CC6C74 /* ForgotPasswordPresenterTests.swift */; };
 		49A3EA4421E08C3F00A7E779 /* DogBreedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3EA4321E08C3F00A7E779 /* DogBreedCollectionViewCell.swift */; };
 		49A3EA4621E0916800A7E779 /* DogBreedsCollectionViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A3EA4521E0916800A7E779 /* DogBreedsCollectionViewProvider.swift */; };
 		49E3F14021F41D0900991504 /* LoadingTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E3F13F21F41D0900991504 /* LoadingTableViewTests.swift */; };
@@ -117,6 +119,8 @@
 		4996379C21EEDD1B0036C3A1 /* LoadingTableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewProvider.swift; sourceTree = "<group>"; };
 		4996379E21EEECA90036C3A1 /* DogsListFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListFlow.swift; sourceTree = "<group>"; };
 		49A1322E21F960D800CC6C74 /* DogGalleryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryPresenterTests.swift; sourceTree = "<group>"; };
+		49A1323121F9832900CC6C74 /* ForgotPasswordConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfiguratorTests.swift; sourceTree = "<group>"; };
+		49A1323321F9836F00CC6C74 /* ForgotPasswordPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenterTests.swift; sourceTree = "<group>"; };
 		49A3EA4321E08C3F00A7E779 /* DogBreedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedCollectionViewCell.swift; sourceTree = "<group>"; };
 		49A3EA4521E0916800A7E779 /* DogBreedsCollectionViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsCollectionViewProvider.swift; sourceTree = "<group>"; };
 		49E3F13F21F41D0900991504 /* LoadingTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewTests.swift; sourceTree = "<group>"; };
@@ -229,6 +233,15 @@
 				4996379C21EEDD1B0036C3A1 /* LoadingTableViewProvider.swift */,
 			);
 			path = LoadingTableView;
+			sourceTree = "<group>";
+		};
+		49A1323021F982F800CC6C74 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				49A1323121F9832900CC6C74 /* ForgotPasswordConfiguratorTests.swift */,
+				49A1323321F9836F00CC6C74 /* ForgotPasswordPresenterTests.swift */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		49A3EA4221E08C2300A7E779 /* CollectionView */ = {
@@ -553,6 +566,7 @@
 				49E9AB9021F4726B008BA528 /* DogGallery */,
 				9FCF0A4E2066A7D400EB86AA /* DogsList */,
 				9FFBAAEF20652C9000A98008 /* SignIn */,
+				49A1323021F982F800CC6C74 /* ForgotPassword */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -746,12 +760,14 @@
 				49A1322F21F960D800CC6C74 /* DogGalleryPresenterTests.swift in Sources */,
 				9F3936552065880200AFD3CD /* AuthFlowCoordinatorTests.swift in Sources */,
 				9F39365920658AFC00AFD3CD /* CoordinatorTests.swift in Sources */,
+				49A1323221F9832900CC6C74 /* ForgotPasswordConfiguratorTests.swift in Sources */,
 				49E3F14421F4279C00991504 /* DogsListConfiguratorTests.swift in Sources */,
 				49E3F14021F41D0900991504 /* LoadingTableViewTests.swift in Sources */,
 				9F3E9C092066914100C1BB0D /* HUDViewTests.swift in Sources */,
 				9F393657206589DC00AFD3CD /* DogsFlowCoordinatorTests.swift in Sources */,
 				9FD123B12066712400BD3DD7 /* ReusableViewTests.swift in Sources */,
 				49E9AB9221F4729C008BA528 /* DogGalleryConfiguratorTests.swift in Sources */,
+				49A1323421F9836F00CC6C74 /* ForgotPasswordPresenterTests.swift in Sources */,
 				49E3F14621F42DFE00991504 /* DogsListSceneTests.swift in Sources */,
 				9F768D352062AF42005BC464 /* SignInSceneTests.swift in Sources */,
 				9F768D332062AEFC005BC464 /* NetworkTests.swift in Sources */,

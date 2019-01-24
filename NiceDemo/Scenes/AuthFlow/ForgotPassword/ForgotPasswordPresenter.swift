@@ -38,6 +38,18 @@ class ForgotPasswordPresenter {
         }
         return value
     }
+    
+    func performPasswordRecovery(using email: String) {
+        // perform some url request
+        // handle result
+        if true {
+            view.showAlert(title: nil, message: "We sent you instructions for password recovery on your email.", completion: { [unowned self] in
+                self.delegate?.userPerformedPasswordRecovery()
+            })
+        } else {
+            // show appropriate UI, that error occured
+        }
+    }
 }
 
 // MARK: ForgotPasswordPresentation Protocol
@@ -47,19 +59,11 @@ extension ForgotPasswordPresenter: ForgotPasswordPresentation {
         view.hideKeyboard()
         let email = view.getEmailText()
         // perform some validation here
-        if let _ = validateEmail(email) {
+        if let validatededEmail = validateEmail(email) {
             // validation passed
             // show loading...
-            // perform some url request
+            performPasswordRecovery(using: validatededEmail)
             // hide loading..
-            // handle result
-            if true {
-                view.showAlert(title: nil, message: "We sent you instructions for password recovery on your email.", completion: { [unowned self] in
-                    self.delegate?.userPerformedPasswordRecovery()
-                })
-            } else {
-                // show appropriate UI, that error occured
-            }
         }
     }
 }

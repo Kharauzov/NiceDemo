@@ -20,14 +20,6 @@ class UserDefaultsLayer: UserCredentialsStorage, DogsStorage {
     
     // MARK: Public Properties
     
-    var launchesCounter: Int {
-        get {
-            return defaults.integer(forKey: GeneralKeys.launchesCounter)
-        } set {
-            defaults.set(newValue, forKey: GeneralKeys.launchesCounter)
-        }
-    }
-    
     var isUserAuthenticated: Bool {
         get {
             return defaults.bool(forKey: GeneralKeys.isUserAuthenticated)
@@ -51,7 +43,6 @@ class UserDefaultsLayer: UserCredentialsStorage, DogsStorage {
 
 extension UserDefaultsLayer {
     private struct GeneralKeys {
-        static let launchesCounter = "launchesCounter"
         static let isUserAuthenticated = "isUserAuthenticated"
         static let favouriteDogBreed = "favouriteDogBreed"
     }
