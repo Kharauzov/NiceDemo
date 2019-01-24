@@ -65,19 +65,22 @@ class DogGalleryPresenter {
         return favouriteBreed == dog.breed
     }
     
-    func showDogSubbreeds() {
-        if let subbreeds = dog.subbreeds, !subbreeds.isEmpty {
-            view.setCollectionViewProvider(collectionViewProvider)
-            collectionViewProvider.data = subbreeds.map({$0.capitalizingFirstLetter()})
-            view.reloadCollectionView()
+    func showDogSubbreeds(_ subbreeds: [String]) {
+        view.setCollectionViewProvider(collectionViewProvider)
+        collectionViewProvider.data = subbreeds.map({$0.capitalizingFirstLetter()})
+        view.reloadCollectionView()
+    }
+    
+    func updateDataLabelVisibility(hasSubbreeds: Bool) {
+        if hasSubbreeds {
             view.hideNoDataLabel()
         } else {
             view.showNoDataLabel()
         }
     }
     
-    func updateRightBarButtonItemHighlightState() {
-        view.setRightBarButtonItemHighlightState(isBreedFavourite(), animated: true)
+    func updateRightBarButtonItemHighlightState(_ highlighted: Bool) {
+        view.setRightBarButtonItemHighlightState(highlighted, animated: true)
     }
     
     func updateViewBasedOn(state: DogGalleryFlow.ViewState) {
@@ -98,10 +101,15 @@ class DogGalleryPresenter {
 
 extension DogGalleryPresenter: DogGalleryPresentation {
     func onViewDidLoad() {
-        showDogSubbreeds()
         view.setNavigationTitle(dog.breed.capitalizingFirstLetter())
-        updateRightBarButtonItemHighlightState()
+        updateRightBarButtonItemHighlightState(isBreedFavourite())
         state = .loadingRandomImage
+        if let subbreeds = dog.subbreeds, !subbreeds.isEmpty {
+            showDogSubbreeds(subbreeds)
+            view.hideNoDataLabel()
+        } else {
+            view.showNoDataLabel()
+        }
     }
     
     func handleActionButtonTap() {
@@ -111,6 +119,6 @@ extension DogGalleryPresenter: DogGalleryPresentation {
     func handleFavouriteButtonTap() {
         let valueToStore = isBreedFavourite() ? nil : dog.breed
         storageService.setFavouriteDogBreed(valueToStore)
-        updateRightBarButtonItemHighlightState()
+        updateRightBarButtonItemHighlightState(isBreedFavourite())
     }
 }
