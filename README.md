@@ -1,4 +1,4 @@
-![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 ![BuildPass](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Codecoverage](https://img.shields.io/badge/coverage-65.9%25-yellow.svg)
