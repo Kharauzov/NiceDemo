@@ -18,7 +18,9 @@ class DogBreedsCollectionViewProvider: NSObject, CollectionViewProvider {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DogBreedCollectionViewCell.reuseIdentifier, for: indexPath) as! DogBreedCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DogBreedCollectionViewCell.reuseIdentifier, for: indexPath) as? DogBreedCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         cell.setTitle(data[indexPath.row])
         return cell
     }

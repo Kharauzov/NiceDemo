@@ -28,8 +28,8 @@ extension HUDDisplayable where Self: UIView {
         let hudView = HUDView(frame: .zero, backgroundColor: backgroundColor, tintColor: tintColor)
         addSubview(hudView)
         pinEdgesOf(hudView, to: self)
+        hudView.startAnimating()
         if animated {
-            hudView.startAnimating()
             UIView.animate(withDuration: 1, animations: {
                 hudView.alpha = 1
             })
@@ -42,8 +42,8 @@ extension HUDDisplayable where Self: UIView {
         // check, if view has presented `HUD` already.
         // to have `HUD` for hiding..
         guard let hud = HUDView.hudIn(view: self) else { return }
+        hud.stopAnimating()
         if animated {
-            hud.stopAnimating()
             UIView.animate(withDuration: 1, animations: {
                 hud.alpha = 0
             }, completion: { (completed) in

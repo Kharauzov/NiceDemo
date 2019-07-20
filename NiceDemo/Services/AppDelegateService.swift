@@ -29,7 +29,10 @@ class AppDelegateService {
     
     func setupAppCoordinator() {
         window.rootViewController = BaseNavigationController()
-        appCoordinator = AppCoordinator(navigationController: window.rootViewController as! UINavigationController)
+        guard let rootNavigationController = window.rootViewController as? UINavigationController else {
+            fatalError("Root viewController must be inherited from UINavigationController")
+        }
+        appCoordinator = AppCoordinator(navigationController: rootNavigationController)
         appCoordinator.start()
         window.makeKeyAndVisible()
     }
