@@ -34,10 +34,7 @@ public struct DeviceType {
     public static let isIpad                   = UIDevice.current.userInterfaceIdiom == .pad
     
     public static var hasTopNotch: Bool {
-        if #available(iOS 11.0, *) {
-            return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
-        }
-        return false
+        return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
     }
 }
 

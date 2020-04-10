@@ -14,9 +14,6 @@ class BaseNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        removeBorder()
-        makeNotTranslucent()
     }
 
     override func didReceiveMemoryWarning() {

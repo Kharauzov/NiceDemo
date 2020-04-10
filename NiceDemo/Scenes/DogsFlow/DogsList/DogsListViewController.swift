@@ -26,6 +26,7 @@ class DogsListViewController: BaseViewController {
         super.viewDidLoad()
         setupSearchController()
         setupNavigationItem()
+        setupNavigatioBar()
         registerTableViewForForceTouchInteractions()
         showNavigationBar()
         presenter.onViewDidLoad()
@@ -33,7 +34,6 @@ class DogsListViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigatioBar()
         presenter.onViewWillAppear()
     }
     
@@ -50,19 +50,15 @@ class DogsListViewController: BaseViewController {
     }
     
     func setupSearchController() {
-        if #available(iOS 11.0, *) {
-            let searchController = UISearchController(searchResultsController: nil)
-            searchController.searchResultsUpdater = self
-            searchController.dimsBackgroundDuringPresentation = false
-            navigationItem.searchController = searchController
-            definesPresentationContext = true
-        }
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     func setupNavigatioBar() {
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupNavigationItem() {

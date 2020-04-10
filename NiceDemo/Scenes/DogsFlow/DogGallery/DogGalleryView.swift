@@ -49,13 +49,8 @@ class DogGalleryView: UIView {
         shadowContainerView.addSketchShadow(color: UIColor.AppColors.primaryColor, alpha: 0.28, x: 0, y: 6, blur: 16, spread: 0)
         self.shadowContainerView = shadowContainerView
         addSubview(shadowContainerView)
-        if #available(iOS 11.0, *), DeviceType.hasTopNotch {
-            NSLayoutConstraint(item: shadowContainerView, attribute: .top, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 24).isActive = true
-            NSLayoutConstraint(item: shadowContainerView, attribute: .bottom, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: -24).isActive = true
-        } else {
-            NSLayoutConstraint(item: shadowContainerView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 24).isActive = true
-            NSLayoutConstraint(item: shadowContainerView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -24).isActive = true
-        }
+        NSLayoutConstraint(item: shadowContainerView, attribute: .top, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 24).isActive = true
+        NSLayoutConstraint(item: shadowContainerView, attribute: .bottom, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: -24).isActive = true
         NSLayoutConstraint(item: shadowContainerView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16).isActive = true
         NSLayoutConstraint(item: shadowContainerView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: -16).isActive = true
     }

@@ -30,7 +30,7 @@ class LoadingTableViewProvider: NSObject, TableViewProvider {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return configuration.heightForRow
     }
 }
 
@@ -38,10 +38,12 @@ extension LoadingTableViewProvider {
     struct Configuration {
         let numberOfSections: Int
         let numberOfRowsInSection: Int
+        let heightForRow: CGFloat
         
-        init(numberOfSections: Int = 1, numberOfRowsInSection: Int = 100) {
+        init(numberOfSections: Int = 1, numberOfRowsInSection: Int = 100, heightForRow: CGFloat = 70) {
             self.numberOfSections = numberOfSections
             self.numberOfRowsInSection = numberOfRowsInSection
+            self.heightForRow = heightForRow
         }
     }
 }
