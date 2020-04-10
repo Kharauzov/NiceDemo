@@ -43,20 +43,22 @@ class DogBreedTableViewCell: UITableViewCell {
     
     private func addIconImageView() {
         let size: CGFloat = 50
-        iconImageViewContainer = UIView()
+        let iconImageViewContainer = UIView()
         iconImageViewContainer.translatesAutoresizingMaskIntoConstraints = false
         iconImageViewContainer.backgroundColor = UIColor.AppColors.primaryColor
         iconImageViewContainer.clipsToBounds = true
         iconImageViewContainer.layer.cornerRadius = size / 2
+        self.iconImageViewContainer = iconImageViewContainer
         contentView.addSubview(iconImageViewContainer)
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 10).isActive = true
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1.0, constant: -10).isActive = true
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .leading, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1.0, constant: 16).isActive = true
         NSLayoutConstraint(item: iconImageViewContainer, attribute: .width, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .height, multiplier: 1.0, constant: 0).isActive = true
-        iconImageView = UIImageView(image: #imageLiteral(resourceName: "pawPrint").withRenderingMode(.alwaysTemplate))
+        let iconImageView = UIImageView(image: #imageLiteral(resourceName: "pawPrint").withRenderingMode(.alwaysTemplate))
         iconImageView.tintColor = UIColor.AppColors.secondaryColor
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.clipsToBounds = true
+        self.iconImageView = iconImageView
         iconImageViewContainer.addSubview(iconImageView)
         NSLayoutConstraint(item: iconImageView, attribute: .top, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .top, multiplier: 1.0, constant: 10).isActive = true
         NSLayoutConstraint(item: iconImageView, attribute: .leading, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .leading, multiplier: 1.0, constant: 10).isActive = true
@@ -65,9 +67,10 @@ class DogBreedTableViewCell: UITableViewCell {
     }
     
     private func addTitleLabel() {
-        titleLabel = UILabel(frame: .zero)
+        let titleLabel = UILabel(frame: .zero)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        self.titleLabel = titleLabel
         contentView.addSubview(titleLabel)
         NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1.0, constant: 10).isActive = true
         NSLayoutConstraint(item: titleLabel, attribute: .leading, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .trailing, multiplier: 1.0, constant: 12).isActive = true
@@ -75,9 +78,10 @@ class DogBreedTableViewCell: UITableViewCell {
     }
     
     private func addSubtitleLabel() {
-        subtitleLabel = UILabel(frame: .zero)
+        let subtitleLabel = UILabel(frame: .zero)
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        self.subtitleLabel = subtitleLabel
         contentView.addSubview(subtitleLabel)
         NSLayoutConstraint(item: subtitleLabel, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1.0, constant: -10).isActive = true
         NSLayoutConstraint(item: subtitleLabel, attribute: .leading, relatedBy: .equal, toItem: iconImageViewContainer, attribute: .trailing, multiplier: 1.0, constant: 12).isActive = true

@@ -10,9 +10,15 @@ import UIKit
 
 class DogsListView: UIView {
 
-    // MARK: Private properties
+    // MARK: Properties
     
-    private(set) var tableView: UITableView!
+    let tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.rowHeight = 70
+        tableView.contentInset.bottom = 44.0
+        return tableView
+    }()
     
     // MARK: Init
     
@@ -27,13 +33,9 @@ class DogsListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Private methods
+    // MARK: Methods
     
     private func addTableView() {
-        tableView = UITableView(frame: .zero, style: .plain)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.rowHeight = 70
-        tableView.contentInset.bottom = 44.0
         addSubview(tableView)
         if #available(iOS 11.0, *) {
             NSLayoutConstraint(item: tableView, attribute: .top, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
