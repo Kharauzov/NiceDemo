@@ -14,6 +14,7 @@
 		4996379B21EEDCFE0036C3A1 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996379A21EEDCFE0036C3A1 /* LoadingTableViewCell.swift */; };
 		4996379D21EEDD1B0036C3A1 /* LoadingTableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996379C21EEDD1B0036C3A1 /* LoadingTableViewProvider.swift */; };
 		4996379F21EEECA90036C3A1 /* DogsListFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996379E21EEECA90036C3A1 /* DogsListFlow.swift */; };
+		499BEBFB2449F3170021D519 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499BEBFA2449F3170021D519 /* KeyboardObserver.swift */; };
 		49A1322F21F960D800CC6C74 /* DogGalleryPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1322E21F960D800CC6C74 /* DogGalleryPresenterTests.swift */; };
 		49A1323221F9832900CC6C74 /* ForgotPasswordConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1323121F9832900CC6C74 /* ForgotPasswordConfiguratorTests.swift */; };
 		49A1323421F9836F00CC6C74 /* ForgotPasswordPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1323321F9836F00CC6C74 /* ForgotPasswordPresenterTests.swift */; };
@@ -118,6 +119,7 @@
 		4996379A21EEDCFE0036C3A1 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		4996379C21EEDD1B0036C3A1 /* LoadingTableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewProvider.swift; sourceTree = "<group>"; };
 		4996379E21EEECA90036C3A1 /* DogsListFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListFlow.swift; sourceTree = "<group>"; };
+		499BEBFA2449F3170021D519 /* KeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		49A1322E21F960D800CC6C74 /* DogGalleryPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGalleryPresenterTests.swift; sourceTree = "<group>"; };
 		49A1323121F9832900CC6C74 /* ForgotPasswordConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfiguratorTests.swift; sourceTree = "<group>"; };
 		49A1323321F9836F00CC6C74 /* ForgotPasswordPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenterTests.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				9F64F65A204C467900ED9EB4 /* AppDelegateService.swift */,
 				9F21E813205A82C200156B30 /* SimpleImageLoader.swift */,
 				9F3776542050328400E9BB0A /* Validator.swift */,
+				499BEBFA2449F3170021D519 /* KeyboardObserver.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				9F222830205FA60D004324B6 /* Alertable.swift in Sources */,
 				9FAA4C662052787700DBD109 /* ForgotPasswordContract.swift in Sources */,
 				9F64F645204C194100ED9EB4 /* UIViewController+Extension.swift in Sources */,
+				499BEBFB2449F3170021D519 /* KeyboardObserver.swift in Sources */,
 				9FD5E209204BFDE7002536E7 /* AppDelegate.swift in Sources */,
 				9F495B672057D9AD0054FB4E /* DogsServerService.swift in Sources */,
 				9FE95E722052B8A70080CBAA /* DogsListViewController.swift in Sources */,

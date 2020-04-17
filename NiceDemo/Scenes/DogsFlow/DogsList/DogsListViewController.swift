@@ -15,6 +15,7 @@ class DogsListViewController: BaseViewController {
 
     var presenter: DogsListPresentation!
     lazy var customView = view as! DogsListView
+    var keyboardObserver: KeyboardObserver?
     
     // MARK: Lifecycle
     
@@ -24,6 +25,7 @@ class DogsListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        keyboardObserver = KeyboardObserver(targetView: customView.tableView)
         setupSearchController()
         setupNavigationItem()
         registerTableViewForForceTouchInteractions()
