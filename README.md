@@ -20,6 +20,9 @@ Auth flow only imitates user's authentication/actions.
 
 App uses [Dog-api](https://dog.ceo/dog-api/) for backend. It is free and amazing 🐕.
 
+You might notice that this app doesn't have a fancy UI. That's because the project is concentrated on architecture and patterns rather than interfaces.
+If you're looking for complex interfaces along with smooth animations, please check my other projects here: [CardsHolder](https://github.com/Kharauzov/CardsHolder) or [SwipeableCards](https://github.com/Kharauzov/SwipeableCards).
+
 ## User Interfaces
 
 <p align="left">
