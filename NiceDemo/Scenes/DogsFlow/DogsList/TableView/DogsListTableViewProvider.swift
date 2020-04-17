@@ -13,9 +13,8 @@ class DogsListTableViewProvider: NSObject, TableViewProvider {
     
     // MARK: Properties
     
-    var data = [Dog]()
+    var data = [DogBreedViewModel]()
     var didSelectItem: ((_ atIndex: Int) -> Void)?
-    private let dogDescriptionFormatter = DogDescriptionFormatter()
     
     // MARK: TableViewProvider methods
     
@@ -27,8 +26,8 @@ class DogsListTableViewProvider: NSObject, TableViewProvider {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DogBreedTableViewCell.reuseIdentifier, for: indexPath) as? DogBreedTableViewCell else {
             return UITableViewCell()
         }
-        let description = dogDescriptionFormatter.getBreedDescriptionFrom(dog: data[indexPath.row])
-        cell.setTitle(description.title, subtitle: description.subtitle)
+        let viewModel = data[indexPath.row]
+        cell.setTitle(viewModel.title, subtitle: viewModel.subtitle)
         return cell
     }
     

@@ -18,18 +18,25 @@ class DogsListPresenter {
     let serverService: DogsListServerProtocol
     let storageService: DogsListStorageProtocol
     let loadingTableViewProvider = LoadingTableViewProvider()
+    let dogDescriptionFormatter = DogDescriptionFormatter()
     lazy var contentTableViewProvider: DogsListTableViewProvider = {
         let tableViewProvider = DogsListTableViewProvider()
         tableViewProvider.didSelectItem = { [unowned self] (atIndex: Int) in
-            let dog = tableViewProvider.data[atIndex]
+            let dog = self.displayedData[atIndex]
             self.delegate?.didSelectDog(dog)
         }
         return tableViewProvider
     }()
     // data, fetched from server
     var fetchedData = [Dog]() {
-        didSet {
+        willSet {
+            displayedData = newValue
             updateFavouriteButtonVisibility(hasFavouriteDog: isFavouriteDogAvailable)
+        }
+    }
+    var displayedData = [Dog]() {
+        willSet {
+            setContentTableView(data: getDogBreedViewModels(from: newValue))
         }
     }
     var isFavouriteDogAvailable: Bool {
@@ -60,6 +67,13 @@ class DogsListPresenter {
         }
     }
     
+    func getDogBreedViewModels(from data: [Dog]) -> [DogBreedViewModel] {
+        return data.map({
+            let description = dogDescriptionFormatter.getBreedDescriptionFrom(dog: $0)
+            return DogBreedViewModel(title: description.title, subtitle: description.subtitle)
+        })
+    }
+    
     func getFavouriteDog() -> Dog? {
         guard let breed = storageService.getFavouriteDogBreed() else {
             return nil
@@ -80,12 +94,12 @@ class DogsListPresenter {
         view.reloadData()
     }
     
-    func setContentTableView(data: [Dog]) {
+    func setContentTableView(data: [DogBreedViewModel]) {
         view.setTableViewProvider(contentTableViewProvider)
         updateContentDataInView(data: data)
     }
     
-    func updateContentDataInView(data: [Dog]) {
+    func updateContentDataInView(data: [DogBreedViewModel]) {
         contentTableViewProvider.data = data
         view.reloadData()
     }
@@ -100,7 +114,6 @@ class DogsListPresenter {
             }
         case .result(let items):
             fetchedData = items
-            setContentTableView(data: fetchedData)
         case .error(let message):
             view.showAlert(title: nil, message: message)
         }
@@ -125,15 +138,15 @@ extension DogsListPresenter: DogsListPresentation {
     }
     
     func getGalleryViewForItem(at indexPath: IndexPath) -> UIViewController? {
-        let dog = contentTableViewProvider.data[indexPath.row]
+        let dog = displayedData[indexPath.row]
         return delegate?.getGalleryView(for: dog)
     }
     
     func handleSearchBarTextChange(_ text: String?) {
         guard let text = text, !text.isEmpty else {
-            return updateContentDataInView(data: fetchedData)
+            displayedData = fetchedData
+            return
         }
-        let filteredData = fetchedData.filter({$0.breed.lowercased().hasPrefix(text.lowercased())})
-        updateContentDataInView(data: filteredData)
+        displayedData = fetchedData.filter({$0.breed.lowercased().hasPrefix(text.lowercased())})
     }
 }
