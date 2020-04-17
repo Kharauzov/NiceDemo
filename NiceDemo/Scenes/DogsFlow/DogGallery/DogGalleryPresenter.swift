@@ -19,6 +19,7 @@ class DogGalleryPresenter {
     let serverService: DogGalleryServerProtocol
     let storageService: DogGalleryStorageProtocol
     let imageLoader: ImageLoader
+    var imageLoadingDelayTask: DispatchWorkItem?
     lazy var collectionViewProvider = DogBreedsCollectionViewProvider()
     var state = DogGalleryFlow.ViewState.loadingRandomImage {
         didSet {
@@ -47,15 +48,28 @@ class DogGalleryPresenter {
     }
     
     func loadRandomDogImage() {
+        initialiaseImageLoadingDelayTask()
         performRequestToGetRandomDogImage { [weak self] (urlString) in
-            self?.imageLoader.loadImageFrom(urlString: urlString, completion: { [weak self] (image) in
+            guard let self = self else { return }
+            self.imageLoadingDelayTask?.cancel()
+            self.imageLoader.loadImageFrom(urlString: urlString, completion: { [weak self] (image) in
+                guard let self = self else { return }
                 if let image = image {
-                    self?.state = .resultRandomImage(image)
+                    self.state = .resultRandomImage(image)
                 } else {
-                    self?.state = .errorGettingRandomImage(message: "Failed to load image from url")
+                    self.state = .errorGettingRandomImage(message: "Failed to load image from url")
                 }
             })
         }
+    }
+    
+    func initialiaseImageLoadingDelayTask() {
+        imageLoadingDelayTask?.cancel()
+        let task = DispatchWorkItem { [weak self] in
+            self?.state = .loadingRandomImage
+        }
+        imageLoadingDelayTask = task
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: task)
     }
     
     func isBreedFavourite() -> Bool {
@@ -87,12 +101,20 @@ class DogGalleryPresenter {
         switch state {
         case .loadingRandomImage:
             view.showHUD(animated: true)
-            loadRandomDogImage()
         case .resultRandomImage(let image):
             view.hideHUD(animated: true)
-            view.setDogImage(image)
+            view.setDogImage(image, animated: true)
         case .errorGettingRandomImage(_):
             view.hideHUD(animated: true)
+        }
+    }
+    
+    func configureSubbreedsContent(basedOn subbreeds: [String]?) {
+        if let subbreeds = subbreeds, !subbreeds.isEmpty {
+            showDogSubbreeds(subbreeds)
+            view.hideNoDataLabel()
+        } else {
+            view.showNoDataLabel()
         }
     }
 }
@@ -103,17 +125,12 @@ extension DogGalleryPresenter: DogGalleryPresentation {
     func onViewDidLoad() {
         view.setNavigationTitle(dog.breed.capitalizingFirstLetter())
         updateRightBarButtonItemHighlightState(isBreedFavourite())
-        state = .loadingRandomImage
-        if let subbreeds = dog.subbreeds, !subbreeds.isEmpty {
-            showDogSubbreeds(subbreeds)
-            view.hideNoDataLabel()
-        } else {
-            view.showNoDataLabel()
-        }
+        configureSubbreedsContent(basedOn: dog.subbreeds)
+        loadRandomDogImage()
     }
     
     func handleActionButtonTap() {
-        state = .loadingRandomImage
+        loadRandomDogImage()
     }
     
     func handleFavouriteButtonTap() {

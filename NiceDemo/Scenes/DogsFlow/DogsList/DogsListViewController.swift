@@ -26,7 +26,6 @@ class DogsListViewController: BaseViewController {
         super.viewDidLoad()
         setupSearchController()
         setupNavigationItem()
-        setupNavigatioBar()
         registerTableViewForForceTouchInteractions()
         showNavigationBar()
         presenter.onViewDidLoad()

@@ -9,7 +9,7 @@
 import UIKit
 
 class DogGalleryView: UIView {
-
+    
     // MARK: Public properties
     
     var didPressActionButton: (() -> Void)?
@@ -149,8 +149,14 @@ extension DogGalleryView {
         collectionView.reloadData()
     }
     
-    func setDogImage(_ image: UIImage) {
-        dogImageView.image = image
+    func setDogImage(_ image: UIImage, animated: Bool) {
+        let duration: TimeInterval = animated ? 0.5 : 0
+        UIView.transition(
+            with: dogImageView, duration: duration, options: .transitionCrossDissolve,
+            animations: {
+                self.dogImageView.image = image
+            },
+            completion: nil)
     }
     
     func showNoDataLabel() {

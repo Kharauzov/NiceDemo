@@ -63,8 +63,8 @@ extension DogGalleryViewController: DogGalleryViewInterface {
         customView.reloadCollectionView()
     }
     
-    func setDogImage(_ image: UIImage) {
-        customView.setDogImage(image)
+    func setDogImage(_ image: UIImage, animated: Bool) {
+        customView.setDogImage(image, animated: animated)
     }
     
     func setNavigationTitle(_ title: String) {

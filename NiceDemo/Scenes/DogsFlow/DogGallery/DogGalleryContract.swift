@@ -22,7 +22,7 @@ protocol DogGalleryStorageProtocol {
 }
 
 protocol DogGalleryViewInterface: class {
-    func setDogImage(_ image: UIImage)
+    func setDogImage(_ image: UIImage, animated: Bool)
     func setNavigationTitle(_ title: String)
     func showHUD(animated: Bool)
     func hideHUD(animated: Bool)
