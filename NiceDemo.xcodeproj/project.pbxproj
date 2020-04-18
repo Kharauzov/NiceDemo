@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49692496244B03A000298287 /* DogsApiDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49692495244B03A000298287 /* DogsApiDataParser.swift */; };
 		4970A26C21D4905E00D228F9 /* TableViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A26B21D4905E00D228F9 /* TableViewProvider.swift */; };
 		4970A26E21D4907B00D228F9 /* CollectionViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A26D21D4907B00D228F9 /* CollectionViewProvider.swift */; };
 		4970A27021D4949400D228F9 /* DogDescriptionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A26F21D4949400D228F9 /* DogDescriptionFormatter.swift */; };
@@ -113,6 +114,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49692495244B03A000298287 /* DogsApiDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsApiDataParser.swift; sourceTree = "<group>"; };
 		4970A26B21D4905E00D228F9 /* TableViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProvider.swift; sourceTree = "<group>"; };
 		4970A26D21D4907B00D228F9 /* CollectionViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewProvider.swift; sourceTree = "<group>"; };
 		4970A26F21D4949400D228F9 /* DogDescriptionFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDescriptionFormatter.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			children = (
 				9F495B622057CE790054FB4E /* Core */,
 				9F495B662057D9AD0054FB4E /* DogsServerService.swift */,
+				49692495244B03A000298287 /* DogsApiDataParser.swift */,
 			);
 			path = ServerApi;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				9F091AAB204D6B0400B580CB /* AuthFlowCoordinator.swift in Sources */,
 				9F67C5192052C3D90031C8FB /* DogsListTableViewProvider.swift in Sources */,
 				9FE95E752052BCA80080CBAA /* DogsListView.swift in Sources */,
+				49692496244B03A000298287 /* DogsApiDataParser.swift in Sources */,
 				9F091A91204D543600B580CB /* StartPresenter.swift in Sources */,
 				9FE95E702052B8A70080CBAA /* DogsListContract.swift in Sources */,
 				9F091AA4204D6A0000B580CB /* SignInContract.swift in Sources */,

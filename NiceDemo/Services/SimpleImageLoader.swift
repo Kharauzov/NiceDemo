@@ -14,7 +14,7 @@ protocol ImageLoader {
 }
 
 protocol ImageLoaderCore {
-    func getData(from url: URL) -> Data?
+    func getImageData(from url: URL, completion: @escaping (_ data: Data?) -> Void)
 }
 
 /// Responsible for retrieving UIImage via url using `Data.contentsOfUrl` method.
@@ -35,21 +35,23 @@ class SimpleImageLoader: ImageLoader {
             completion(nil)
             return
         }
-        DispatchQueue.global(qos: .background).async {
-            let data = self.core.getData(from: url)
-            DispatchQueue.main.async {
-                if let data = data {
-                    completion(UIImage(data: data))
-                } else {
-                    completion(nil)
-                }
+        core.getImageData(from: url) { (data) in
+            if let data = data {
+                completion(UIImage(data: data))
+            } else {
+                completion(nil)
             }
         }
     }
 }
 
 class SimpleImageLoaderCore: ImageLoaderCore {
-    func getData(from url: URL) -> Data? {
-        return try? Data(contentsOf: url)
+    func getImageData(from url: URL, completion: @escaping (_ data: Data?) -> Void) {
+        DispatchQueue.global(qos: .background).async {
+            let data = try? Data(contentsOf: url)
+            DispatchQueue.main.async {
+                completion(data)
+            }
+        }
     }
 }

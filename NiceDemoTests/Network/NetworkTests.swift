@@ -16,10 +16,14 @@ import XCTest
 class NiceDemoNetworkTests: XCTestCase {
     
     var dogsServerService: DogsServerService!
+    var dogsDataParser: MockDogsApiDataParser!
+    var core: MockServerService!
     
     override func setUp() {
         super.setUp()
-        dogsServerService = DogsServerService(core: UrlSessionService())
+        dogsDataParser = MockDogsApiDataParser()
+        core = MockServerService()
+        dogsServerService = DogsServerService(core: core, parser: dogsDataParser)
     }
     
     override func tearDown() {
@@ -27,40 +31,95 @@ class NiceDemoNetworkTests: XCTestCase {
         super.tearDown()
     }
     
-    func testGetAllDogsNetworkRequest() {
+    func testGetAllDogsValidNetworkRequest() {
         // given
-        let promise = expectation(description: "Completion handler invoked")
         var responseData: Any?
         var responseError: Error?
+        let getAllDogsUrlPath = ServerRouter.getAllDogsBreeds.asURLRequest().url?.absoluteString
         // when
         dogsServerService.getAllDogs { (dogs, error) in
             responseData = dogs
             responseError = error
-            promise.fulfill()
         }
-        
-        waitForExpectations(timeout: 5, handler: nil)
         // then
         XCTAssertNil(responseError)
         XCTAssertNotNil(responseData)
+        XCTAssertEqual(getAllDogsUrlPath, core.requestUrlString)
     }
     
-    func testGetDogRandomImageUrlRequest() {
+    func testGetAllDogsNotValidNetworkRequest() {
         // given
-        let promise = expectation(description: "Completion handler invoked")
         var responseData: Any?
         var responseError: Error?
+        let getAllDogsUrlPath = ServerRouter.getAllDogsBreeds.asURLRequest().url?.absoluteString
+        core.shouldFailRequest = true
         // when
-        dogsServerService.getDogRandomImageUrl(breed: "akita") { (urlString, error) in
+        dogsServerService.getAllDogs { (dogs, error) in
+            responseData = dogs
+            responseError = error
+        }
+        // then
+        XCTAssertNotNil(responseError)
+        XCTAssertNil(responseData)
+        XCTAssertEqual(getAllDogsUrlPath, core.requestUrlString)
+    }
+    
+    func testGetDogRandomImageValidUrlRequest() {
+        // given
+        var responseData: Any?
+        var responseError: Error?
+        let breed = "akita"
+        let getDogRandomImageUrlPath = ServerRouter.getDogRandomImage(breed).asURLRequest().url?.absoluteString
+        // when
+        dogsServerService.getDogRandomImageUrl(breed: breed) { (urlString, error) in
             responseData = urlString
             responseError = error
-            promise.fulfill()
         }
-        waitForExpectations(timeout: 5, handler: nil)
         // then
         XCTAssertNil(responseError)
         XCTAssertNotNil(responseData)
+        XCTAssertEqual(getDogRandomImageUrlPath, core.requestUrlString)
     }
     
+    func testGetDogRandomImageNotValidUrlRequest() {
+        // given
+        var responseData: Any?
+        var responseError: Error?
+        let breed = "akita"
+        let getDogRandomImageUrlPath = ServerRouter.getDogRandomImage(breed).asURLRequest().url?.absoluteString
+        core.shouldFailRequest = true
+        // when
+        dogsServerService.getDogRandomImageUrl(breed: breed) { (urlString, error) in
+            responseData = urlString
+            responseError = error
+        }
+        // then
+        XCTAssertNotNil(responseError)
+        XCTAssertNil(responseData)
+        XCTAssertEqual(getDogRandomImageUrlPath, core.requestUrlString)
+    }
 }
 
+class MockServerService: ServerService {
+    var requestUrlString: String?
+    var shouldFailRequest = false
+    
+    func performRequest<T>(_ request: URLRequestable, completion: ServerRequestResponseCompletion<T>?) {
+        requestUrlString = request.asURLRequest().url?.absoluteString
+        if shouldFailRequest {
+            completion?(Result.failure(NSError(domain: "", code: 0, userInfo: nil)))
+        } else if let data = Data() as? T {
+            completion?(Result.success(data))
+        }
+    }
+}
+
+class MockDogsApiDataParser: DogsServerResponseParser {
+    func parseGetAllDogsResponse(data: Data) -> [Dog]? {
+        return [Dog(breed: "Test", subbreeds: nil)]
+    }
+    
+    func parseGetDogRandomImageUrlResponse(data: Data) -> String? {
+        return "image.jpg"
+    }
+}

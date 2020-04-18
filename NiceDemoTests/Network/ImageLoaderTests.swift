@@ -34,13 +34,10 @@ class ImageLoaderTests: XCTestCase {
         // given
         var responseData: Any?
         let validUrlString = "https://mock.com/valid.jpg"
-        let promise = expectation(description: "Completion handler invoked")
         // when
         imageLoader.loadImageFrom(urlString: validUrlString) { (image) in
             responseData = image
-            promise.fulfill()
         }
-        waitForExpectations(timeout: 1, handler: nil)
         // then
         XCTAssertNotNil(responseData)
     }
@@ -49,20 +46,17 @@ class ImageLoaderTests: XCTestCase {
         // given
         var responseData: Any?
         let notValidUrlString = ""
-        let promise = expectation(description: "Completion handler invoked")
         // when
         imageLoader.loadImageFrom(urlString: notValidUrlString) { (image) in
             responseData = image
-            promise.fulfill()
         }
-        waitForExpectations(timeout: 1, handler: nil)
         // then
         XCTAssertNil(responseData)
     }
 }
 
 class MockImageLoaderCore: ImageLoaderCore {
-    func getData(from url: URL) -> Data? {
-        return #imageLiteral(resourceName: "dog").pngData()
+    func getImageData(from url: URL, completion: @escaping (_ data: Data?) -> Void) {
+        completion(#imageLiteral(resourceName: "dog").pngData())
     }
 }
