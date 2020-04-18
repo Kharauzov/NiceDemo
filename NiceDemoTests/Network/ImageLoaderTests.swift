@@ -14,30 +14,55 @@ import XCTest
 ///
 
 class ImageLoaderTests: XCTestCase {
-
+    
     var imageLoader: SimpleImageLoader!
+    var imageLoaderCore: MockImageLoaderCore!
     
     override func setUp() {
         super.setUp()
-        imageLoader = SimpleImageLoader()
+        imageLoaderCore = MockImageLoaderCore()
+        imageLoader = SimpleImageLoader(core: imageLoaderCore)
     }
     
     override func tearDown() {
         imageLoader = nil
+        imageLoaderCore = nil
         super.tearDown()
     }
     
-    func testLoadingOfImageByUrl() {
+    func testLoadingOfImageByValidUrl() {
         // given
-        let promise = expectation(description: "Completion handler invoked")
         var responseData: Any?
+        let validUrlString = "https://mock.com/valid.jpg"
+        let promise = expectation(description: "Completion handler invoked")
         // when
-        imageLoader.loadImageFrom(urlString: "https://dog.ceo/api/img/hound-walker/n02089867_1381.jpg") { (image) in
+        imageLoader.loadImageFrom(urlString: validUrlString) { (image) in
             responseData = image
             promise.fulfill()
         }
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 1, handler: nil)
         // then
         XCTAssertNotNil(responseData)
+    }
+    
+    func testLoadingOfImageByInvalidUrl() {
+        // given
+        var responseData: Any?
+        let notValidUrlString = ""
+        let promise = expectation(description: "Completion handler invoked")
+        // when
+        imageLoader.loadImageFrom(urlString: notValidUrlString) { (image) in
+            responseData = image
+            promise.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+        // then
+        XCTAssertNil(responseData)
+    }
+}
+
+class MockImageLoaderCore: ImageLoaderCore {
+    func getData(from url: URL) -> Data? {
+        return #imageLiteral(resourceName: "dog").pngData()
     }
 }

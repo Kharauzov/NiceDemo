@@ -29,7 +29,7 @@ class DogsListTableViewTests: XCTestCase {
         tableViewProvider.didSelectItem = { [unowned self] (_ atIndex: Int) in
             self.selectedIndex = atIndex
         }
-        let data = [Dog(breed: "Akita", subbreeds: nil), Dog(breed: "Terrier", subbreeds: ["Westhighland", "Yorkshire"])]
+        let data = [DogBreedViewModel(title: "Akita", subtitle: "Westhighland, Yorkshire"), DogBreedViewModel(title: "Terrier", subtitle: "")]
         tableViewProvider.data = data
         tableView.dataSource = tableViewProvider
         tableView.delegate = tableViewProvider
@@ -56,10 +56,8 @@ class DogsListTableViewTests: XCTestCase {
         
         // then
         XCTAssertNotNil(cell, "Must exists.")
-        XCTAssertNotNil(title, "Must exists.")
         XCTAssertEqual(title, "Akita", "Dismatch.")
-        XCTAssertNotNil(subtitle, "Must exists.")
-        XCTAssertEqual(subtitle, "No subreeds", "Dismatch.")
+        XCTAssertEqual(subtitle, "Westhighland, Yorkshire", "Dismatch.")
     }
     
     func testTableViewDelegate() {

@@ -42,7 +42,7 @@ class DogGalleryPresenterTests: XCTestCase {
         // when
         XCTAssertEqual(imageLoader.loadImageFromDidCalled, 0)
         XCTAssertEqual(serverService.getDogRandomImageUrlDidCalled, 0)
-        presenter.updateViewBasedOn(state: .loadingRandomImage)
+        presenter.loadRandomDogImage()
         // then
         XCTAssertEqual(imageLoader.loadImageFromDidCalled, 1)
         XCTAssertEqual(serverService.getDogRandomImageUrlDidCalled, 1)
@@ -145,7 +145,7 @@ class DogGalleryViewControllerMock: DogGalleryViewInterface {
     var isRightBarButtonHighlighted = false
     var isNoDataLabelHidden = false
     
-    func setDogImage(_ image: UIImage) {
+    func setDogImage(_ image: UIImage, animated: Bool) {
         isDogImageSet = true
     }
     
