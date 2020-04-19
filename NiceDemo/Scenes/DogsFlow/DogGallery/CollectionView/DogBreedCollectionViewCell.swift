@@ -12,7 +12,7 @@ class DogBreedCollectionViewCell: UICollectionViewCell {
     
     // MARK: Private properties
     
-    private lazy var titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)

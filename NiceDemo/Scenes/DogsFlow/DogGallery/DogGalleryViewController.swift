@@ -42,12 +42,12 @@ class DogGalleryViewController: BaseViewController {
     }
     
     func setupNavigationItem() {
-        let rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "pawPrintNotSelected").withRenderingMode(.alwaysTemplate), landscapeImagePhone: nil, style: .done, target: self, action: #selector(favouriteButtonTapped(_:)))
+        let rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "pawPrintNotSelected").withRenderingMode(.alwaysTemplate), landscapeImagePhone: nil, style: .done, target: self, action: #selector(favouriteButtonTapped))
         rightBarButtonItem.tintColor = UIColor.AppColors.primaryColor
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
-    @objc func favouriteButtonTapped(_ sender: Any) {
+    @objc func favouriteButtonTapped() {
         presenter.handleFavouriteButtonTap()
     }
 }

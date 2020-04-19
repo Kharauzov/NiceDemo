@@ -8,23 +8,20 @@
 
 import UIKit
 
-//@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    // MARK: Public properties
+    // MARK: Properties
     
     var window: UIWindow?
-    
-    // MARK: Private properties
-    
-    private var appDelegateService: AppDelegateService!
+    var appDelegateService: AppDelegateService!
 
     // MARK: UIApplication Delegate
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        appDelegateService = AppDelegateService(window: window!)
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        appDelegateService = AppDelegateService(window: window)
         appDelegateService.setupAppCoordinator()
+        self.window = window
         return true
     }
 }

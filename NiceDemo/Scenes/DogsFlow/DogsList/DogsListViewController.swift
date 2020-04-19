@@ -58,10 +58,6 @@ class DogsListViewController: BaseViewController {
         definesPresentationContext = true
     }
     
-    func setupNavigatioBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
     func setupNavigationItem() {
         navigationItem.title = "List of dogs"
     }

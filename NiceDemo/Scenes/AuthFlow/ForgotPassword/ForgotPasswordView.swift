@@ -16,16 +16,51 @@ class ForgotPasswordView: UIView {
     
     // MARK: Private properties
     
-    private var submitButton: UIButton!
-    private var emailTextField: UITextField!
-    private var descriptionLabel: UILabel!
-    private var logoImageView: UIImageView!
+    let submitButton: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        button.setTitle("Submit", for: .normal)
+        button.setTitleColor(UIColor.AppColors.secondaryColor, for: .normal)
+        button.layer.cornerRadius = 10.0
+        button.backgroundColor = UIColor.AppColors.primaryColor
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        button.addTarget(self, action: #selector(submitButtonTapped(_:)), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    let emailTextField: UITextField = {
+        let textField = UITextField(frame: .zero)
+        textField.placeholder = "Email"
+        textField.keyboardType = .emailAddress
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    let descriptionLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.textColor = UIColor.AppColors.primaryColor
+        label.textAlignment = .left
+        label.text = "Enter your email and we’ll send you a link to get back to your account."
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    let logoImageView: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "walkingWithDog").withRenderingMode(.alwaysTemplate))
+        imageView.tintColor = UIColor.AppColors.primaryColor
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     // MARK: Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
+        emailTextField.delegate = self
         addLogoImageView()
         addEmailTextField()
         addDescriptionLabel()
@@ -39,12 +74,6 @@ class ForgotPasswordView: UIView {
     // MARK: Private methods
     
     private func addLogoImageView() {
-        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "walkingWithDog").withRenderingMode(.alwaysTemplate))
-        logoImageView.tintColor = UIColor.AppColors.primaryColor
-        logoImageView.contentMode = .scaleAspectFill
-        logoImageView.clipsToBounds = true
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        self.logoImageView = logoImageView
         addSubview(logoImageView)
         NSLayoutConstraint(item: logoImageView, attribute: .top, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .top, multiplier: 1.0, constant: 44).isActive = true
         NSLayoutConstraint(item: logoImageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
@@ -53,14 +82,6 @@ class ForgotPasswordView: UIView {
     }
     
     private func addEmailTextField() {
-        let emailTextField = UITextField(frame: .zero)
-        emailTextField.placeholder = "Email"
-        emailTextField.keyboardType = .emailAddress
-        emailTextField.autocapitalizationType = .none
-        emailTextField.autocorrectionType = .no
-        emailTextField.delegate = self
-        emailTextField.translatesAutoresizingMaskIntoConstraints = false
-        self.emailTextField = emailTextField
         addSubview(emailTextField)
         NSLayoutConstraint(item: emailTextField, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: emailTextField, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16.0).isActive = true
@@ -78,14 +99,6 @@ class ForgotPasswordView: UIView {
     }
     
     private func addDescriptionLabel() {
-        let descriptionLabel = UILabel(frame: .zero)
-        descriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        descriptionLabel.textColor = UIColor.AppColors.primaryColor
-        descriptionLabel.textAlignment = .left
-        descriptionLabel.text = "Enter your email and we’ll send you a link to get back to your account."
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.descriptionLabel = descriptionLabel
         addSubview(descriptionLabel)
         NSLayoutConstraint(item: descriptionLabel, attribute: .bottom, relatedBy: .equal, toItem: emailTextField, attribute: .top, multiplier: 1.0, constant: -24).isActive = true
         NSLayoutConstraint(item: descriptionLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 16.0).isActive = true
@@ -93,15 +106,6 @@ class ForgotPasswordView: UIView {
     }
     
     private func addForgotPasswordButton() {
-        let submitButton = UIButton(type: .roundedRect)
-        submitButton.setTitle("Submit", for: .normal)
-        submitButton.setTitleColor(UIColor.AppColors.secondaryColor, for: .normal)
-        submitButton.layer.cornerRadius = 10.0
-        submitButton.backgroundColor = UIColor.AppColors.primaryColor
-        submitButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
-        submitButton.addTarget(self, action: #selector(submitButtonTapped(_:)), for: .touchUpInside)
-        submitButton.translatesAutoresizingMaskIntoConstraints = false
-        self.submitButton = submitButton
         addSubview(submitButton)
         if DeviceType.hasTopNotch {
             NSLayoutConstraint(item: submitButton, attribute: .bottom, relatedBy: .equal, toItem: safeAreaLayoutGuide, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
